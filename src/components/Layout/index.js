@@ -8,43 +8,46 @@ import Header from '../Header'
 
 import { generateMeta, generateLink } from './helpers.js'
 
-const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
-
-const renderLayout = (data, props) => {
-  const {
-    site: {
-      siteMetadata: { title: siteTitle, description: siteDescription, author },
-    },
-  } = data
-  const { children, pageTitle, description, lang, ...meta } = props
-  const metaDescription = description || siteDescription
-  const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle
-  return (
-    <>
-      <Helmet
-        htmlAttributes={{ lang }}
-        title={title}
-        meta={generateMeta({ metaDescription, title, author, ...meta })}
-        link={generateLink()}
-      />
-      <Theme>
-        <Header />
-        {children}
-      </Theme>
-    </>
-  )
-}
-
 const Layout = props => (
-  <StaticQuery query={query} render={data => renderLayout(data, props)} />
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => {
+      const {
+        site: {
+          siteMetadata: {
+            title: siteTitle,
+            description: siteDescription,
+            author,
+          },
+        },
+      } = data
+      const { children, pageTitle, description, lang, ...meta } = props
+      const metaDescription = description || siteDescription
+      const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle
+      return (
+        <>
+          <Helmet
+            htmlAttributes={{ lang }}
+            title={title}
+            meta={generateMeta({ metaDescription, title, author, ...meta })}
+            link={generateLink()}
+          />
+          <Theme>
+            <Header />
+            {children}
+          </Theme>
+        </>
+      )
+    }}
+  />
 )
 
 Layout.propTypes = {

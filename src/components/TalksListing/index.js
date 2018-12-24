@@ -54,8 +54,12 @@ const ImageCredit = styled(Paragraph)`
 
 const TalksListing = ({ data }) => (
   <Box>
-    {data.map(event => (
-      <Event a11yDescriptionId="description" a11yTitleId="talkTitle">
+    {data.map((event, index) => (
+      <Event
+        key={index}
+        a11yDescriptionId="description"
+        a11yTitleId="talkTitle"
+      >
         <ImageBox>
           <Image filename={event.image} alt={event.title} />
         </ImageBox>

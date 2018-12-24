@@ -23,7 +23,7 @@ const PageHeading = styled(Heading)`
   }
 `
 
-const PageSubHeading = styled(PageHeading)`
+const PageSubHeading = styled(Text)`
   font-weight: 300;
   font-size: 2.625rem;
   letter-spacing: -1px;

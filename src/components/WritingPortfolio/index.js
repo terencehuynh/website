@@ -84,10 +84,10 @@ const Portfolio = ({ stories }) => (
   <>
     <SectionHeading as="h3">Portfolio</SectionHeading>
     <Stories>
-      {stories.map(story => {
+      {stories.map((story, key) => {
         const { link, title, publication, date } = story
         return (
-          <Story>
+          <Story key={key}>
             <ArticleTitle as="h6">
               <Link href={link}>{title}</Link>
             </ArticleTitle>
