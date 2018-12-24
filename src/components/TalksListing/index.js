@@ -1,5 +1,7 @@
 import React from 'react'
 import { Box, Card, Heading, Paragraph, styled } from 'fannypack'
+import { theme } from 'styled-tools'
+
 import Image from '../Image'
 
 const Event = styled(Card.Card)`
@@ -12,6 +14,11 @@ const EventTitle = styled(Heading)`
   font-weight: 700;
   letter-spacing; -1px;
   margin: 8px 0 12px;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    font-size: 1.3125rem;
+  }
+
 `
 
 const EventDescription = styled(Paragraph)`
@@ -19,11 +26,21 @@ const EventDescription = styled(Paragraph)`
   font-size: 1rem;
   font-family: 'Merriweather', sans-serif;
   font-weight: 300;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    font-size: 0.875rem;
+  }
 `
 
 const ImageBox = styled(Box)`
   width: 45%;
   margin-right: 36px;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 `
 
 const CardContents = styled(Box)`

@@ -8,13 +8,14 @@ import {
   Button,
   styled,
 } from 'fannypack'
+import { theme } from 'styled-tools'
 
 const CardTitle = styled(Heading)`
-font-size: 1.3125rem;
-line-height: 1.15;
-font-weight: 700;
-letter-spacing; -1px;
-margin: 0 0 12px;
+  font-size: 1.3125rem;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing; -1px;
+  margin: 0 0 12px;
 `
 
 const CardDescription = styled(Paragraph)`
@@ -22,6 +23,10 @@ const CardDescription = styled(Paragraph)`
   font-size: 1rem;
   font-family: 'Merriweather', sans-serif;
   font-weight: 300;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    font-size: 0.875rem;
+  }
 `
 
 const WritingFeatured = () => (

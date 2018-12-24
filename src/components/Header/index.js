@@ -15,6 +15,16 @@ const SiteHeader = styled(Heading)`
   padding: 20px 0;
   flex: 1;
   color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: underline;
+  }
 `
 
 const NavList = styled(List)`
@@ -42,7 +52,9 @@ const NavLink = styled(Link)`
 
 const Header = () => (
   <Container>
-    <SiteHeader as="h1">Terence Huynh</SiteHeader>
+    <SiteHeader as="h1">
+      <Link href="/">Terence Huynh</Link>
+    </SiteHeader>
     <Navigation>
       <NavList isHorizontal>
         <List.Item>
