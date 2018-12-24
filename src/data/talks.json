@@ -1,0 +1,20 @@
+[
+  {
+    "image": "talks/aabill.jpg",
+    "imageCredit": "Daniel Sykes-Turner (@dsykesturner)",
+    "title": "The #AABill: A Melbourne Conversation",
+    "description": "I was invited by TypeHuman to join a panel with Sarah Moran (Girl Geek Academy), Peter Tonoli (Electronic Frontiers Australia), and Eliza Sorensen (Assembly Four) to discuss the impact of the #AABill on the Australian tech industry."
+  },
+  {
+    "image": "talks/reactnative.jpg",
+    "imageCredit": "Pranati Vyas (@PranatiVyas)",
+    "title": "The Other Side of React Native",
+    "description": "Lightning talk at Junior Developers Melbourne's Code and Tell night. React Native lets you build cross-platform applications from one JavaScript codebase - that's good, right? The talk details some of the weird quirks and complexities of React Native development."
+  },
+  {
+    "image": "talks/quitjob.jpg",
+    "imageCredit": "Steven Cooper (@developersteve)",
+    "title": "How To Quit Your Job",
+    "description": "Lightning talk at Junior Developers Melbourne's Code and Tell night. Leaving a job is the hardest thing to do but often it is the only way to get your career trajectory back on track. The talk features what motivates a person to leave, using my recent job move as an example."
+  }
+]
