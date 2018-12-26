@@ -36,6 +36,7 @@ const Layout = props => (
         description,
         lang,
         homepage,
+        breakpoint,
         ...meta
       } = props
       const metaDescription = description || siteDescription
@@ -51,7 +52,7 @@ const Layout = props => (
           <Theme>
             <Header homepage={homepage} />
             {children}
-            <Footer />
+            <Footer breakpoint={breakpoint} />
           </Theme>
         </>
       )
@@ -67,6 +68,7 @@ Layout.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   pageTitle: PropTypes.string,
   homepage: PropTypes.bool,
+  breakpoint: PropTypes.string,
 }
 
 Layout.defaultProps = {
@@ -74,6 +76,7 @@ Layout.defaultProps = {
   meta: [],
   keywords: [],
   homepage: false,
+  breakpoint: 'desktop',
 }
 
 export default Layout

@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import HomepageHero from '../components/Homepage/Hero'
 
 const IndexPage = () => (
-  <Layout homepage>
+  <Layout homepage breakpoint="fullHD">
     <HomepageHero />
   </Layout>
 )

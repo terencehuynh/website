@@ -31,9 +31,9 @@ const FooterParagraph = styled(Paragraph)`
   }
 `
 
-const Footer = () => (
+const Footer = ({ breakpoint }) => (
   <PageBlock bgColor="#eceff1">
-    <Container breakpoint="desktop">
+    <Container breakpoint={breakpoint}>
       <Columns>
         <Column>
           <FooterParagraph>
