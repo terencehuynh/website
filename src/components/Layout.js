@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Theme from './Theme'
-import Header from '../Header'
+import Header from './Header'
+import Footer from './Footer'
 
-import { generateMeta, generateLink } from './helpers.js'
+import { generateMeta, generateLink } from '../utils/helmet'
 
 const Layout = props => (
   <StaticQuery
@@ -29,7 +30,14 @@ const Layout = props => (
           },
         },
       } = data
-      const { children, pageTitle, description, lang, ...meta } = props
+      const {
+        children,
+        pageTitle,
+        description,
+        lang,
+        homepage,
+        ...meta
+      } = props
       const metaDescription = description || siteDescription
       const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle
       return (
@@ -41,8 +49,9 @@ const Layout = props => (
             link={generateLink()}
           />
           <Theme>
-            <Header />
+            <Header homepage={homepage} />
             {children}
+            <Footer />
           </Theme>
         </>
       )
@@ -57,12 +66,14 @@ Layout.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   pageTitle: PropTypes.string,
+  homepage: PropTypes.bool,
 }
 
 Layout.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
+  homepage: false,
 }
 
 export default Layout

@@ -36,7 +36,7 @@ const ImageBox = styled(Box)`
   width: 45%;
   margin-right: 36px;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     width: 100%;
     margin-right: 0;
     margin-bottom: 20px;
@@ -48,8 +48,9 @@ const CardContents = styled(Box)`
 `
 
 const ImageCredit = styled(Paragraph)`
+  font-weight: 500;
   font-size: 0.8125rem;
-  color: #b0bec5;
+  color: #90a4ae;
 `
 
 const TalksListing = ({ data }) => (

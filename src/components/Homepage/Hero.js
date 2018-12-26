@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Icon,
   Flex,
-  Container as FPContainer,
+  Container as _Container,
   Paragraph,
   Link,
   styled,
@@ -12,25 +12,21 @@ import { theme } from 'styled-tools'
 
 const colorMap = {
   se: '#ffeb3b',
-  blog: '#03a9f4',
-  loc: '#ec407a',
+  blog: '#f4511e',
+  loc: '#E91E63',
 }
 
 const BgWrap = styled(Flex)`
-  background-color: #24252a;
+  background-color: #101010;
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 85vh;
+  height: 95vh;
   padding: 64px 0;
   position: relative;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    height: 500px;
-  }
 `
 
-const Container = styled(FPContainer)`
+const Container = styled(_Container)`
   flex: 1;
 `
 
@@ -93,23 +89,23 @@ const Hero = () => (
   <BgWrap>
     <Container>
       <HeroLine>
-        My name is <HeroLink>Terence Huynh</HeroLink> and
+        My name is <HeroLink href="/about">Terence Huynh</HeroLink> and
       </HeroLine>
       <HeroLine>
         I am a{' '}
-        <HeroLink href="#" className="se">
+        <HeroLink href="/about" className="se">
           <HeroIcon icon="solid-laptop-code" /> Software Engineer
         </HeroLink>
       </HeroLine>
       <HeroLine>
         and{' '}
-        <HeroLink href="#" className="blog">
+        <HeroLink href="/writing" className="blog">
           <HeroIcon icon="solid-pencil-alt" /> Tech Blogger
         </HeroLink>
       </HeroLine>
       <HeroLine>
         from{' '}
-        <HeroLink href="#" className="loc">
+        <HeroLink href="https://www.visitmelbourne.com/" className="loc">
           <HeroIcon icon="solid-map-marker-alt" /> Melbourne, Australia
         </HeroLink>
       </HeroLine>

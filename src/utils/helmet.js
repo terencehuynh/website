@@ -1,7 +1,7 @@
 export const generateLink = () => {
   return [
     {
-      href: 'https://fonts.googleapis.com/css?family=Merriweather:300,700,900',
+      href: 'https://fonts.googleapis.com/css?family=Merriweather:300,900',
       rel: 'stylesheet',
     },
   ]

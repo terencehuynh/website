@@ -1,59 +1,24 @@
 import React from 'react'
-import {
-  Box,
-  Container,
-  Columns,
-  Column,
-  Heading,
-  Paragraph,
-  styled,
-} from 'fannypack'
+import { Container, Columns, Column, Link } from 'fannypack'
 
 import Layout from '../components/Layout'
+import PageBlock from '../components/PageBlock'
 import Image from '../components/Image'
-import AboutHistory from '../components/AboutHistory'
+import AboutHistory from '../components/About/History'
+import { PageHeading, Highlight, Text, SideHeading } from '../components/Core'
 
-const PageWrap = styled(Box)`
-  padding: 48px 0;
-  background-color: ${props => props.bgColor || 'transparent'};
-`
-
-const PageHeading = styled(Heading)`
-  font-size: 1rem;
-  margin: 0 0 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-`
-
-const SideHeading = styled(Heading)`
-  font-weight: 700;
-  font-size: 2.625rem;
-  letter-spacing: -1px;
-  margin: 0;
-`
-
-const Highlight = styled(Paragraph)`
-  font-weight: 300;
-  font-size: 2.625rem;
-`
-
-const Text = styled(Paragraph)`
-  line-height: 2;
-  font-size: 1.125rem;
-  font-family: 'Merriweather', sans-serif;
-  font-weight: 300;
-`
+import history from '../data/about-history.json'
+import current from '../data/about-current.json'
 
 const IndexPage = () => (
   <Layout pageTitle="About Me">
-    <PageWrap>
+    <PageBlock>
       <Container breakpoint="desktop">
-        <Columns>
-          <Column spread={3}>
+        <Columns minBreakpoint="tablet">
+          <Column spread={4}>
             <Image filename="avatar.png" alt="Terence Huynh" />
           </Column>
-          <Column spread={8} spreadOffset={1}>
+          <Column spread={7} spreadOffset={1} spreadTabletOffset={1}>
             <PageHeading as="h2">About Me</PageHeading>
             <Highlight>
               Hey! I am a full-stack Software Engineer and Tech Blogger based in
@@ -63,8 +28,8 @@ const IndexPage = () => (
               I am currently a <strong>Software Engineer at Localz</strong>, a
               startup that is developing last-mile solutions for retail,
               logistics and utility businesses based in Melbourne, Australia. I
-              currently work across our front-end, back-end and mobile
-              applications.
+              currently work across our backend, front-end and mobile
+              applications (React Native).
             </Text>
             <Text>
               I am also the <strong>Executive Editor of TechGeek</strong>,
@@ -82,24 +47,37 @@ const IndexPage = () => (
               largest hackathons in Australia.
             </Text>
             <Text>
-              Interested to know more about me? Feel free to get in contact.
+              Interested to know more about me?{' '}
+              <Link href="/contact">Feel free to get in contact.</Link>
             </Text>
           </Column>
         </Columns>
       </Container>
-    </PageWrap>
-    <PageWrap bgColor="#ECEFF1">
+    </PageBlock>
+    <PageBlock bgColor="#FFF8E1">
       <Container breakpoint="desktop">
         <Columns>
-          <Column spread={3}>
-            <SideHeading as="h3">History</SideHeading>
+          <Column spread={4}>
+            <SideHeading as="h3">Currently...</SideHeading>
           </Column>
-          <Column spread={8} spreadOffset={1}>
-            <AboutHistory />
+          <Column spread={7} spreadOffset={1}>
+            <AboutHistory data={current} borderColor="#FFE57F" />
           </Column>
         </Columns>
       </Container>
-    </PageWrap>
+    </PageBlock>
+    <PageBlock>
+      <Container breakpoint="desktop">
+        <Columns>
+          <Column spread={4}>
+            <SideHeading as="h3">Previously...</SideHeading>
+          </Column>
+          <Column spread={7} spreadOffset={1}>
+            <AboutHistory data={history} />
+          </Column>
+        </Columns>
+      </Container>
+    </PageBlock>
   </Layout>
 )
 

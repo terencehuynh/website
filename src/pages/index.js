@@ -1,10 +1,10 @@
 import React from 'react'
 
 import Layout from '../components/Layout'
-import HomepageHero from '../components/HomepageHero'
+import HomepageHero from '../components/Homepage/Hero'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout homepage>
     <HomepageHero />
   </Layout>
 )
