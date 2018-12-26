@@ -13,7 +13,7 @@ const PageHeader = styled(Box)`
 const PageHeading = styled(Heading)`
   font-size: 2.625rem;
   letter-spacing: -1px;
-  color: white;
+  color: ${props => props.textColor || 'white'};
   font-weight: 700;
   margin: 0;
   display: inline-block;
@@ -27,7 +27,8 @@ const PageSubHeading = styled(Text)`
   font-weight: 300;
   font-size: 2.625rem;
   letter-spacing: -1px;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${props => props.textColor || 'white'};
+  opacity: 0.5;
   margin: 0 0 0 24px;
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
@@ -35,10 +36,12 @@ const PageSubHeading = styled(Text)`
   }
 `
 
-const Header = ({ heading, subheading }) => (
+const Header = ({ heading, subheading, textColor }) => (
   <PageHeader>
-    <PageHeading as="h2">{heading}</PageHeading>
-    <PageSubHeading>{subheading}</PageSubHeading>
+    <PageHeading as="h2" textColor={textColor}>
+      {heading}
+    </PageHeading>
+    <PageSubHeading textColor={textColor}>{subheading}</PageSubHeading>
   </PageHeader>
 )
 

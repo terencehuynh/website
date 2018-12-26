@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Theme from './Theme'
-import Header from './Header'
-import Footer from './Footer'
+import Header from './Core/Header'
+import Footer from './Core/Footer'
 
 import { generateMeta, generateLink } from '../utils/helmet'
 

@@ -2,8 +2,8 @@ import React from 'react'
 import { Container } from 'fannypack'
 
 import Layout from '../components/Layout'
-import PageBlock from '../components/PageBlock'
-import PageHeader from '../components/PageHeader'
+import PageBlock from '../components/Core/PageBlock'
+import PageHeader from '../components/Core/PageHeader'
 import WritingFeatured from '../components/Writing/Featured'
 import WritingPortfolio from '../components/Writing/Portfolio'
 

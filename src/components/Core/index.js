@@ -18,6 +18,7 @@ export const SideHeading = styled(Heading)`
   font-size: 2.625rem;
   letter-spacing: -1px;
   margin: 0 0 24px;
+  color: ${props => props.color || 'inherit'};
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     font-size: 2rem;

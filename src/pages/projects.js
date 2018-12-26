@@ -8,13 +8,17 @@ import TalksListing from '../components/Talks/Listing'
 
 import talksData from '../data/talks.json'
 
-const BG_COLOR = '#673ab7'
+const BG_COLOR = '#FFC107'
 
 const TalksPage = () => (
   <Layout pageTitle="Talks">
     <PageBlock headerBg headerBgColor={BG_COLOR}>
       <Container breakpoint="desktop">
-        <PageHeader heading="Talks" subheading="I say words..." />
+        <PageHeader
+          heading="Projects"
+          subheading="I code things..."
+          textColor="#303030"
+        />
         <TalksListing data={talksData} />
       </Container>
     </PageBlock>

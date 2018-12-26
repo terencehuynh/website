@@ -3,6 +3,7 @@ import { Box, Paragraph, styled } from 'fannypack'
 import { theme } from 'styled-tools'
 
 const History = styled(Box)`
+  color: ${props => props.textColor || 'inherit'};
   :not(:last-child) {
     padding-bottom: 24px;
     border-bottom: 1px solid ${props => props.borderColor || '#e0e0e0'};
@@ -47,10 +48,10 @@ const HistorySubtitle = styled(Paragraph)`
   }
 `
 
-const AboutHistory = ({ data, borderColor }) => (
+const AboutHistory = ({ data, borderColor, textColor }) => (
   <>
     {data.map(({ title, subtitle, time }, index) => (
-      <History key={index} borderColor={borderColor}>
+      <History key={index} borderColor={borderColor} textColor={textColor}>
         <HistoryTitle>{title}</HistoryTitle>
         <HistorySubtitle>{subtitle}</HistorySubtitle>
         <HistoryTime>{time}</HistoryTime>

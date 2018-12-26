@@ -2,10 +2,10 @@ import React from 'react'
 import { Container, Columns, Column, Link } from 'fannypack'
 
 import Layout from '../components/Layout'
-import PageBlock from '../components/PageBlock'
 import Image from '../components/Image'
 import AboutHistory from '../components/About/History'
 import { PageHeading, Highlight, Text, SideHeading } from '../components/Core'
+import PageBlock from '../components/Core/PageBlock'
 
 import history from '../data/about-history.json'
 import current from '../data/about-current.json'
@@ -54,14 +54,20 @@ const IndexPage = () => (
         </Columns>
       </Container>
     </PageBlock>
-    <PageBlock bgColor="#FFF8E1">
+    <PageBlock bgColor="#FFC107">
       <Container breakpoint="desktop">
         <Columns>
           <Column spread={4}>
-            <SideHeading as="h3">Currently...</SideHeading>
+            <SideHeading as="h3" color="#303030">
+              Currently...
+            </SideHeading>
           </Column>
           <Column spread={7} spreadOffset={1}>
-            <AboutHistory data={current} borderColor="#FFE57F" />
+            <AboutHistory
+              data={current}
+              borderColor="#FFE57F"
+              textColor="#303030"
+            />
           </Column>
         </Columns>
       </Container>

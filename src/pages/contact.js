@@ -2,9 +2,9 @@ import React from 'react'
 import { Container, Columns, Column, Link } from 'fannypack'
 
 import Layout from '../components/Layout'
-import PageBlock from '../components/PageBlock'
-import ContactSocial from '../components/Contact/Social'
 import { PageHeading, Highlight, Text } from '../components/Core'
+import PageBlock from '../components/Core/PageBlock'
+import ContactSocial from '../components/Contact/Social'
 
 const IndexPage = () => (
   <Layout pageTitle="Contact">
