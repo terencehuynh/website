@@ -21,6 +21,7 @@ const BgWrap = styled(Flex)`
   align-items: center;
   justify-content: center;
   width: 100vw;
+  min-height: 600px;
   height: 95vh;
   padding: 64px 0;
   position: relative;
@@ -47,6 +48,10 @@ const HeroLine = styled(Paragraph)`
     color: white;
     font-weight: 700;
     letter-spacing: -1px;
+  }
+
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
+    font-size: 2rem;
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
@@ -78,6 +83,11 @@ const HeroIcon = styled(Icon)`
   width: 3rem;
   height: 3rem;
   margin-right: 4px;
+
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
+    width: 2rem;
+    height: 2rem;
+  }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     width: 1.5rem;

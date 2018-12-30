@@ -18,7 +18,7 @@ export const Container = styled(Flex)`
     right: 0;
     left: 0;
     background: transparent;
-    border-bottom: 1px solid #303030;
+    border-bottom: 1px solid #202020;
   }
 
   &.homepage h1 a {

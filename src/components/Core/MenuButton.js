@@ -1,8 +1,8 @@
 import React from 'react'
-import { Icon, Button as FpButton, styled } from 'fannypack'
+import { Icon as FpIcon, Button as FpButton, styled } from 'fannypack'
 import { theme } from 'styled-tools'
 
-export const Button = styled(FpButton)`
+const Button = styled(FpButton)`
   color: #969696;
   position: absolute;
   right: 0;
@@ -22,9 +22,15 @@ export const Button = styled(FpButton)`
   }
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    display: block;
+    display: flex;
   }
 `
+
+const Icon = styled(FpIcon)`
+  height: auto;
+  flex: 1;
+`
+
 
 const MenuButton = ({ onClick, className }) => (
   <Button as="a" kind="link" onClick={onClick} className={className}>

@@ -3,7 +3,7 @@ import {
   Navigation,
   List as _List,
   Link as _Link,
-  Icon as _Icon,
+  Icon,
   styled,
 } from 'fannypack'
 import { theme } from 'styled-tools'
@@ -13,9 +13,14 @@ const List = styled(_List)`
 
   li {
     display: inline-block;
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     text-align: left;
     margin-top: 24px;
   }
@@ -28,10 +33,6 @@ const Link = styled(_Link)`
   &:hover {
     color: #37474f;
   }
-`
-
-const Icon = styled(_Icon)`
-  margin-right: 8px;
 `
 
 const ListItem = ({ name, icon, link, ...opt }) => (

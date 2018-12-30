@@ -49,7 +49,7 @@ const NavLink = styled(Link)`
   }
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    border-bottom: 1px solid #606060;
+    border-bottom: 1px solid #404040;
     padding: 12px 20px;
   }
 `
