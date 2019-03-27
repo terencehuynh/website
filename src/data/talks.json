@@ -1,20 +1,49 @@
 [
   {
+    "image": "talks/devrelcon-tokyo.jpg",
+    "imageCredit": "DevRelCon Tokyo",
+    "title": "So, you want to run a hackathon?",
+    "date": "March 2019",
+    "conference": "DevRelCon Tokyo 2019",
+    "description": "Everyone wants to run a hackathon - companies, startups, universities, governments. I presented a talk at DevRelCon Tokyo - a conference for developer advocates and developer relations people - on how to run a hackathon, and if you should hold a hackathon in the first place.",
+    "media": {
+      "slides": "https://speakerdeck.com/terencehuynh/so-you-want-to-run-a-hackathon"
+    }
+  },
+  {
+    "image": "talks/react-native.jpg",
+    "title": "Let's talk about React Native",
+    "date": "February 2019",
+    "conference": "GDG Melbourne",
+    "description": "I gave a presentation at the Google Developers Group in Melbourne. This gave an introduction of React Native, how it works, and why you should (and should not) use it.",
+    "media": {
+      "slides": "https://speakerdeck.com/terencehuynh/lets-talk-about-react-native",
+      "video": "https://www.youtube.com/watch?v=q7EhELPTT_Q"
+    }
+  },
+  {
     "image": "talks/aabill.jpg",
     "imageCredit": "Daniel Sykes-Turner (@dsykesturner)",
     "title": "The #AABill: A Melbourne Conversation",
-    "description": "I was invited by TypeHuman to join a panel with Sarah Moran (Girl Geek Academy), Peter Tonoli (Electronic Frontiers Australia), and Eliza Sorensen (Assembly Four) to discuss the impact of the #AABill on the Australian tech industry."
+    "date": "December 2018",
+    "description": "I was invited by TypeHuman to join a panel with Sarah Moran (Girl Geek Academy), Peter Tonoli (Electronic Frontiers Australia), and Eliza Sorensen (Assembly Four) to discuss the impact of the #AABill on the Australian tech industry.",
+    "media": {
+      "video": "https://www.youtube.com/watch?v=Bn7M6puXjvk"
+    }
   },
   {
     "image": "talks/reactnative.jpg",
     "imageCredit": "Pranati Vyas (@PranatiVyas)",
     "title": "The Other Side of React Native",
+    "date": "May 2018",
+    "conference": "Junior Developers Melbourne",
     "description": "Lightning talk at Junior Developers Melbourne's Code and Tell night. React Native lets you build cross-platform applications from one JavaScript codebase - that's good, right? The talk details some of the weird quirks and complexities of React Native development."
   },
   {
     "image": "talks/quitjob.jpg",
-    "imageCredit": "Steven Cooper (@developersteve)",
     "title": "How To Quit Your Job",
+    "date": "November 2017",
+    "conference": "Junior Developers Melbourne",
     "description": "Lightning talk at Junior Developers Melbourne's Code and Tell night. Leaving a job is the hardest thing to do but often it is the only way to get your career trajectory back on track. The talk features what motivates a person to leave, using my recent job move as an example."
   }
 ]

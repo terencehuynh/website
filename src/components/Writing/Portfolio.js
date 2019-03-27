@@ -2,6 +2,8 @@ import React from 'react'
 import { Grid, Heading, Text, Paragraph, Link, styled } from 'fannypack'
 import { theme } from 'styled-tools'
 
+import { SerifFonts } from '../../constants'
+
 const SectionHeading = styled(Text)`
   font-weight: 300;
   font-size: 2.625rem;
@@ -33,7 +35,7 @@ const ArticleDate = styled(Paragraph)`
 
 const ArticleTitle = styled(Heading)`
   font-size: 1.5rem;
-  font-family: 'Merriweather', sans-serif;
+  font-family: ${SerifFonts};
   letter-spacing: -1px;
   font-weight: 900;
   margin: 0 0 48px;

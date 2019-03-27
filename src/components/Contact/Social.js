@@ -8,6 +8,8 @@ import {
 } from 'fannypack'
 import { theme } from 'styled-tools'
 
+import { SerifFonts } from '../../constants'
+
 const List = styled(_List)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -20,7 +22,7 @@ const List = styled(_List)`
 const Link = styled(_Link)`
   line-height: 2;
   font-size: 1.125rem;
-  font-family: 'Merriweather', sans-serif;
+  font-family: ${SerifFonts};
   font-weight: 300;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {

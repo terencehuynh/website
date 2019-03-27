@@ -2,6 +2,8 @@ import React from 'react'
 import { Box, Paragraph, styled } from 'fannypack'
 import { theme } from 'styled-tools'
 
+import { SerifFonts } from '../../constants'
+
 const History = styled(Box)`
   color: ${props => props.textColor || 'inherit'};
   :not(:last-child) {
@@ -24,7 +26,7 @@ const HistoryTime = styled(Paragraph)`
 
 const HistoryTitle = styled(Paragraph)`
   font-size: 1.5rem;
-  font-family: 'Merriweather', sans-serif;
+  font-family: ${SerifFonts};
   letter-spacing: -1px;
   font-weight: 900;
 

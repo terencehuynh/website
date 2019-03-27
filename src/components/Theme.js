@@ -6,6 +6,7 @@ import {
   faMapMarkerAlt,
   faBars,
   faHeart,
+  faVideo,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -18,6 +19,7 @@ import {
   faMastodon,
   faTelegram,
   faMedium,
+  faSpeakerDeck,
 } from '@fortawesome/free-brands-svg-icons'
 
 const theme = {
@@ -35,7 +37,14 @@ const theme = {
   Icon: {
     iconSets: [
       {
-        icons: [faLaptopCode, faPencilAlt, faMapMarkerAlt, faBars, faHeart],
+        icons: [
+          faLaptopCode,
+          faPencilAlt,
+          faMapMarkerAlt,
+          faBars,
+          faHeart,
+          faVideo,
+        ],
         prefix: 'solid-',
         type: 'font-awesome',
       },
@@ -51,6 +60,7 @@ const theme = {
           faGithub,
           faTelegram,
           faMedium,
+          faSpeakerDeck,
         ],
         prefix: 'brand-',
         type: 'font-awesome',

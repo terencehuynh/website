@@ -9,6 +9,8 @@ import {
 } from 'fannypack'
 import { theme } from 'styled-tools'
 
+import { SerifFonts } from '../../constants'
+
 const Columns = styled(Grid)`
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 24px;
@@ -38,7 +40,7 @@ const CardTitle = styled(Heading)`
 const CardDescription = styled(Paragraph)`
   line-height: 2;
   font-size: 1rem;
-  font-family: 'Merriweather', sans-serif;
+  font-family: ${SerifFonts};
   font-weight: 300;
   flex: 1;
 
