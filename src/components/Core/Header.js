@@ -31,10 +31,10 @@ export const Container = styled(Flex)`
 `
 
 export const SiteHeader = styled(Heading)`
-  font-size: 1.3125rem;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 300;
   margin: 0;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
   flex: 1;
   color: white;
   height: 72px;

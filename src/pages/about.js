@@ -1,5 +1,12 @@
 import React from 'react'
-import { Container, Columns, Column, Link } from 'fannypack'
+import {
+  Container as _Container,
+  Columns,
+  Column,
+  Link,
+  styled,
+  theme,
+} from 'fannypack'
 
 import Layout from '../components/Layout'
 import Image from '../components/Image'
@@ -10,15 +17,32 @@ import PageBlock from '../components/Core/PageBlock'
 import history from '../data/about-history.json'
 import current from '../data/about-current.json'
 
+const Container = styled(_Container)`
+  position: relative;
+`
+
+const Avatar = styled.div`
+  border-radius: 50%;
+  overflow: hidden;
+
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+`
+
 const IndexPage = () => (
   <Layout pageTitle="About Me">
     <PageBlock>
       <Container breakpoint="desktop">
         <Columns minBreakpoint="tablet">
-          <Column spread={4}>
-            <Image filename="avatar.png" alt="Terence Huynh" />
+          <Column spread={4} spreadTablet={12}>
+            <Avatar>
+              <Image filename="avatar.png" alt="Terence Huynh" />
+            </Avatar>
           </Column>
-          <Column spread={7} spreadOffset={1} spreadTabletOffset={1}>
+          <Column spread={7} spreadTablet={12} spreadOffset={1}>
             <PageHeading as="h2">About Me</PageHeading>
             <Highlight>
               Hey! I am a full-stack Software Engineer and Tech Blogger based in

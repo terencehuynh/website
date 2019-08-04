@@ -13,6 +13,19 @@ export const PageHeading = styled(Heading)`
   }
 `
 
+export const SectionHeading = styled(Heading)`
+  font-weight: 400;
+  font-size: 1.125rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: ${props => props.color || 'inherit'};
+  margin: 36px 0 16px;
+
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
+    font-size: 1rem;
+  }
+`
+
 export const SideHeading = styled(Heading)`
   font-weight: 700;
   font-size: 2.625rem;

@@ -12,9 +12,14 @@ const BG_COLOR = '#673ab7'
 
 const TalksPage = () => (
   <Layout pageTitle="Talks">
-    <PageBlock headerBg headerBgColor={BG_COLOR}>
+    <PageBlock>
       <Container breakpoint="desktop">
-        <PageHeader heading="Talks" subheading="I say words..." />
+        <PageHeader
+          accent={BG_COLOR}
+          icon="solid-laptop-code"
+          heading="Talks"
+          subheading="I say words..."
+        />
         <TalksListing data={talksData} />
       </Container>
     </PageBlock>

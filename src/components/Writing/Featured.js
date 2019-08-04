@@ -58,7 +58,7 @@ const WritingFeatured = () => (
         written by the product and development teams based in Melbourne.
       </CardDescription>
       <Button as="a" href="https://medium.com/localz-engineering/">
-        Visit Localz Engineering
+        Read More
       </Button>
     </Card>
     <Card>

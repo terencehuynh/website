@@ -1,59 +1,52 @@
 import React from 'react'
-import { Box, Card, Heading, Paragraph, Button, Set, styled } from 'fannypack'
-import { theme } from 'styled-tools'
+import {
+  Grid,
+  Box,
+  Card,
+  Heading,
+  Paragraph,
+  Button,
+  Set,
+  styled,
+  theme,
+} from 'fannypack'
 
 import { SerifFonts } from '../../constants'
-import Image from '../Image'
+import Image from '../TalkImage'
 
 const Event = styled(Card.Card)`
-  margin-bottom: 24px;
+  overflow: hidden;
+  display: block;
 `
 
 const EventTitle = styled(Heading)`
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   line-height: 1.15;
   font-weight: 700;
   letter-spacing; -1px;
   margin: 8px 0 8px;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 1.3125rem;
-  }
 `
 
 const EventMetadata = styled(Paragraph)`
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.15;
   font-weight: 400;
   letter-spacing; -1px;
   margin: 0 0 24px;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.875rem;
-  }
 `
 
 const EventDescription = styled(Paragraph)`
   line-height: 2;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-family: ${SerifFonts};
   font-weight: 300;
   margin: 12px 0 0;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.875rem;
-  }
 `
 
 const ImageBox = styled(Box)`
-  width: 45%;
-  margin-right: 36px;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
+  margin: -24px -24px 20px;
+  width: auto;
 `
 
 const CardContents = styled(Box)`
@@ -62,14 +55,25 @@ const CardContents = styled(Box)`
 
 const ImageCredit = styled(Paragraph)`
   font-weight: 300;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: #90a4ae;
-  margin-top: 12px;
+  margin: 12px 24px 0;
 `
 
 const MediaButton = styled(Button)`
+  font-size: 0.875rem;
+`
+
+const Listings = styled(Grid)`
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.875rem;
+    grid-template-columns: repeat(1, 1fr);
   }
 `
 
@@ -96,7 +100,7 @@ const MediaListing = ({ media }) => {
 }
 
 const TalksListing = ({ data }) => (
-  <Box>
+  <Listings>
     {data.map((event, index) => (
       <Event
         key={index}
@@ -124,7 +128,7 @@ const TalksListing = ({ data }) => (
         </CardContents>
       </Event>
     ))}
-  </Box>
+  </Listings>
 )
 
 export default TalksListing

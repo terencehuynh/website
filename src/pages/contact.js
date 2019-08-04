@@ -34,6 +34,12 @@ const IndexPage = () => (
               I am not looking for any freelance development opportunities at
               this current time.
             </Text>
+            <PageHeading as="h2">Social Media Disclaimer</PageHeading>
+            <Text>
+              Any and all views expressed on my social media profiles are my own
+              and do not necessarily reflect those of my employer or associated
+              organisations that I am involved with.
+            </Text>
             <PageHeading as="h2">Elsewhere on the Web</PageHeading>
             <ContactSocial />
           </Column>

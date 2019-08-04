@@ -4,18 +4,6 @@ import { theme } from 'styled-tools'
 
 import { SerifFonts } from '../../constants'
 
-const SectionHeading = styled(Text)`
-  font-weight: 300;
-  font-size: 2.625rem;
-  letter-spacing: -1px;
-  color: #f4511e;
-  margin: 24px 0 8px;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    font-size: 2rem;
-  }
-`
-
 const ArticlePublication = styled(Paragraph)`
   font-size: 1rem;
   color: #607d8b;
@@ -83,23 +71,20 @@ const Story = styled(Grid.Item)`
 `
 
 const Portfolio = ({ stories }) => (
-  <>
-    <SectionHeading as="h3">Portfolio</SectionHeading>
-    <Stories>
-      {stories.map((story, key) => {
-        const { link, title, publication, date } = story
-        return (
-          <Story key={key}>
-            <ArticleTitle as="h6">
-              <Link href={link}>{title}</Link>
-            </ArticleTitle>
-            <ArticlePublication>{publication}</ArticlePublication>
-            <ArticleDate>{date}</ArticleDate>
-          </Story>
-        )
-      })}
-    </Stories>
-  </>
+  <Stories>
+    {stories.map((story, key) => {
+      const { link, title, publication, date } = story
+      return (
+        <Story key={key}>
+          <ArticleTitle as="h6">
+            <Link href={link}>{title}</Link>
+          </ArticleTitle>
+          <ArticlePublication>{publication}</ArticlePublication>
+          <ArticleDate>{date}</ArticleDate>
+        </Story>
+      )
+    })}
+  </Stories>
 )
 
 export default Portfolio

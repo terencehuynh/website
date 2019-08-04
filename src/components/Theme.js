@@ -23,7 +23,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 const theme = {
-  global: {},
   Paragraph: {
     base: css`
       &:not(:last-child) {
