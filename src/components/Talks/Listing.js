@@ -16,7 +16,8 @@ import Image from '../TalkImage'
 
 const Event = styled(Card.Card)`
   overflow: hidden;
-  display: block;
+  display: flex;
+  flex-direction: column;
 `
 
 const EventTitle = styled(Heading)`
@@ -33,7 +34,6 @@ const EventMetadata = styled(Paragraph)`
   font-weight: 400;
   letter-spacing; -1px;
   margin: 0 0 24px;
-
 `
 
 const EventDescription = styled(Paragraph)`
@@ -53,6 +53,10 @@ const CardContents = styled(Box)`
   flex: 1;
 `
 
+const MediaListingSet = styled(Set)`
+  margin-top: 12px;
+`
+
 const ImageCredit = styled(Paragraph)`
   font-weight: 300;
   font-size: 0.75rem;
@@ -65,7 +69,7 @@ const MediaButton = styled(Button)`
 `
 
 const Listings = styled(Grid)`
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 12px;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
@@ -80,7 +84,7 @@ const Listings = styled(Grid)`
 const MediaListing = ({ media }) => {
   if (!media || Object.keys(media).length < 1) return null
   return (
-    <Set>
+    <MediaListingSet>
       {media.video && (
         <MediaButton use="a" href={media.video} iconBefore="solid-video">
           Watch
@@ -95,7 +99,7 @@ const MediaListing = ({ media }) => {
           Slides
         </MediaButton>
       )}
-    </Set>
+    </MediaListingSet>
   )
 }
 
@@ -124,8 +128,8 @@ const TalksListing = ({ data }) => (
           <EventDescription id="description">
             {event.description}
           </EventDescription>
-          <MediaListing media={event.media} />
         </CardContents>
+        <MediaListing media={event.media} />
       </Event>
     ))}
   </Listings>

@@ -1,5 +1,25 @@
 [
   {
+    "image": "talks/react-native-devworld.jpg",
+    "imageCredit": "Josh Parnham",
+    "title": "Let's Talk About React Native",
+    "date": "September 2019",
+    "conference": "/dev/world/2019",
+    "description": "For the past 18 months, Terence Huynh has been developing mobile apps. However, he has no knowledge of iOS or Android development. Instead he has been using React Native to build it. So what is it, what are the pros and cons, and should you use it?",
+    "previous": [
+      {
+        "conference": "MelbJS"
+      },
+      {
+        "conference": "GDG Melbourne",
+        "link": "https://www.youtube.com/watch?v=q7EhELPTT_Q"
+      }
+    ],
+    "media": {
+      "slides": "https://speakerdeck.com/terencehuynh/lets-talk-about-react-native-918df748-7929-47e9-bfd2-477d5e9c89ff"
+    }
+  },
+  {
     "image": "talks/devrelcon-tokyo.jpg",
     "imageCredit": "DevRelCon Tokyo",
     "title": "So, you want to run a hackathon?",
@@ -9,17 +29,6 @@
     "media": {
       "slides": "https://speakerdeck.com/terencehuynh/so-you-want-to-run-a-hackathon",
       "video": "https://www.youtube.com/watch?v=hKA87_aHfRw"
-    }
-  },
-  {
-    "image": "talks/react-native.jpg",
-    "title": "Let's talk about React Native",
-    "date": "February 2019",
-    "conference": "GDG Melbourne",
-    "description": "I gave a presentation at the Google Developers Group in Melbourne. This gave an introduction of React Native, how it works, and why you should (and should not) use it.",
-    "media": {
-      "slides": "https://speakerdeck.com/terencehuynh/lets-talk-about-react-native",
-      "video": "https://www.youtube.com/watch?v=q7EhELPTT_Q"
     }
   },
   {
