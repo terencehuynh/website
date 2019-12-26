@@ -23,6 +23,12 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 const theme = {
+  palette: {
+    header: '#24252a',
+    menuInactive: '#2d2e35',
+    menuBorder: '#474953',
+    menuHover: '#36383f',
+  },
   Paragraph: {
     base: css`
       &:not(:last-child) {

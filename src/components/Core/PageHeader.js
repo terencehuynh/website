@@ -1,15 +1,15 @@
 import React from 'react'
-import { Box, Icon, Heading, Text, styled } from 'fannypack'
+import { Box, Icon, Heading, Text, styled, space } from 'fannypack'
 import { theme } from 'styled-tools'
 
 const PageHeader = styled(Box)`
-  margin-bottom: 48px;
-  padding-bottom: 48px;
+  margin-bottom: ${space(4, 'major')}rem;
+  padding-bottom: ${space(4, 'major')}rem;
   border-bottom: 5px solid ${props => props.accent};
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
+    margin-bottom: ${space(3, 'major')}rem;
+    padding-bottom: ${space(3, 'major')}rem;
   }
 `
 
@@ -27,6 +27,7 @@ const PageHeading = styled(Heading)`
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     display: block;
+    margin-bottom: ${space(1, 'major')}rem;
   }
 `
 
@@ -36,8 +37,8 @@ const PageSubHeading = styled(Text)`
   letter-spacing: -1px;
   border-left: 1px solid #d9d9d9;
   color: #b3b3b3;
-  padding: 0 0 0 24px;
-  margin: 0 0 0 24px;
+  padding: 0 0 0 ${space(3, 'major')}rem;
+  margin: 0 0 0 ${space(3, 'major')}rem;
   flex: 1;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {

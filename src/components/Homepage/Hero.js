@@ -23,7 +23,7 @@ const BgWrap = styled(Flex)`
   width: 100vw;
   min-height: 600px;
   height: 95vh;
-  padding: 64px 0;
+  padding: 64px 20px;
   position: relative;
 `
 
@@ -36,7 +36,7 @@ const HeroLine = styled(Paragraph)`
   font-weight: 300;
   font-size: 3rem;
   line-height: 1.5;
-  letter-spacing: -1px
+  letter-spacing: -1px;
   color: #707070;
   display: block;
 
@@ -47,7 +47,6 @@ const HeroLine = styled(Paragraph)`
   strong {
     color: white;
     font-weight: 700;
-    letter-spacing: -1px;
   }
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
@@ -56,7 +55,7 @@ const HeroLine = styled(Paragraph)`
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     font-size: 1.5rem;
-    letter-spacing: 0px
+    letter-spacing: 0px;
   }
 `
 

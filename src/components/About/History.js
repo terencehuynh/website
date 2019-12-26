@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Paragraph, styled } from 'fannypack'
+import { Box, Paragraph, styled, space } from 'fannypack'
 import { theme } from 'styled-tools'
 
 import { SerifFonts } from '../../constants'
@@ -7,9 +7,9 @@ import { SerifFonts } from '../../constants'
 const History = styled(Box)`
   color: ${props => props.textColor || 'inherit'};
   :not(:last-child) {
-    padding-bottom: 24px;
+    padding-bottom: ${space(3, 'major')}rem;
     border-bottom: 1px solid ${props => props.borderColor || '#e0e0e0'};
-    margin-bottom: 24px;
+    margin-bottom: ${space(3, 'major')}rem;
   }
 `
 

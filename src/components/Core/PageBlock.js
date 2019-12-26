@@ -1,19 +1,15 @@
-import { Box, styled } from 'fannypack'
+import { Box, styled, space } from 'fannypack'
 import { theme } from 'styled-tools'
 
-const PageWrap = styled(Box)`
-  padding: 48px 20px;
+const PageBlock = styled(Box)`
+  padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
   position: relative;
   background-color: ${props => props.bgColor || 'transparent'};
   overflow: visible;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    padding: 36px 20px;
-  }
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    padding: 24px 20px;
+    padding: ${space(3, 'major')}rem ${space(2, 'major')}rem;
   }
 `
 
-export default PageWrap
+export default PageBlock

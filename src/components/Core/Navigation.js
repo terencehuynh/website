@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation, List, Link, styled } from 'fannypack'
+import { Navigation, List, Link, styled, palette, space } from 'fannypack'
 import { theme } from 'styled-tools'
 
 import MenuButton from './MenuButton'
@@ -24,10 +24,13 @@ const NavList = styled(List)`
   }
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    display: block;
-    clear: both;
-    margin: 0 -20px;
-    background: #303030;
+    &.active {
+      display: grid;
+      clear: both;
+      margin: 0 -${space(2, 'major')}rem;
+      background: ${palette('menuHover')};
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     li {
       display: block;
@@ -41,7 +44,7 @@ const NavLink = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   display: block;
-  padding: 25px 14px;
+  padding: ${space(3, 'major')}rem ${space(2, 'major')}rem;
   color: #969898;
 
   &:hover {
@@ -49,8 +52,9 @@ const NavLink = styled(Link)`
   }
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    border-bottom: 1px solid #404040;
-    padding: 12px 20px;
+    border-bottom: 1px solid ${palette('menuBorder')};
+    padding: ${space(2, 'major')}rem ${space(2, 'major')}rem;
+    text-align: center;
   }
 `
 
@@ -69,9 +73,9 @@ class MainNavigation extends React.Component {
     const { active } = this.state
     const className = active ? 'active' : 'inactive'
     return (
-      <Nav as="nav" className={className} a11yTitle="Main Navigation">
+      <Nav as="nav" a11yTitle="Main Navigation">
         <MenuButton onClick={this.toggleState} className={className} />
-        <NavList>
+        <NavList className={className}>
           <NavList.Item>
             <NavLink href="/about">About</NavLink>
           </NavList.Item>

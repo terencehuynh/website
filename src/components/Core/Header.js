@@ -1,12 +1,12 @@
 import React from 'react'
-import { Flex, Link, Heading, styled } from 'fannypack'
+import { Flex, Link, Heading, styled, palette, space } from 'fannypack'
 import { theme } from 'styled-tools'
 
 import Navigation from './Navigation'
 
 export const Container = styled(Flex)`
-  padding: 0 20px;
-  background: #24252a;
+  padding: 0 ${space(2, 'major')}rem;
+  background: ${palette('header')};
   align-items: center;
   position: relative;
   z-index: 999;
@@ -18,7 +18,6 @@ export const Container = styled(Flex)`
     right: 0;
     left: 0;
     background: transparent;
-    border-bottom: 1px solid #202020;
   }
 
   &.homepage h1 a {

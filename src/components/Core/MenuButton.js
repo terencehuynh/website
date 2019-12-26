@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon as FpIcon, Button as FpButton, styled } from 'fannypack'
+import { Icon as FpIcon, Button as FpButton, styled, palette } from 'fannypack'
 import { theme } from 'styled-tools'
 
 const Button = styled(FpButton)`
@@ -17,12 +17,13 @@ const Button = styled(FpButton)`
   }
 
   &.active {
-    background: #303030;
+    background: ${palette('menuHover')};
     color: white;
   }
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     display: flex;
+    background: ${palette('menuInactive')};
   }
 `
 
@@ -30,7 +31,6 @@ const Icon = styled(FpIcon)`
   height: auto;
   flex: 1;
 `
-
 
 const MenuButton = ({ onClick, className }) => (
   <Button as="a" kind="link" onClick={onClick} className={className}>
