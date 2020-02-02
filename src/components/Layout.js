@@ -37,6 +37,7 @@ const Layout = props => (
         lang,
         homepage,
         breakpoint,
+        links,
         ...meta
       } = props
       const metaDescription = description || siteDescription
@@ -47,7 +48,7 @@ const Layout = props => (
             htmlAttributes={{ lang }}
             title={title}
             meta={generateMeta({ metaDescription, title, author, ...meta })}
-            link={generateLink()}
+            link={generateLink(links)}
           />
           <Theme>
             <Header homepage={homepage} />

@@ -38,6 +38,13 @@ const ArticleTitle = styled(Heading)`
     color: #f4511e;
   }
 
+  a:focus {
+    color: white;
+    background: #f4511e;
+    outline: #f4511e 2px solid;
+    outline-offset: 0;
+  }
+
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     font-size: 1.3125rem;
     margin-bottom: 12px;
@@ -55,6 +62,8 @@ const Stories = styled(Grid)`
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     grid-template-columns: repeat(1, 1fr);
+    border-left: 0px;
+    border-top: 0px;
   }
 `
 
@@ -67,6 +76,13 @@ const Story = styled(Grid.Item)`
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     padding: 16px;
+  }
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    border-right: 0px;
+    border-bottom: 0px;
+    padding: 0;
+    margin-bottom: 24px;
   }
 `
 

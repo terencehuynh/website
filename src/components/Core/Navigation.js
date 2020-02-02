@@ -1,16 +1,15 @@
 import React from 'react'
-import { Navigation, List, Link, styled, palette, space } from 'fannypack'
+import { Navigation, List, styled, palette, space } from 'fannypack'
+import { Link } from 'gatsby'
 import { theme } from 'styled-tools'
 
 import MenuButton from './MenuButton'
+import { MonoFonts } from '../../constants'
 
 const Nav = styled(Navigation)`
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     ul {
       display: none;
-    }
-    &.active ul {
-      display: block;
     }
   }
 `
@@ -40,12 +39,14 @@ const NavList = styled(List)`
 
 const NavLink = styled(Link)`
   font-size: 0.875rem;
-  font-weight: 500;
+  letter-spacing: 2px;
+  font-weight: 300;
   text-transform: uppercase;
   text-decoration: none;
   display: block;
-  padding: ${space(3, 'major')}rem ${space(2, 'major')}rem;
   color: #969898;
+  margin-left: ${space(4, 'major')}rem;
+  font-family: ${MonoFonts};
 
   &:hover {
     color: white;
@@ -54,6 +55,7 @@ const NavLink = styled(Link)`
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     border-bottom: 1px solid ${palette('menuBorder')};
     padding: ${space(2, 'major')}rem ${space(2, 'major')}rem;
+    margin-left: 0;
     text-align: center;
   }
 `
@@ -77,16 +79,16 @@ class MainNavigation extends React.Component {
         <MenuButton onClick={this.toggleState} className={className} />
         <NavList className={className}>
           <NavList.Item>
-            <NavLink href="/about">About</NavLink>
+            <NavLink to="/about/">About</NavLink>
           </NavList.Item>
           <NavList.Item>
-            <NavLink href="/talks">Talks</NavLink>
+            <NavLink to="/talks/">Talks</NavLink>
           </NavList.Item>
           <NavList.Item>
-            <NavLink href="/writing">Writing</NavLink>
+            <NavLink to="/writing/">Writing</NavLink>
           </NavList.Item>
           <NavList.Item>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink to="/contact/">Contact</NavLink>
           </NavList.Item>
         </NavList>
       </Nav>

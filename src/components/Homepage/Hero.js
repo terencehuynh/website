@@ -9,6 +9,7 @@ import {
 } from 'fannypack'
 
 import { theme } from 'styled-tools'
+import { MonoFonts } from '../../constants'
 
 const colorMap = {
   se: '#ffeb3b',
@@ -31,14 +32,16 @@ const Container = styled(_Container)`
   flex: 1;
 `
 
-const HeroLine = styled(Paragraph)`
+const HeroLine = styled.span`
   margin: 0;
+  font-family: ${MonoFonts};
   font-weight: 300;
   font-size: 3rem;
-  line-height: 1.5;
-  letter-spacing: -1px;
+  line-height: 2;
+  letter-spacing: -2px;
   color: #707070;
   display: block;
+  text-align: center;
 
   &:not(:last-child) {
     margin: 0;
@@ -51,11 +54,13 @@ const HeroLine = styled(Paragraph)`
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     font-size: 2rem;
+    letter-spacing: 0px;
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 1.5rem;
-    letter-spacing: 0px;
+    font-size: 1.125rem;
+    text-align: left;
+    display: inline;
   }
 `
 
@@ -65,7 +70,6 @@ const HeroLink = styled(Link)`
   color: ${props => colorMap[props.className] || 'white'};
   border-bottom: 1px solid ${props => colorMap[props.className] || 'white'};
   font-weight: 700;
-  letter-spacing: -1px;
   transition: background-color 0.08s ease-in-out, color 0.08s ease-in-out;
 
   &:hover {
@@ -74,14 +78,16 @@ const HeroLink = styled(Link)`
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    padding: 2px 4px;
+    padding: 0 4px;
+    display: inline-block;
+    clear: both;
   }
 `
 
 const HeroIcon = styled(Icon)`
   width: 3rem;
   height: 3rem;
-  margin-right: 4px;
+  margin-right: 2px;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     width: 2rem;
@@ -89,8 +95,8 @@ const HeroIcon = styled(Icon)`
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1rem;
+    height: 1rem;
   }
 `
 
@@ -98,19 +104,19 @@ const Hero = () => (
   <BgWrap>
     <Container>
       <HeroLine>
-        My name is <HeroLink href="/about">Terence Huynh</HeroLink> and
+        My name is <HeroLink href="/about">Terence Huynh</HeroLink> and{' '}
       </HeroLine>
       <HeroLine>
         I am a{' '}
         <HeroLink href="/about" className="se">
           <HeroIcon icon="solid-laptop-code" /> Software Engineer
-        </HeroLink>
+        </HeroLink>{' '}
       </HeroLine>
       <HeroLine>
         and{' '}
         <HeroLink href="/writing" className="blog">
           <HeroIcon icon="solid-pencil-alt" /> Tech Blogger
-        </HeroLink>
+        </HeroLink>{' '}
       </HeroLine>
       <HeroLine>
         from{' '}

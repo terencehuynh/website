@@ -1,15 +1,21 @@
 import React from 'react'
-import { Flex, Link, Heading, styled, palette, space } from 'fannypack'
+import {
+  Container as _Container,
+  Heading,
+  styled,
+  palette,
+  space,
+} from 'fannypack'
+import { Link } from 'gatsby'
 import { theme } from 'styled-tools'
 
 import Navigation from './Navigation'
+import { MonoFonts } from '../../constants'
 
-export const Container = styled(Flex)`
-  padding: 0 ${space(2, 'major')}rem;
+const Wrapper = styled.div`
   background: ${palette('header')};
-  align-items: center;
-  position: relative;
-  z-index: 999;
+  padding: 0 ${space(2, 'major')}rem;
+  height: 72px;
 
   &.homepage {
     position: absolute;
@@ -17,7 +23,7 @@ export const Container = styled(Flex)`
     top: 0;
     right: 0;
     left: 0;
-    background: transparent;
+    padding: 0;
   }
 
   &.homepage h1 a {
@@ -25,13 +31,27 @@ export const Container = styled(Flex)`
   }
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
+    &.homepage {
+      background: transparent;
+    }
+  }
+`
+
+const Container = styled(_Container)`
+  align-items: center;
+  position: relative;
+  display: flex;
+  z-index: 999;
+  height: 72px;
+
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     display: block;
   }
 `
 
-export const SiteHeader = styled(Heading)`
+const SiteHeader = styled(Heading)`
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 600;
   margin: 0;
   letter-spacing: 0px;
   flex: 1;
@@ -39,12 +59,14 @@ export const SiteHeader = styled(Heading)`
   height: 72px;
 `
 
-export const HeaderLink = styled(Link)`
+const HeaderLink = styled(Link)`
   color: white;
   text-decoration: none;
   height: 72px;
   display: table-cell;
   vertical-align: middle;
+  font-family: ${MonoFonts};
+  letter-spacing: -1px;
 
   &:hover {
     color: white;
@@ -52,13 +74,15 @@ export const HeaderLink = styled(Link)`
   }
 `
 
-const Header = ({ homepage }) => (
-  <Container className={homepage && 'homepage'}>
-    <SiteHeader as="h1">
-      <HeaderLink href="/">Terence Huynh</HeaderLink>
-    </SiteHeader>
-    <Navigation />
-  </Container>
+const Header = ({ homepage = false }) => (
+  <Wrapper className={homepage && 'homepage'}>
+    <Container breakpoint="desktop">
+      <SiteHeader as="h1">
+        <HeaderLink to="/">Terence Huynh</HeaderLink>
+      </SiteHeader>
+      <Navigation homepage={homepage} />
+    </Container>
+  </Wrapper>
 )
 
 export default Header

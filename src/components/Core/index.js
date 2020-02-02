@@ -1,5 +1,6 @@
 import { Heading, Paragraph, styled } from 'fannypack'
 import { theme } from 'styled-tools'
+import { SerifFonts } from '../../constants'
 
 export const PageHeading = styled(Heading)`
   font-size: 1rem;
@@ -50,7 +51,7 @@ export const Highlight = styled(Paragraph)`
 export const Text = styled(Paragraph)`
   line-height: 2;
   font-size: 1.125rem;
-  font-family: 'Merriweather', sans-serif;
+  font-family: ${SerifFonts};
   font-weight: 300;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {

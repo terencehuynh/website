@@ -78,33 +78,12 @@ const IndexPage = () => (
         </Columns>
       </Container>
     </PageBlock>
-    <PageBlock bgColor="#FFC107">
-      <Container breakpoint="desktop">
-        <Columns>
-          <Column spread={4}>
-            <SideHeading as="h3" color="#303030">
-              Currently...
-            </SideHeading>
-          </Column>
-          <Column spread={7} spreadOffset={1}>
-            <AboutHistory
-              data={current}
-              borderColor="#FFE57F"
-              textColor="#303030"
-            />
-          </Column>
-        </Columns>
-      </Container>
-    </PageBlock>
     <PageBlock>
       <Container breakpoint="desktop">
+        <SideHeading as="h3">Employment</SideHeading>
         <Columns>
-          <Column spread={4}>
-            <SideHeading as="h3">Previously...</SideHeading>
-          </Column>
-          <Column spread={7} spreadOffset={1}>
-            <AboutHistory data={history} />
-          </Column>
+          <Column spread={4}></Column>
+          <Column spread={7} spreadOffset={1}></Column>
         </Columns>
       </Container>
     </PageBlock>
