@@ -9,7 +9,7 @@ import {
 import { theme } from 'styled-tools'
 
 const List = styled(_List)`
-  text-align: right;
+  margin-bottom: 24px;
 
   li {
     display: inline-block;
@@ -19,19 +19,14 @@ const List = styled(_List)`
       margin-right: 0;
     }
   }
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    text-align: left;
-    margin-top: 24px;
-  }
 `
 
 const Link = styled(_Link)`
   font-size: 1.5rem;
-  color: #78909c;
+  color: #6d6d6d;
 
   &:hover {
-    color: #37474f;
+    color: #004fc9;
   }
 `
 

@@ -1,9 +1,13 @@
-import { Heading, Paragraph, styled } from 'fannypack'
-import { theme } from 'styled-tools'
-import { SerifFonts } from '../../constants'
+import { Heading, Paragraph, styled, theme, palette } from 'fannypack'
+import { SerifFonts, MonoFonts } from '../../constants'
 
 export const PageHeading = styled(Heading)`
-  font-size: 1rem;
+  font-size: 1rem
+  font-family: ${MonoFonts};
+  background-color: ${palette('text')};
+  color: white;
+  padding: 2px 6px;
+  display: inline-block;
   margin: 0 0 12px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -39,9 +43,21 @@ export const SideHeading = styled(Heading)`
   }
 `
 
+export const SubHeading = styled(Heading)`
+  font-weight: 300;
+  font-size: 2rem;
+  letter-spacing: -1px;
+  margin: 0 0 24px;
+  font-family: ${MonoFonts};
+  color: ${props => props.color || 'inherit'};
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    font-size: 1.75rem;
+  }
+`
 export const Highlight = styled(Paragraph)`
   font-weight: 300;
-  font-size: 2.625rem;
+  font-size: 2.25rem;
+  font-family: ${MonoFonts};
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     font-size: 2rem;

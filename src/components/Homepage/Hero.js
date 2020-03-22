@@ -1,30 +1,15 @@
 import React from 'react'
-import {
-  Icon,
-  Flex,
-  Container as _Container,
-  Paragraph,
-  Link,
-  styled,
-} from 'fannypack'
-
+import { Icon, Flex, Container as _Container, styled } from 'fannypack'
+import { Link } from 'gatsby'
 import { theme } from 'styled-tools'
 import { MonoFonts } from '../../constants'
 
-const colorMap = {
-  se: '#ffeb3b',
-  blog: '#f4511e',
-  loc: '#E91E63',
-}
-
 const BgWrap = styled(Flex)`
-  background-color: #101010;
   align-items: center;
   justify-content: center;
   width: 100vw;
-  min-height: 600px;
-  height: 95vh;
-  padding: 64px 20px;
+  padding: 100px 20px;
+  background-color: #004fc9;
   position: relative;
 `
 
@@ -34,17 +19,16 @@ const Container = styled(_Container)`
 
 const HeroLine = styled.span`
   margin: 0;
-  font-family: ${MonoFonts};
   font-weight: 300;
-  font-size: 3rem;
-  line-height: 2;
-  letter-spacing: -2px;
-  color: #707070;
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: #97a8e4;
   display: block;
-  text-align: center;
+  text-align: left;
 
   &:not(:last-child) {
-    margin: 0;
+    margin: 0 0 12px 0;
   }
 
   strong {
@@ -59,22 +43,20 @@ const HeroLine = styled.span`
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     font-size: 1.125rem;
-    text-align: left;
-    display: inline;
   }
 `
 
 const HeroLink = styled(Link)`
   text-decoration: none;
   padding: 2px 6px;
-  color: ${props => colorMap[props.className] || 'white'};
-  border-bottom: 1px solid ${props => colorMap[props.className] || 'white'};
+  color: white;
+  border-bottom: 1px solid white;
   font-weight: 700;
   transition: background-color 0.08s ease-in-out, color 0.08s ease-in-out;
 
   &:hover {
-    background: ${props => colorMap[props.className] || 'white'};
-    color: #101010;
+    background: white;
+    color: #004fc9;
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
@@ -85,8 +67,9 @@ const HeroLink = styled(Link)`
 `
 
 const HeroIcon = styled(Icon)`
-  width: 3rem;
-  height: 3rem;
+  top: 0.35rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-right: 2px;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
@@ -102,25 +85,25 @@ const HeroIcon = styled(Icon)`
 
 const Hero = () => (
   <BgWrap>
-    <Container>
+    <Container breakpoint="desktop">
       <HeroLine>
-        My name is <HeroLink href="/about">Terence Huynh</HeroLink> and{' '}
+        My name is <HeroLink to="/about">Terence Huynh</HeroLink> and{' '}
       </HeroLine>
       <HeroLine>
         I am a{' '}
-        <HeroLink href="/about" className="se">
+        <HeroLink to="/about">
           <HeroIcon icon="solid-laptop-code" /> Software Engineer
         </HeroLink>{' '}
       </HeroLine>
       <HeroLine>
         and{' '}
-        <HeroLink href="/writing" className="blog">
+        <HeroLink to="/writing">
           <HeroIcon icon="solid-pencil-alt" /> Tech Blogger
         </HeroLink>{' '}
       </HeroLine>
       <HeroLine>
         from{' '}
-        <HeroLink href="https://www.visitmelbourne.com/" className="loc">
+        <HeroLink to="https://www.visitmelbourne.com/">
           <HeroIcon icon="solid-map-marker-alt" /> Melbourne, Australia
         </HeroLink>
       </HeroLine>

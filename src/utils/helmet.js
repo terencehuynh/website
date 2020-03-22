@@ -2,12 +2,12 @@ export const generateLink = (links = []) => {
   return [
     {
       href:
-        'https://fonts.googleapis.com/css?family=Martel:200,900&display=swap',
+        'https://fonts.googleapis.com/css?family=Martel:200,700,900&display=swap',
       rel: 'stylesheet',
     },
     {
       href:
-        'https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,600&display=swap',
+        'https://fonts.googleapis.com/css?family=IBM+Plex+Mono:300,400,600&display=swap',
       rel: 'stylesheet',
     },
     ...links,

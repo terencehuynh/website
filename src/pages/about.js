@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Container as _Container,
   Columns,
+  Grid,
   Column,
   Link,
   styled,
@@ -10,12 +11,9 @@ import {
 
 import Layout from '../components/Layout'
 import Image from '../components/Image'
-import AboutHistory from '../components/About/History'
-import { PageHeading, Highlight, Text, SideHeading } from '../components/Core'
+import { PageHeading, SubHeading, Highlight, Text } from '../components/Core'
 import PageBlock from '../components/Core/PageBlock'
-
-import history from '../data/about-history.json'
-import current from '../data/about-current.json'
+import Card from '../components/Core/Card'
 
 const Container = styled(_Container)`
   position: relative;
@@ -29,6 +27,15 @@ const Avatar = styled.div`
     width: 200px;
     height: 200px;
     margin: 0 auto;
+  }
+`
+
+const ActivitiesGrid = styled(Grid)`
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 24px;
+
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
+    display: block;
   }
 `
 
@@ -65,12 +72,6 @@ const IndexPage = () => (
               and <em>Gizmodo Australia</em>.
             </Text>
             <Text>
-              In addition, I am the <strong>founder of UNIHACK</strong>,
-              Australia's premier university student hackathon. With 300+
-              students competing across two cities, we are also one of the
-              largest hackathons in Australia.
-            </Text>
-            <Text>
               Interested to know more about me?{' '}
               <Link href="/contact">Feel free to get in contact.</Link>
             </Text>
@@ -78,13 +79,52 @@ const IndexPage = () => (
         </Columns>
       </Container>
     </PageBlock>
-    <PageBlock>
+    <PageBlock bgColor="#f7f7f7">
       <Container breakpoint="desktop">
-        <SideHeading as="h3">Employment</SideHeading>
-        <Columns>
-          <Column spread={4}></Column>
-          <Column spread={7} spreadOffset={1}></Column>
-        </Columns>
+        <SubHeading as="h3">Community</SubHeading>
+        <ActivitiesGrid>
+          <Card.Card>
+            <Card.ImageBox>
+              <Image filename="about/unihack.png" alt="UNIHACK" />
+            </Card.ImageBox>
+            <Card.Title as="h5">UNIHACK Melbourne</Card.Title>
+            <Card.Description>
+              I am the founder of UNIHACK, Australia's premier university
+              student hackathon. With 200 students competing in Melbourne every
+              year, we are also one of the largest hackathons in Australia.
+            </Card.Description>
+            <Card.Button
+              as="a"
+              href="https://unihack.net/"
+              text="Visit the site"
+            />
+            <Card.Button
+              href="https://twitter.com/unihackmelb"
+              text="Follow @unihackmelb"
+            />
+          </Card.Card>
+          <Card.Card>
+            <Card.ImageBox>
+              <Image filename="about/juniordev.png" alt="JuniorDev Melbourne" />
+            </Card.ImageBox>
+            <Card.Title as="h5">JuniorDev Melbourne</Card.Title>
+            <Card.Description>
+              I am one of the organisers of this meetup group that helps new and
+              upcoming developers and other members in the IT scene in Melbourne
+              learn and connect with their fellow peers in a friendly
+              environment.
+            </Card.Description>
+            <Card.Button
+              href="https://www.meetup.com/Junior-Developers-Melbourne/"
+              text="Join the Meetup Group"
+            />
+            <Card.Button
+              as="a"
+              href="https://twitter.com/juniordevio"
+              text="Follow @juniordevio"
+            />
+          </Card.Card>
+        </ActivitiesGrid>
       </Container>
     </PageBlock>
   </Layout>

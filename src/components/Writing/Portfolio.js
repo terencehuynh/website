@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Heading, Text, Paragraph, Link, styled } from 'fannypack'
+import { Grid, Heading, Paragraph, Link, styled } from 'fannypack'
 import { theme } from 'styled-tools'
 
 import { SerifFonts } from '../../constants'

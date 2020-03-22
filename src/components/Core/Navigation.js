@@ -40,7 +40,7 @@ const NavList = styled(List)`
 const NavLink = styled(Link)`
   font-size: 0.875rem;
   letter-spacing: 2px;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   text-decoration: none;
   display: block;

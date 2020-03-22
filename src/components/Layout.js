@@ -35,8 +35,7 @@ const Layout = props => (
         pageTitle,
         description,
         lang,
-        homepage,
-        breakpoint,
+        showHeader,
         links,
         ...meta
       } = props
@@ -51,9 +50,9 @@ const Layout = props => (
             link={generateLink(links)}
           />
           <Theme>
-            <Header homepage={homepage} />
+            {showHeader && <Header />}
             {children}
-            <Footer breakpoint={breakpoint} />
+            <Footer />
           </Theme>
         </>
       )
@@ -68,16 +67,14 @@ Layout.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   pageTitle: PropTypes.string,
-  homepage: PropTypes.bool,
-  breakpoint: PropTypes.string,
+  showHeader: PropTypes.bool,
 }
 
 Layout.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
-  homepage: false,
-  breakpoint: 'desktop',
+  showHeader: true,
 }
 
 export default Layout
