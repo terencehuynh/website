@@ -7,6 +7,7 @@ import {
   faBars,
   faHeart,
   faVideo,
+  faAngleRight,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -24,17 +25,13 @@ import {
 
 const theme = {
   palette: {
+    primary: '#004fc9',
+    primaryDark: '#002294',
+    primaryLight: '#97a8e4',
     header: '#24252a',
     menuInactive: '#2d2e35',
     menuBorder: '#474953',
     menuHover: '#36383f',
-  },
-  Paragraph: {
-    base: css`
-      &:not(:last-child) {
-        margin-bottom: 18px;
-      }
-    `,
   },
   Container: {
     tabletMargin: '0 20px',
@@ -49,6 +46,7 @@ const theme = {
           faBars,
           faHeart,
           faVideo,
+          faAngleRight,
         ],
         prefix: 'solid-',
         type: 'font-awesome',

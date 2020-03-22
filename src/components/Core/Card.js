@@ -5,6 +5,7 @@ import {
   Heading,
   Paragraph,
   styled,
+  space,
   theme,
 } from 'fannypack'
 
@@ -13,6 +14,8 @@ import { SerifFonts } from '../../constants'
 const Card = styled(_Card.Card)`
   display: flex;
   flex-direction: column;
+  margin-bottom: ${props =>
+    props.hasMarginBottom ? space(2, 'major') : '0'}rem
   border-radius: 0;
 
   a[type='button'] {
@@ -36,8 +39,8 @@ const CardTitle = styled(Heading)`
   }
 `
 
-const CardButton = ({ href, text }) => (
-  <Button as="a" href={href}>
+const CardButton = ({ href, text, ...props }) => (
+  <Button as="a" palette="primary" href={href} {...props}>
     {text}
   </Button>
 )
@@ -52,6 +55,13 @@ const CardImageBox = styled.div`
   }
 `
 
+const CardImageCredit = styled(Paragraph)`
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: #90a4ae;
+  margin: 12px 24px 0;
+`
+
 const CardDescription = styled(Paragraph)`
   line-height: 2;
   font-size: 1rem;
@@ -64,10 +74,20 @@ const CardDescription = styled(Paragraph)`
   }
 `
 
+const CardMetadata = styled(Paragraph)`
+  font-size: 0.875rem;
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing; -1px;
+  margin: 0 0 24px;
+`
+
 export default {
   Card,
   Title: CardTitle,
   Description: CardDescription,
   ImageBox: CardImageBox,
+  ImageCredit: CardImageCredit,
   Button: CardButton,
+  Metadata: CardMetadata,
 }

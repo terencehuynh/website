@@ -1,6 +1,6 @@
 [
   {
-    "image": "talks/react-native-devworld.jpg",
+    "image": "talks-react-native-devworld.jpg",
     "imageCredit": "Josh Parnham",
     "title": "Let's Talk About React Native",
     "date": "September 2019",
@@ -20,7 +20,7 @@
     }
   },
   {
-    "image": "talks/devrelcon-tokyo.jpg",
+    "image": "talks-devrelcon-tokyo.jpg",
     "imageCredit": "DevRelCon Tokyo",
     "title": "So, you want to run a hackathon?",
     "date": "March 2019",
@@ -32,7 +32,7 @@
     }
   },
   {
-    "image": "talks/aabill.jpg",
+    "image": "talks-aabill.jpg",
     "imageCredit": "Daniel Sykes-Turner (@dsykesturner)",
     "title": "The #AABill: A Melbourne Conversation",
     "date": "December 2018",
@@ -42,7 +42,7 @@
     }
   },
   {
-    "image": "talks/reactnative.jpg",
+    "image": "talks-reactnative.jpg",
     "imageCredit": "Pranati Vyas (@PranatiVyas)",
     "title": "The Other Side of React Native",
     "date": "May 2018",
@@ -50,7 +50,7 @@
     "description": "Lightning talk at Junior Developers Melbourne's Code and Tell night. React Native lets you build cross-platform applications from one JavaScript codebase - that's good, right? The talk details some of the weird quirks and complexities of React Native development."
   },
   {
-    "image": "talks/quitjob.jpg",
+    "image": "talks-quitjob.jpg",
     "title": "How To Quit Your Job",
     "date": "November 2017",
     "conference": "Junior Developers Melbourne",

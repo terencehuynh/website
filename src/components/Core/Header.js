@@ -10,60 +10,43 @@ import { Link } from 'gatsby'
 import { theme } from 'styled-tools'
 
 import Navigation from './Navigation'
-import { MonoFonts, SerifFonts } from '../../constants'
+import { SerifFonts } from '../../constants'
 
 const Wrapper = styled.div`
-  background: ${palette('header')};
-  padding: 0 ${space(2, 'major')}rem;
-  height: 72px;
+  display: flex;
+  padding: ${space(2, 'major')}rem ${space(2, 'major')}rem;
+  background: ${palette('primaryDark')};
+  min-height: 72px;
+`
 
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    &.homepage {
-      background: transparent;
+const Container = styled(_Container)`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
+  h1 {
+    margin: 0 0 12px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-family: ${SerifFonts};
+
+    a {
+      color: white;
+      text-decoration: none;
     }
   }
 `
 
-const Container = styled(_Container)`
-  align-items: center;
-  display: flex;
-  z-index: 999;
-  height: 72px;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    display: block;
-  }
-`
-
-const SiteHeader = styled(Heading)`
-  font-size: 1.5rem;
-  margin: 0;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  color: white;
-  height: 72px;
-`
-
-const HeaderLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-  font-family: ${SerifFonts};
-  font-weight: 700;
-  letter-spacing: -1px;
-
-  &:hover {
-    color: white;
-    text-decoration: underline;
-  }
-`
-
-const Header = () => (
+const Header = ({ showName = true }) => (
   <Wrapper>
     <Container breakpoint="desktop">
-      <SiteHeader as="h1">
-        <HeaderLink to="/">Terence Huynh</HeaderLink>
-      </SiteHeader>
+      {showName && (
+        <h1>
+          <Link to="/">Terence Huynh</Link>
+        </h1>
+      )}
       <Navigation />
     </Container>
   </Wrapper>

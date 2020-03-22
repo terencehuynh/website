@@ -1,27 +1,22 @@
 import React from 'react'
-import { Icon, Flex, Container as _Container, styled } from 'fannypack'
+import { Flex, Container, styled, space } from 'fannypack'
 import { Link } from 'gatsby'
 import { theme } from 'styled-tools'
-import { MonoFonts } from '../../constants'
 
 const BgWrap = styled(Flex)`
   align-items: center;
   justify-content: center;
   width: 100vw;
-  padding: 100px 20px;
+  padding: ${space(12, 'major')}rem ${space(2, 'major')}rem;
   background-color: #004fc9;
   position: relative;
-`
-
-const Container = styled(_Container)`
-  flex: 1;
 `
 
 const HeroLine = styled.span`
   margin: 0;
   font-weight: 300;
   font-size: 2.5rem;
-  line-height: 1;
+  line-height: 1.25;
   letter-spacing: -1px;
   color: #97a8e4;
   display: block;
@@ -66,23 +61,6 @@ const HeroLink = styled(Link)`
   }
 `
 
-const HeroIcon = styled(Icon)`
-  top: 0.35rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-right: 2px;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    width: 1rem;
-    height: 1rem;
-  }
-`
-
 const Hero = () => (
   <BgWrap>
     <Container breakpoint="desktop">
@@ -90,21 +68,15 @@ const Hero = () => (
         My name is <HeroLink to="/about">Terence Huynh</HeroLink> and{' '}
       </HeroLine>
       <HeroLine>
-        I am a{' '}
-        <HeroLink to="/about">
-          <HeroIcon icon="solid-laptop-code" /> Software Engineer
-        </HeroLink>{' '}
+        I am a <HeroLink to="/about">Software Engineer</HeroLink>{' '}
       </HeroLine>
       <HeroLine>
-        and{' '}
-        <HeroLink to="/writing">
-          <HeroIcon icon="solid-pencil-alt" /> Tech Blogger
-        </HeroLink>{' '}
+        and <HeroLink to="/writing">Tech Blogger</HeroLink>{' '}
       </HeroLine>
       <HeroLine>
         from{' '}
         <HeroLink to="https://www.visitmelbourne.com/">
-          <HeroIcon icon="solid-map-marker-alt" /> Melbourne, Australia
+          Melbourne, Australia
         </HeroLink>
       </HeroLine>
     </Container>

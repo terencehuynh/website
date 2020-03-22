@@ -2,7 +2,7 @@ export const generateLink = (links = []) => {
   return [
     {
       href:
-        'https://fonts.googleapis.com/css?family=Martel:200,700,900&display=swap',
+        'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap',
       rel: 'stylesheet',
     },
     {

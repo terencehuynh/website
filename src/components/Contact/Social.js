@@ -12,7 +12,7 @@ import { SerifFonts } from '../../constants'
 
 const List = styled(_List)`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     grid-template-columns: repeat(2, 1fr);

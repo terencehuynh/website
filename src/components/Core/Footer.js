@@ -33,7 +33,7 @@ const FooterParagraph = styled(Paragraph)`
 
 const FooterSection = styled.footer`
   background: #f2f2f2;
-  padding: ${space(4, 'major')}rem;
+  padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
 `
 
 const Footer = ({ breakpoint }) => (
