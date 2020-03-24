@@ -1,6 +1,5 @@
 import React from 'react'
-import { SerifFonts } from '../../constants'
-import Card from '../Core/Card'
+import Card from '../Card'
 
 const WritingFeatured = () => (
   <>
@@ -15,7 +14,7 @@ const WritingFeatured = () => (
         text="Read More"
       />
     </Card.Card>
-    <Card.Card>
+    <Card.Card hasMarginBottom={true}>
       <Card.Title as="h5">TechGeek</Card.Title>
       <Card.Description>
         You can see most of my technology, gaming and geek culture stories and

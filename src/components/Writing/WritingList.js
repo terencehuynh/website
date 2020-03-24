@@ -1,40 +1,19 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { HeadingLevel } from '../Blog/BlogItem'
-import { generateWritings } from './Common'
+import { generateItems, HeadingLevel } from '../Blog/Common'
+import SectionHeading from '../Core/SectionHeading'
+import LinkButton from '../Core/LinkButton'
 
-const WritingList = () => {
-  const {
-    allMarkdownRemark: { edges },
-  } = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(writing)/" } }
-        sort: { order: DESC, fields: [frontmatter___date] }
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              link
-              source
-              date(formatString: "DD MMMM YYYY")
-              title
-            }
-          }
-        }
-      }
-    }
-  `)
-
+const WritingList = ({ title, titleAs, edges, showLinkButton = false }) => {
   return (
     <>
+      {title && <SectionHeading text={title} as={titleAs} />}
       {edges.map(
-        generateWritings({
+        generateItems({
           headingLevel: HeadingLevel.MEDIUM,
           headingAs: 'h4',
         })
       )}
+      {showLinkButton && <LinkButton text="More Writings" to="/writing/" />}
     </>
   )
 }

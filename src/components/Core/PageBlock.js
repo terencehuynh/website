@@ -1,17 +1,11 @@
 import React from 'react'
-import { Box, Container, styled, space } from 'fannypack'
-import { theme } from 'styled-tools'
+import { Container, styled, space } from 'fannypack'
 
-const PageBox = styled(Box)`
-  padding: ${space(6, 'major')}rem ${space(2, 'major')}rem;
+const PageBox = styled.div`
+  padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
   position: relative;
   background-color: ${props => props.bgColor || 'transparent'};
   border-top: ${props => (props.border ? '1px solid #e9e9e9' : 'none')};
-  overflow: visible;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    padding: ${space(3, 'major')}rem ${space(2, 'major')}rem;
-  }
 `
 
 export const PageBlock = ({ children, ...props }) => {

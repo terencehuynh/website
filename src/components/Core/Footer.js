@@ -1,14 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Columns,
-  Column,
-  Icon,
-  Paragraph,
-  Link,
-  styled,
-  space,
-} from 'fannypack'
+import { Container, Icon, Paragraph, Link, styled, space } from 'fannypack'
 
 import FooterSocial from './FooterSocial'
 
@@ -36,7 +27,7 @@ const FooterSection = styled.footer`
   padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
 `
 
-const Footer = ({ breakpoint }) => (
+const Footer = () => (
   <FooterSection>
     <Container breakpoint="desktop">
       <FooterSocial />

@@ -1,24 +1,12 @@
 import React from 'react'
-import {
-  Container as _Container,
-  Columns,
-  Grid,
-  Column,
-  styled,
-  space,
-  theme,
-} from 'fannypack'
+import { Columns, Grid, Column, styled, space, theme } from 'fannypack'
 import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Image from '../components/Image'
-import { PageHeading, SubHeading, Highlight, Text } from '../components/Core'
+import { SubHeading, Highlight, Text } from '../components/Core'
 import PageBlock from '../components/Core/PageBlock'
-import Card from '../components/Core/Card'
-
-const Container = styled(_Container)`
-  position: relative;
-`
+import Card from '../components/Card'
 
 const Avatar = styled.div`
   border-radius: 50%;
@@ -79,7 +67,7 @@ const IndexPage = () => (
       </Columns>
     </PageBlock>
     <PageBlock bgColor="#f9f9f9" border={true}>
-      <SubHeading as="h3">Community</SubHeading>
+      <SubHeading as="h3">Community Engagement</SubHeading>
       <ActivitiesGrid>
         <Card.Card>
           <Card.ImageBox>

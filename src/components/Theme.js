@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider, css } from 'fannypack'
+import { ThemeProvider } from 'fannypack'
 import {
   faLaptopCode,
   faPencilAlt,
@@ -28,10 +28,10 @@ const theme = {
     primary: '#004fc9',
     primaryDark: '#002294',
     primaryLight: '#97a8e4',
-    header: '#24252a',
-    menuInactive: '#2d2e35',
-    menuBorder: '#474953',
-    menuHover: '#36383f',
+    menu: '#00196d',
+    menuInactive: '#001d80',
+    menuHover: '#0b43ff',
+    menuText: '#0b43ff',
   },
   Container: {
     tabletMargin: '0 20px',
@@ -69,16 +69,6 @@ const theme = {
         type: 'font-awesome',
       },
     ],
-  },
-  Columns: {
-    base: css`
-      margin: 0;
-    `,
-  },
-  Column: {
-    base: css`
-      padding: 0;
-    `,
   },
 }
 

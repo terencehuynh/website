@@ -1,13 +1,6 @@
 import React from 'react'
-import {
-  Container as _Container,
-  Heading,
-  styled,
-  palette,
-  space,
-} from 'fannypack'
+import { Container as _Container, styled, palette, space } from 'fannypack'
 import { Link } from 'gatsby'
-import { theme } from 'styled-tools'
 
 import Navigation from './Navigation'
 import { SerifFonts } from '../../constants'
@@ -16,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   padding: ${space(2, 'major')}rem ${space(2, 'major')}rem;
   background: ${palette('primaryDark')};
-  min-height: 72px;
+  min-height: 64px;
 `
 
 const Container = styled(_Container)`
@@ -26,11 +19,13 @@ const Container = styled(_Container)`
   align-items: left;
 
   h1 {
-    margin: 0 0 12px;
+    margin: 0;
     font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 900;
     letter-spacing: -1px;
     font-family: ${SerifFonts};
+    flex: 1;
 
     a {
       color: white;

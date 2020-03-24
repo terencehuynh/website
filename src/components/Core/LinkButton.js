@@ -2,7 +2,7 @@ import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import { Icon } from 'fannypack'
 
-const Link = ({ text, to, activeClassName, ...other }) => {
+const LinkButton = ({ text, to, activeClassName, ...other }) => {
   const internal = /^\/(?!\/)/.test(to)
   // Use Gatsby Link for internal links, and <a> for others
   if (internal) {
@@ -27,4 +27,4 @@ const Link = ({ text, to, activeClassName, ...other }) => {
   )
 }
 
-export default Link
+export default LinkButton

@@ -6,7 +6,6 @@ import {
   Icon,
   styled,
 } from 'fannypack'
-import { theme } from 'styled-tools'
 
 const List = styled(_List)`
   margin-bottom: 24px;

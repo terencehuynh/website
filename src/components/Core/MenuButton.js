@@ -1,41 +1,53 @@
 import React from 'react'
-import { Icon as FpIcon, Button as FpButton, styled, palette } from 'fannypack'
-import { theme } from 'styled-tools'
+import {
+  Icon as _Icon,
+  Button as _Button,
+  styled,
+  palette,
+  css,
+  theme,
+} from 'fannypack'
 
-const Button = styled(FpButton)`
-  color: #969696;
+const Button = styled(_Button)`
+  color: ${palette('menuText')};
   position: absolute;
   right: 0;
   top: 0;
-  height: 72px;
+  height: 64px;
   padding: 20px;
   font-size: 1.3125rem;
   display: none;
+  cursor: pointer;
 
-  &:hover {
-    color: white;
-  }
-
-  &.active {
-    background: ${palette('menuHover')};
-    color: white;
-  }
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    display: flex;
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    display: block;
     background: ${palette('menuInactive')};
+
+    &:hover {
+      color: white;
+      background: ${palette('menuHover')};
+    }
+
+    ${props =>
+      props.active &&
+      css`
+        color: white;
+        background: ${palette('menu')};
+      `}
   }
 `
 
-const Icon = styled(FpIcon)`
+const Icon = styled(_Icon)`
   height: auto;
   flex: 1;
 `
 
-const MenuButton = ({ onClick, className }) => (
-  <Button as="a" kind="link" onClick={onClick} className={className}>
-    <Icon icon="solid-bars" />
-  </Button>
-)
+const MenuButton = ({ onClick, active }) => {
+  return (
+    <Button as="a" kind="link" onClick={onClick} active={active}>
+      <Icon icon="solid-bars" />
+    </Button>
+  )
+}
 
 export default MenuButton

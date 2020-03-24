@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Columns, Column, Link } from 'fannypack'
+import { Columns, Column, Link } from 'fannypack'
 
 import Layout from '../components/Layout'
 import { Highlight, Text } from '../components/Core'

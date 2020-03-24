@@ -1,0 +1,8 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "react/no-unescaped-entities": 0,
+    "react/prop-types": 1
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"]
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading as _Heading, styled, space } from 'fannypack'
+import { Heading as _Heading, styled, space, theme } from 'fannypack'
 
 const Heading = styled(_Heading)`
   font-size: 1.125rem;
@@ -26,6 +26,10 @@ const Heading = styled(_Heading)`
     padding-right: 8px;
     position: relative;
     z-index: 2;
+  }
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    margin: 0 0 ${space(3, 'major')}rem;
   }
 `
 

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Container, Grid, Box, Set, space, styled, theme } from 'fannypack'
+import { Grid, Box, space, styled, theme } from 'fannypack'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
 import PageHeader from '../components/Core/PageHeader'
-import Card from '../components/Core/Card'
+import Card from '../components/Card'
 import Image from '../components/TalkImage'
 
 import data from '../data/talks.json'
@@ -22,50 +22,24 @@ const Listings = styled(Grid)`
   }
 `
 
-const CardContents = styled(Box)`
-  flex: 1;
-`
-
-const MediaListingSet = styled(Set)`
-  margin-top: 12px;
-`
-
-const MediaListing = ({ media }) => {
-  if (!media || Object.keys(media).length < 1) return null
-  return (
-    <MediaListingSet>
-      {media.video && (
-        <Card.Button href={media.video} text="Watch" iconBefore="solid-video" />
-      )}
-      {media.slides && (
-        <Card.Button
-          href={media.slides}
-          text="Slides"
-          iconBefore="brand-speaker-deck"
-        />
-      )}
-    </MediaListingSet>
-  )
-}
-
 const renderTalks = (event, index) => {
   return (
-    <Card.Card>
+    <Card.Card key={index}>
       <Card.ImageBox>
         <Image filename={event.image} alt={event.title} />
         {event.imageCredit && (
           <Card.ImageCredit>Image Credit: {event.imageCredit}</Card.ImageCredit>
         )}
       </Card.ImageBox>
-      <CardContents>
+      <Box flex="1">
         <Card.Title as="h5"> {event.title}</Card.Title>
         <Card.Metadata>
           {event.date}
           {event.conference ? ` · ${event.conference}` : ''}
         </Card.Metadata>
         <Card.Description>{event.description}</Card.Description>
-      </CardContents>
-      <MediaListing media={event.media} />
+      </Box>
+      <Card.MediaListing media={event.media} />
     </Card.Card>
   )
 }

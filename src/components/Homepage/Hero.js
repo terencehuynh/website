@@ -10,6 +10,10 @@ const BgWrap = styled(Flex)`
   padding: ${space(12, 'major')}rem ${space(2, 'major')}rem;
   background-color: #004fc9;
   position: relative;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    padding: ${space(6, 'major')}rem ${space(2, 'major')}rem;
+  }
 `
 
 const HeroLine = styled.span`
@@ -37,7 +41,7 @@ const HeroLine = styled.span`
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
   }
 `
 

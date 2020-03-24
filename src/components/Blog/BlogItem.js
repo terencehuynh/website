@@ -1,12 +1,14 @@
 import React from 'react'
-import { Heading as _Heading, Icon, styled, space, palette } from 'fannypack'
+import {
+  Heading as _Heading,
+  Icon,
+  styled,
+  space,
+  palette,
+  theme,
+} from 'fannypack'
+import { HeadingLevel, getHeadingLevel, getMobileHeadingLevel } from './Common'
 import { SerifFonts } from '../../constants'
-
-export const HeadingLevel = {
-  LARGE: 'LARGE',
-  MEDIUM: 'MEDIUM',
-  SMALL: 'SMALL',
-}
 
 const Block = styled.article`
   border-bottom: 1px solid #d0d0d0;
@@ -16,6 +18,11 @@ const Block = styled.article`
   &:last-of-type {
     border-bottom: none;
     margin-bottom: 0;
+  }
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    margin-bottom: ${space(3, 'major')}rem;
+    padding-bottom: ${space(3, 'major')}rem;
   }
 `
 
@@ -32,11 +39,6 @@ const Content = styled.div`
     margin-bottom: 0;
   }
 `
-
-const getHeadingLevel = ({ headingLevel }) => {
-  if (headingLevel === HeadingLevel.MEDIUM) return '1.5rem'
-  return '2rem'
-}
 
 const Heading = styled(_Heading)`
   font-size: ${props => getHeadingLevel(props)};
@@ -61,11 +63,19 @@ const Heading = styled(_Heading)`
     color: white;
     outline-offset: 0;
   }
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    font-size: ${props => getMobileHeadingLevel(props)};
+  }
 `
 
 const Metadata = styled.p`
   margin: 0;
   color: #778fa8;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    font-size: 0.875rem;
+  }
 `
 
 const Link = styled.a`

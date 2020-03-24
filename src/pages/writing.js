@@ -8,7 +8,11 @@ import SectionHeading from '../components/Core/SectionHeading'
 import WritingWhere from '../components/Writing/Featured'
 import WritingList from '../components/Writing/WritingList'
 
-const WritingPage = () => {
+const WritingPage = ({
+  data: {
+    writings: { edges },
+  },
+}) => {
   return (
     <Layout pageTitle="Writing">
       <PageHeader heading="Writing" />
@@ -19,13 +23,33 @@ const WritingPage = () => {
             <WritingWhere />
           </Column>
           <Column spread={7} spreadOffset={1}>
-            <SectionHeading text="Portfolio" as="h3" />
-            <WritingList />
+            <WritingList title="Portfolio" titleAs="h3" edges={edges} />
           </Column>
         </Columns>
       </PageBlock>
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    writings: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/(writing)/" } }
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            link
+            source
+            date(formatString: "DD MMMM YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`
 
 export default WritingPage

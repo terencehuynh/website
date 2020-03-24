@@ -1,34 +1,33 @@
 import React from 'react'
 import {
   Container,
-  Icon as _Icon,
   Heading as _Heading,
   styled,
   palette,
   space,
+  theme,
 } from 'fannypack'
-import { theme } from 'styled-tools'
 
 const Wrapper = styled.div`
   background: ${palette('primary')};
-  padding: ${space(6, 'major')}rem 0rem;
+  padding: ${space(6, 'major')}rem ${space(2, 'major')}rem;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
+  }
 `
 
 const Heading = styled(_Heading)`
   font-size: 3rem;
   line-height: 1;
-  letter-spacing: -1px;
   color: white;
-  font-weight: 700;
+  font-style: italic;
+  font-weight: 300;
+  font-family: 'Merriweather';
   margin: 0;
 
   @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     font-size: 2rem;
-  }
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    display: block;
-    margin-bottom: ${space(1, 'major')}rem;
   }
 `
 
