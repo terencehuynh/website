@@ -45,45 +45,44 @@ const HeroLine = styled.span`
   }
 `
 
-const HeroLink = styled(Link)`
-  text-decoration: none;
-  padding: 2px 6px;
-  color: white;
-  border-bottom: 1px solid white;
-  font-weight: 700;
-  transition: background-color 0.08s ease-in-out, color 0.08s ease-in-out;
+const HeroContainer = styled(Container)`
+  a {
+    text-decoration: none;
+    padding: 2px 6px;
+    color: white;
+    border-bottom: 1px solid white;
+    font-weight: 700;
+    transition: background-color 0.08s ease-in-out, color 0.08s ease-in-out;
 
-  &:hover {
-    background: white;
-    color: #004fc9;
-  }
+    &:hover {
+      background: white;
+      color: #004fc9;
+    }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    padding: 0 4px;
-    display: inline-block;
-    clear: both;
+    @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+      padding: 0 4px;
+      display: inline-block;
+      clear: both;
+    }
   }
 `
 
 const Hero = () => (
   <BgWrap>
-    <Container breakpoint="desktop">
+    <HeroContainer breakpoint="desktop">
       <HeroLine>
-        My name is <HeroLink to="/about">Terence Huynh</HeroLink> and{' '}
+        My name is <Link to="/about">Terence Huynh</Link> and{' '}
       </HeroLine>
       <HeroLine>
-        I am a <HeroLink to="/about">Software Engineer</HeroLink>{' '}
+        I am a <Link to="/about">Software Engineer</Link>{' '}
       </HeroLine>
       <HeroLine>
-        and <HeroLink to="/writing">Tech Blogger</HeroLink>{' '}
+        and <Link to="/writing">Tech Blogger</Link>{' '}
       </HeroLine>
       <HeroLine>
-        from{' '}
-        <HeroLink to="https://www.visitmelbourne.com/">
-          Melbourne, Australia
-        </HeroLink>
+        from <a href="https://www.visitmelbourne.com/">Melbourne, Australia</a>
       </HeroLine>
-    </Container>
+    </HeroContainer>
   </BgWrap>
 )
 

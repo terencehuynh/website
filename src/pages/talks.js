@@ -1,26 +1,14 @@
 import React from 'react'
-import { Grid, Box, space, styled, theme } from 'fannypack'
+import { Box } from 'fannypack'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
 import PageHeader from '../components/Core/PageHeader'
 import Card from '../components/Card'
+import Grid from '../components/Grid'
 import Image from '../components/TalkImage'
 
 import data from '../data/talks.json'
-
-const Listings = styled(Grid)`
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: ${space(3, 'major')}rem;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-`
 
 const renderTalks = (event, index) => {
   return (
@@ -48,7 +36,7 @@ const TalksPage = () => (
   <Layout pageTitle="Talks">
     <PageHeader icon="solid-laptop-code" heading="Talks" />
     <PageBlock>
-      <Listings>{data.map(renderTalks)}</Listings>
+      <Grid>{data.map(renderTalks)}</Grid>
     </PageBlock>
   </Layout>
 )

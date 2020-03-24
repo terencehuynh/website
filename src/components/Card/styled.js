@@ -14,8 +14,6 @@ import { SerifFonts } from '../../constants'
 export const Card = styled(_Card.Card)`
   display: flex;
   flex-direction: column;
-  margin-bottom: ${props =>
-    props.hasMarginBottom ? space(2, 'major') : '0'}rem
   border-radius: 0;
 
   a[type='button'] {

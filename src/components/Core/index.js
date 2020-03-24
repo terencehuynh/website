@@ -10,6 +10,7 @@ export const SubHeading = styled(Heading)`
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     font-size: 1.5rem;
+    text-align: center;
   }
 `
 

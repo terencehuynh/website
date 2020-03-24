@@ -1,5 +1,5 @@
 import React from 'react'
-import { Columns, Grid, Column, styled, space, theme } from 'fannypack'
+import { Columns, Column, styled, theme } from 'fannypack'
 import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
@@ -7,6 +7,7 @@ import Image from '../components/Image'
 import { SubHeading, Highlight, Text } from '../components/Core'
 import PageBlock from '../components/Core/PageBlock'
 import Card from '../components/Card'
+import Grid from '../components/Grid'
 
 const Avatar = styled.div`
   border-radius: 50%;
@@ -16,15 +17,6 @@ const Avatar = styled.div`
     width: 200px;
     height: 200px;
     margin: 0 auto;
-  }
-`
-
-const ActivitiesGrid = styled(Grid)`
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: ${space(3, 'major')}rem;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    display: block;
   }
 `
 
@@ -68,7 +60,7 @@ const IndexPage = () => (
     </PageBlock>
     <PageBlock bgColor="#f9f9f9" border={true}>
       <SubHeading as="h3">Community Engagement</SubHeading>
-      <ActivitiesGrid>
+      <Grid>
         <Card.Card>
           <Card.ImageBox>
             <Image filename="unihack.png" alt="UNIHACK" />
@@ -109,7 +101,7 @@ const IndexPage = () => (
             text="Follow @juniordevio"
           />
         </Card.Card>
-      </ActivitiesGrid>
+      </Grid>
     </PageBlock>
   </Layout>
 )

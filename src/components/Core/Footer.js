@@ -1,5 +1,13 @@
 import React from 'react'
-import { Container, Icon, Paragraph, Link, styled, space } from 'fannypack'
+import {
+  Container,
+  Icon,
+  Paragraph,
+  Link,
+  styled,
+  space,
+  theme,
+} from 'fannypack'
 
 import FooterSocial from './FooterSocial'
 
@@ -25,6 +33,10 @@ const FooterParagraph = styled(Paragraph)`
 const FooterSection = styled.footer`
   background: #f2f2f2;
   padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    text-align: center;
+  }
 `
 
 const Footer = () => (

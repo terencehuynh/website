@@ -31,17 +31,19 @@ const Container = styled(_Container)`
       color: white;
       text-decoration: none;
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 `
 
-const Header = ({ showName = true }) => (
+const Header = () => (
   <Wrapper>
     <Container breakpoint="desktop">
-      {showName && (
-        <h1>
-          <Link to="/">Terence Huynh</Link>
-        </h1>
-      )}
+      <h1>
+        <Link to="/">Terence Huynh</Link>
+      </h1>
       <Navigation />
     </Container>
   </Wrapper>
