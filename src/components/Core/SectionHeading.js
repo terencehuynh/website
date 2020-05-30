@@ -1,11 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Heading as _Heading, styled, space, theme, palette } from 'fannypack'
 
 const Heading = styled(_Heading)`
-  font-size: 0.875rem;
+  font-size: 1rem;
+  font-weight: 700;
   margin: 0 0 ${space(4, 'major')}rem;
   color: ${palette('primary')};
   text-transform: uppercase;
+  letter-spacing: 1px;
   position: relative;
 
   &:before {
@@ -39,6 +42,11 @@ const SectionHeading = ({ text, as = 'h2' }) => {
       <span>{text}</span>
     </Heading>
   )
+}
+
+SectionHeading.propTypes = {
+  text: PropTypes.string,
+  as: PropTypes.string,
 }
 
 export default SectionHeading

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Container, styled, space } from 'fannypack'
 
 const getVerticalPadding = props => {
@@ -21,6 +22,11 @@ export const PageBlock = ({ as, children, ...props }) => {
       </Container>
     </PageBox>
   )
+}
+
+PageBlock.propTypes = {
+  as: PropTypes.string,
+  children: PropTypes.node,
 }
 
 export default PageBlock

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  Container as _Container,
+  Container,
   Navigation as _Navigation,
   List as _List,
   Heading,
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
     props.mini
       ? css`
           padding: ${space(2, 'major')}rem ${space(2, 'major')}rem;
-          border-bottom: 1px solid #d0d0d0;
+          border-bottom: 1px solid ${palette('white900')};
         `
       : css`
           padding: ${space(4, 'major')}rem ${space(2, 'major')}rem 0rem;
@@ -41,29 +41,19 @@ const Wrapper = styled.div`
   }
 `
 
-const Container = styled(_Container)`
-  display: flex;
-`
-
 const Navigation = styled(_Navigation)`
-  flex: 1;
-  display: flex;
   align-items: center;
+  margin-top: ${space(1, 'major')}rem;
 `
 
 const List = styled(_List)`
   margin-bottom: 0px;
-  margin-left: ${space(2, 'major')}rem;
-  padding-left: ${space(2, 'major')}rem;
   align-content: center;
-  border-left: 1px solid white;
-  flex: 1;
-  display: flex;
 
   li {
     display: inline-block;
     margin-bottom: 0;
-    margin-right: 8px;
+    margin-right: ${space(2, 'major')}rem;
 
     &:last-child {
       margin-right: 0;
@@ -71,20 +61,18 @@ const List = styled(_List)`
 
     a {
       text-decoration: none;
-      color: ${palette('primaryLight')};
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      color: ${palette('gray300')};
       font-size: 0.875rem;
 
       &:hover {
-        color: white;
+        color: ${palette('primary')};
       }
     }
   }
 `
 
-const Header = ({ heading, as, mini, blog, nav }) => (
-  <Wrapper mini={mini} blog={blog}>
+const Header = ({ heading, as, mini, nav }) => (
+  <Wrapper mini={mini}>
     <Container breakpoint="desktop">
       <Heading as={as} className="pageTitle">
         {heading}

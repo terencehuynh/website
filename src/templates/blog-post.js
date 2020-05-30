@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { styled, theme, palette, space } from 'fannypack'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
@@ -90,16 +90,23 @@ const ArticleFooter = styled.footer`
 
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark
-  const coffee = true
   return (
     <Layout>
       <PageHeader
-        heading="Blog"
+        heading="dot com slash blog"
         mini={true}
         nav={[
           {
             to: '/blog',
-            label: 'Archives',
+            label: 'Index',
+          },
+          {
+            to: '/blog/archive',
+            label: 'Archive',
+          },
+          {
+            to: '/rss',
+            label: 'Feed',
           },
         ]}
       />
@@ -110,7 +117,7 @@ const BlogPostTemplate = ({ data }) => {
         </ArticleHeader>
         <ArticleContent dangerouslySetInnerHTML={{ __html: post.html }} />
         <ArticleFooter>
-          {coffee && (
+          {post.frontmatter.showCoffee && (
             <ArticleCoffee>
               <h6>Like what you have read? Consider buying a coffee...</h6>
               <LinkButton
@@ -132,6 +139,7 @@ BlogPostTemplate.propTypes = {
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         date: PropTypes.string,
+        showCoffee: PropTypes.bool,
       }),
       html: PropTypes.any,
     }),
