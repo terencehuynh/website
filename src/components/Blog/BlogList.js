@@ -1,20 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { generateWritingItems, HeadingLevel } from '../Blog/Common'
+import { generateBlogItems, HeadingLevel } from '../Blog/Common'
 import SectionHeading from '../Core/SectionHeading'
-import LinkButton from '../Core/LinkButton'
 
-const WritingList = ({ title, titleAs, edges, showLinkButton }) => {
+const WritingList = ({ title, titleAs, edges }) => {
   return (
     <>
       {title && <SectionHeading text={title} as={titleAs} />}
       {edges.map(
-        generateWritingItems({
-          headingLevel: HeadingLevel.MEDIUM,
+        generateBlogItems({
+          headingLevel: HeadingLevel.LARGE,
           headingAs: 'h4',
+          showPostLink: true,
         })
       )}
-      {showLinkButton && <LinkButton text="More Writings" to="/writings" />}
     </>
   )
 }

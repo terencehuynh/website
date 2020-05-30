@@ -34,7 +34,7 @@ const renderTalks = (event, index) => {
 
 const TalksPage = () => (
   <Layout pageTitle="Talks">
-    <PageHeader icon="solid-laptop-code" heading="Talks" />
+    <PageHeader heading="Talks" />
     <PageBlock>
       <Grid>{data.map(renderTalks)}</Grid>
     </PageBlock>

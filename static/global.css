@@ -33,3 +33,13 @@ a.line-button:hover {
 a.line-button:hover svg {
   margin-left: 10px;
 }
+
+a.line-button__invert {
+  color: white;
+  border-color: white;
+}
+
+a.line-button__invert:hover {
+  color: #004fc9;
+  background-color: white;
+}

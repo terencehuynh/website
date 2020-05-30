@@ -17,7 +17,7 @@ export const getMobileHeadingLevel = ({ headingLevel }) => {
   return '2rem'
 }
 
-export const generateItems = ({ headingAs, headingLevel }) => edge => {
+export const generateWritingItems = ({ headingAs, headingLevel }) => edge => {
   const {
     node: {
       id,
@@ -32,6 +32,33 @@ export const generateItems = ({ headingAs, headingLevel }) => edge => {
       headingLevel={headingLevel}
       link={link}
       metadata={`${date} · ${source}`}
+    />
+  )
+}
+
+export const generateBlogItems = ({
+  headingAs,
+  headingLevel,
+  showPostLink,
+}) => edge => {
+  const {
+    node: {
+      id,
+      excerpt,
+      fields: { slug },
+      frontmatter: { title, date },
+    },
+  } = edge
+  return (
+    <BlogItem
+      key={id}
+      title={title}
+      headingAs={headingAs}
+      headingLevel={headingLevel}
+      link={slug}
+      html={excerpt}
+      metadata={`${date}`}
+      showPostLink={showPostLink}
     />
   )
 }
