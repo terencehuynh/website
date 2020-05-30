@@ -8,53 +8,36 @@ import {
   styled,
   palette,
   space,
-  theme,
   css,
 } from 'fannypack'
 import { Link } from 'gatsby'
-import { SerifFonts } from '../../constants'
 
 const Wrapper = styled.div`
-  background: ${palette('primary')};
-
   ${props =>
     props.mini
       ? css`
           padding: ${space(2, 'major')}rem ${space(2, 'major')}rem;
+          border-bottom: 1px solid #d0d0d0;
         `
       : css`
-          padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
+          padding: ${space(4, 'major')}rem ${space(2, 'major')}rem 0rem;
         `}
 
   .pageTitle {
     line-height: 1;
-    color: white;
-    font-weight: 300;
+    color: ${palette('primary')};
+    font-weight: 900;
     letter-spacing: -1px;
     margin: 0;
-    font-family: ${SerifFonts};
 
     ${props =>
       props.mini
         ? css`
-            font-size: 2rem;
+            font-size: 1.5rem;
           `
         : css`
             font-size: 3rem;
           `}
-  }
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    .pageTitle {
-      font-size: 2rem;
-    }
-  }
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    padding: ${space(2, 'major')}rem ${space(2, 'major')}rem;
-    .pageTitle {
-      font-size: 2rem;
-    }
   }
 `
 
@@ -100,8 +83,8 @@ const List = styled(_List)`
   }
 `
 
-const Header = ({ heading, as, mini, nav }) => (
-  <Wrapper mini={mini}>
+const Header = ({ heading, as, mini, blog, nav }) => (
+  <Wrapper mini={mini} blog={blog}>
     <Container breakpoint="desktop">
       <Heading as={as} className="pageTitle">
         {heading}

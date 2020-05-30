@@ -1,5 +1,11 @@
 import React from 'react'
-import { Container as _Container, styled, palette, space } from 'fannypack'
+import {
+  Container as _Container,
+  styled,
+  palette,
+  theme,
+  space,
+} from 'fannypack'
 import { Link } from 'gatsby'
 
 import Navigation from './Navigation'
@@ -15,8 +21,13 @@ const Wrapper = styled.div`
 const Container = styled(_Container)`
   flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  flex-direction: row;
+  align-items: center;
+
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   h1 {
     margin: 0;
@@ -25,7 +36,6 @@ const Container = styled(_Container)`
     font-weight: 900;
     letter-spacing: -1px;
     font-family: ${SerifFonts};
-    flex: 1;
 
     a {
       color: white;

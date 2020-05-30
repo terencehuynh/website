@@ -4,7 +4,9 @@ import { Link } from 'gatsby'
 import MenuButton from './MenuButton'
 
 const Nav = styled(Navigation)`
-  margin-top: 12px;
+  flex: 1;
+  display: flex;
+  justify-content: right;
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     margin-top: ${space(2, 'major')}rem;
@@ -14,6 +16,7 @@ const Nav = styled(Navigation)`
     background: ${palette('menu')};
     padding: ${space(2, 'major')}rem;
     display: ${props => (props.active ? 'block' : 'none')};
+    width: 100vw;
   }
 `
 
@@ -39,14 +42,14 @@ const NavList = styled(List)`
 `
 
 const NavLink = styled(Link)`
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   letter-spacing: 1px;
   font-weight: 400;
   text-transform: uppercase;
   text-decoration: none;
   display: block;
   color: ${palette('primaryLight')};
-  margin-right: ${space(4, 'major')}rem;
+  margin-left: ${space(3, 'major')}rem;
 
   &:hover {
     color: white;
@@ -70,7 +73,8 @@ const NavLink = styled(Link)`
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     padding: ${space(2, 'major')}rem;
-    margin-right: 0;
+    margin-left: 0;
+    font-size: 0.875rem;
     text-align: center;
 
     &.current {
