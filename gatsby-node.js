@@ -11,8 +11,8 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMarkdownRemark(
+          filter: { fields: { format: { eq: "post" } } }
           sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
         ) {
           edges {
             node {
@@ -56,11 +56,19 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
+    // If it contains a link and source, it's a writing reference and not a
+    // blog post to render
+    if (node.frontmatter.link && node.frontmatter.source) {
+      createNodeField({ name: 'format', node, value: 'link' })
+      return
+    }
+
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,
       node,
       value: `${POST_SLUG_PREFIX}${value}`,
     })
+    createNodeField({ name: 'format', node, value: 'post' })
   }
 }

@@ -5,9 +5,9 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
-import PageHeader from '../components/Core/PageHeader'
+import BlogHeader from '../components/Blog/BlogHeader'
+import BlogCoffee from '../components/Blog/BlogCoffee'
 import { SerifFonts } from '../constants'
-import LinkButton from '../components/Core/LinkButton'
 
 const ArticleHeader = styled.header`
   max-width: 680px;
@@ -63,26 +63,6 @@ const ArticleContent = styled.section`
   }
 `
 
-const ArticleCoffee = styled.section`
-  background: #004fc9;
-  color: white;
-  border-radius: 8px;
-  max-width: 680px;
-  margin: ${space(3, 'major')}rem auto 0;
-  padding: ${space(4, 'major')}rem;
-  text-align: center;
-
-  h6 {
-    margin: 0 0 ${space(1, 'major')}rem;
-    font-size: 1.125rem;
-    color: white;
-  }
-
-  p {
-    margin: 0;
-  }
-`
-
 const ArticleFooter = styled.footer`
   max-width: 680px;
   margin: 0 auto;
@@ -92,24 +72,7 @@ const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout>
-      <PageHeader
-        heading="dot com slash blog"
-        mini={true}
-        nav={[
-          {
-            to: '/blog',
-            label: 'Index',
-          },
-          {
-            to: '/blog/archive',
-            label: 'Archive',
-          },
-          {
-            to: '/rss',
-            label: 'Feed',
-          },
-        ]}
-      />
+      <BlogHeader />
       <PageBlock as="article" xl={true}>
         <ArticleHeader>
           <h1>{post.frontmatter.title}</h1>
@@ -117,16 +80,7 @@ const BlogPostTemplate = ({ data }) => {
         </ArticleHeader>
         <ArticleContent dangerouslySetInnerHTML={{ __html: post.html }} />
         <ArticleFooter>
-          {post.frontmatter.showCoffee && (
-            <ArticleCoffee>
-              <h6>Like what you have read? Consider buying a coffee...</h6>
-              <LinkButton
-                text="Buy me a coffee"
-                to="https://www.buymeacoffee.com/terencehuynh"
-                invert={true}
-              />
-            </ArticleCoffee>
-          )}
+          {post.frontmatter.showCoffee && <BlogCoffee />}
         </ArticleFooter>
       </PageBlock>
     </Layout>
