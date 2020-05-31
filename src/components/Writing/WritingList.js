@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { generateWritingItems, HeadingLevel } from '../Blog/Common'
 import SectionHeading from '../Core/SectionHeading'
-import LinkButton from '../Core/LinkButton'
+import LinkButton from '../LinkButton'
 
 const WritingList = ({ title, titleAs, edges, showLinkButton }) => {
   return (

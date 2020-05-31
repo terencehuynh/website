@@ -1,13 +1,8 @@
 import React from 'react'
-import {
-  Heading as _Heading,
-  Icon,
-  styled,
-  space,
-  palette,
-  theme,
-} from 'fannypack'
+import { Heading as _Heading, styled, space, palette, theme } from 'fannypack'
 import { HeadingLevel, getHeadingLevel, getMobileHeadingLevel } from './Common'
+import Link from '../Link'
+import LinkButton from '../LinkButton'
 import { SerifFonts } from '../../constants'
 
 const Block = styled.article`
@@ -41,7 +36,7 @@ const Content = styled.div`
 `
 
 const Heading = styled(_Heading)`
-  font-size: ${props => getHeadingLevel(props)};
+  font-size: ${(props) => getHeadingLevel(props)};
   margin: 0 0 ${space(2, 'major')}rem;
   line-height: 1.25;
   font-family: ${SerifFonts};
@@ -65,7 +60,7 @@ const Heading = styled(_Heading)`
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: ${props => getMobileHeadingLevel(props)};
+    font-size: ${(props) => getMobileHeadingLevel(props)};
   }
 `
 
@@ -75,34 +70,6 @@ const Metadata = styled.p`
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     font-size: 0.875rem;
-  }
-`
-
-const Link = styled.a`
-  text-decoration: none;
-  color: #004fc9;
-  transition: all 0.08s ease-in-out;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 4px;
-  border: 1px solid #004fc9;
-  padding: 5px 7px;
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.875rem;
-
-  svg {
-    margin-left: 4px;
-    transition: all 0.08s ease-in-out;
-  }
-
-  &:hover {
-    background-color: #004fc9;
-    color: white;
-
-    svg {
-      margin-left: 10px;
-    }
   }
 `
 
@@ -118,7 +85,7 @@ const BlogItem = ({
   return (
     <Block>
       <Heading as={headingAs} headingLevel={headingLevel}>
-        <a href={link}>{title}</a>
+        <Link to={link} text={title} />
       </Heading>
       <Metadata>{metadata}</Metadata>
       {html && (
@@ -129,10 +96,7 @@ const BlogItem = ({
       )}
       {showPostLink && html && (
         <p>
-          <Link href={link}>
-            Continue Reading
-            <Icon icon="solid-angle-right" />
-          </Link>
+          <LinkButton to={link} text="Continue Reading" />
         </p>
       )}
     </Block>
