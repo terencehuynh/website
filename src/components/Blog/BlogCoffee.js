@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled, space } from 'fannypack'
 
-import LinkButton from '../components/LinkButton'
+import LinkButton from '../LinkButton'
 
 const ArticleCoffee = styled.section`
   background: #004fc9;

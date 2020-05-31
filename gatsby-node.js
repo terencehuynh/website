@@ -1,60 +1,14 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require('gatsby-source-filesystem')
+const BlogScripts = require('./gatsby/blog-scripts')
 
-const POST_SLUG_PREFIX = '/post'
+const POST_SLUG = '/post'
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          filter: { fields: { format: { eq: "post" } } }
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-      }
-    `
-  )
-
-  if (result.errors) {
-    throw result.errors
-  }
-
-  // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
-
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
-
-    createPage({
-      path: post.node.fields.slug,
-      component: blogPost,
-      context: {
-        slug: post.node.fields.slug,
-        previous,
-        next,
-      },
-    })
-  })
+  await BlogScripts.createBlogPosts({ graphql, actions })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-
   if (node.internal.type === `MarkdownRemark`) {
     // If it contains a link and source, it's a writing reference and not a
     // blog post to render
@@ -62,13 +16,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({ name: 'format', node, value: 'link' })
       return
     }
-
+    // Else, it is a blog post and add the associated metadata
     const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value: `${POST_SLUG_PREFIX}${value}`,
-    })
+    createNodeField({ name: 'slug', node, value: `${POST_SLUG}${value}` })
     createNodeField({ name: 'format', node, value: 'post' })
   }
 }
