@@ -1,4 +1,5 @@
 const path = require(`path`)
+const { paginate } = require('gatsby-awesome-pagination')
 
 const BLOG_POST_QUERY = `
   {
@@ -42,5 +43,20 @@ exports.createBlogPosts = async ({ graphql, actions }) => {
         next,
       },
     })
+  })
+}
+
+exports.createBlogPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const component = path.resolve(`./src/templates/blog-index.js`)
+  const result = await graphql(BLOG_POST_QUERY)
+  if (result.errors) throw result.errors
+
+  paginate({
+    createPage,
+    component,
+    items: result.data.allMarkdownRemark.edges,
+    itemsPerPage: 10,
+    pathPrefix: '/blog',
   })
 }

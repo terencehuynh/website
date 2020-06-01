@@ -1,19 +1,19 @@
 import React from 'react'
-import { styled, space } from 'fannypack'
+import PropTypes from 'prop-types'
+import { styled, space, palette, css } from 'fannypack'
 
 import LinkButton from '../LinkButton'
 
 const ArticleCoffee = styled.section`
-  background: #004fc9;
+  background: ${palette('primary')};
   color: white;
   border-radius: 8px;
   max-width: 680px;
-  margin: ${space(3, 'major')}rem auto 0;
   padding: ${space(4, 'major')}rem;
   text-align: center;
 
   h6 {
-    margin: 0 0 ${space(1, 'major')}rem;
+    margin: 0 0 ${space(2, 'major')}rem;
     font-size: 1.125rem;
     color: white;
   }
@@ -21,19 +21,38 @@ const ArticleCoffee = styled.section`
   p {
     margin: 0;
   }
+
+  ${(props) =>
+    props.invert &&
+    css`
+      background: white;
+      border: 1px solid ${palette('white900')};
+
+      h6 {
+        color: ${palette('text')};
+      }
+    `}
 `
 
-const BlogCoffee = () => {
+const BlogCoffee = ({ invert }) => {
   return (
-    <ArticleCoffee>
+    <ArticleCoffee invert={invert}>
       <h6>Like what you have read? Consider buying a coffee...</h6>
       <LinkButton
         text="Buy me a coffee"
         to="https://www.buymeacoffee.com/terencehuynh"
-        invert={true}
+        invert={!invert}
       />
     </ArticleCoffee>
   )
+}
+
+BlogCoffee.propTypes = {
+  invert: PropTypes.bool,
+}
+
+BlogCoffee.defaultProps = {
+  invert: false,
 }
 
 export default BlogCoffee

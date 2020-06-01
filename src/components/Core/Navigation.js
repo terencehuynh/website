@@ -15,7 +15,7 @@ const Nav = styled(Navigation)`
     margin-right: -${space(2, 'major')}rem;
     background: ${palette('menu')};
     padding: ${space(2, 'major')}rem;
-    display: ${props => (props.active ? 'block' : 'none')};
+    display: ${(props) => (props.active ? 'block' : 'none')};
     width: 100vw;
   }
 `
@@ -89,7 +89,7 @@ const NavItems = [
   { title: 'About', to: '/about/' },
   { title: 'Talks', to: '/talks/' },
   { title: 'Writing', to: '/writing/' },
-  // { title: 'Blog', to: '/blog/' },
+  { title: 'Blog', to: '/blog/', partiallyActive: true },
   { title: 'Contact', to: '/contact/' },
 ]
 
@@ -102,7 +102,7 @@ class MainNavigation extends React.Component {
   }
 
   onClick = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return { active: !prevState.active }
     })
   }
@@ -114,10 +114,14 @@ class MainNavigation extends React.Component {
         <MenuButton onClick={this.onClick} active={active} />
         <Nav as="nav" a11yTitle="Main Navigation" active={active}>
           <NavList>
-            {NavItems.map(item => {
+            {NavItems.map((item) => {
               return (
                 <NavList.Item key={item.title}>
-                  <NavLink to={item.to} activeClassName="current">
+                  <NavLink
+                    to={item.to}
+                    partiallyActive={item.partiallyActive}
+                    activeClassName="current"
+                  >
                     {item.title}
                   </NavLink>
                 </NavList.Item>

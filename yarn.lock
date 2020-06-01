@@ -7363,6 +7363,13 @@ gatsby-admin@^0.1.54:
     urql "^1.9.7"
     yup "^0.29.0"
 
+gatsby-awesome-pagination@0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/gatsby-awesome-pagination/-/gatsby-awesome-pagination-0.3.6.tgz#e7e2d0af0cebd53a51957414e1e9749f2e0e2c02"
+  integrity sha512-gVt5tnDP8Va+Y02OrG8k/HocGx7NKTnvGGKFzz2E+ChHObBbac6PXeOEOUseFrCqO/zKLhF8JWTfWofGsy7oQA==
+  dependencies:
+    lodash "^4.17.15"
+
 gatsby-cli@^2.12.38:
   version "2.12.38"
   resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.12.38.tgz#537d5541d589bb113315ced9b2a2fce27c9f2a2e"

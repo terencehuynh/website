@@ -18,8 +18,8 @@ const ArticleHeader = styled.header`
   h1 {
     margin: 0 0 ${space(1, 'major')}rem;
     font-family: ${SerifFonts};
-    font-size: 2.5rem;
-    font-weight: 900;
+    font-size: 3em;
+    font-weight: 100;
     letter-spacing: -1px;
     line-height: 1.25;
   }
@@ -73,7 +73,7 @@ const BlogPostTemplate = ({ data }) => {
   return (
     <Layout>
       <BlogHeader />
-      <PageBlock as="article" xl={true}>
+      <PageBlock as="article">
         <ArticleHeader>
           <h1>{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
@@ -109,6 +109,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        showCoffee
         date(formatString: "MMMM Do, YYYY")
       }
     }

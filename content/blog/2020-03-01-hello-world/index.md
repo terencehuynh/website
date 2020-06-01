@@ -1,6 +1,7 @@
 ---
 title: Hello World
 date: 2020-03-01
+showCoffee: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere vulputate eros, et euismod ex ultrices non. In accumsan finibus turpis, non congue mauris malesuada non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur imperdiet ullamcorper nulla. Nunc interdum quis nisi nec aliquet. Morbi sem dui, sagittis id turpis fringilla, eleifend dictum purus. Nullam congue lobortis vestibulum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed lobortis orci eu quam venenatis condimentum sit amet vel odio.

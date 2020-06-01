@@ -8,11 +8,7 @@ const BlogHeader = () => {
       mini={true}
       nav={[
         {
-          to: '/blog',
-          label: 'Index',
-        },
-        {
-          to: '/blog/archive',
+          to: '/blog/',
           label: 'Archive',
         },
         {
