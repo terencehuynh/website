@@ -14,7 +14,7 @@ const WritingList = ({ title, titleAs, edges, showLinkButton }) => {
           headingAs: 'h4',
         })
       )}
-      {showLinkButton && <LinkButton text="More Writings" to="/writings" />}
+      {showLinkButton && <LinkButton text="More Writings" to="/writing/" />}
     </>
   )
 }
