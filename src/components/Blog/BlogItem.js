@@ -34,9 +34,9 @@ const Content = styled.div`
 `
 
 const Heading = styled(_Heading)`
-  font-size: ${(props) => getHeadingLevel(props)};
+  font-size: ${(props) => getHeadingLevel(props)}rem;
   margin: 0 0 ${space(1, 'major')}rem;
-  line-height: ${(props) => getHeadingLevel(props) + 0.25}rem;
+  line-height: ${(props) => getHeadingLevel(props) + 0.5}rem;
   font-family: ${SerifFonts};
   font-weight: 900;
   letter-spacing: -1px;
@@ -58,8 +58,8 @@ const Heading = styled(_Heading)`
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: ${(props) => getMobileHeadingLevel(props)};
-    line-height: ${(props) => getMobileHeadingLevel(props) + 0.25}rem;
+    font-size: ${(props) => getMobileHeadingLevel(props)}rem;
+    line-height: ${(props) => getMobileHeadingLevel(props) + 0.5}rem;
   }
 `
 
