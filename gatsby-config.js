@@ -35,9 +35,34 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
-    'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-unwrap-images',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1024,
+              quality: 80,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-custom-blocks',
+            options: {
+              blocks: {
+                credits: {
+                  classes: 'credits',
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-feed',
       options: {

@@ -4,6 +4,8 @@ date: 2018-12-04
 showCoffee: true
 ---
 
+![](hero-image.jpg)
+
 Other than the coffee culture, one of the many reasons why I love working in Melbourne is the size and the diversity of our tech community. Name a technology buzzword, programming language, framework, or paradigm and you will find at least a Meetup group or tech event for it.
 
 Rust? [There’s a meetup for that](https://www.meetup.com/Rust-Melbourne/). [Golang too](https://www.meetup.com/golang-mel/). [And Elixir](https://www.meetup.com/Elixir-Melbourne/).
@@ -52,4 +54,7 @@ I should stress that starting a hackathon isn’t the only way of “paying it f
 
 ---
 
-_This blog post was previously published on Localz Engineering._
+_This blog post was previously published on Localz Engineering on December 4, 2018._
+
+[[credits]]
+| Top Image: Melbourne Startup Photo Library (City Of Melbourne & That Startup Show)</p>

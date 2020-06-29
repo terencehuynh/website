@@ -17,6 +17,14 @@ const ArticleContent = styled.section`
     }
   }
 
+  .gatsby-resp-image-wrapper {
+    margin: 0 -${space(2, 'major')}rem ${space(3, 'major')}rem;
+
+    @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+      margin: 0 -${space(2, 'major')}rem ${space(2, 'major')}rem !important;
+    }
+  }
+
   p {
     line-height: 2rem;
     font-size: 1rem;
@@ -41,8 +49,8 @@ const ArticleContent = styled.section`
     line-height: 2.25rem;
 
     @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-      font-size: 1.75rem;
-      line-height: 2rem;
+      font-size: 1.5rem;
+      line-height: 1.75rem;
     }
   }
 
@@ -76,6 +84,19 @@ const ArticleContent = styled.section`
     border: 0;
     background-color: ${palette('primaryBorder')};
     height: 1px;
+  }
+
+  .credits {
+    p {
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      color: ${palette('text100')};
+      font-family: inherit;
+    }
+
+    p:last-child {
+      margin: 0;
+    }
   }
 `
 
