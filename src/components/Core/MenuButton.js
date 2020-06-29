@@ -19,7 +19,7 @@ const Button = styled(_Button)`
   display: none;
   cursor: pointer;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     display: block;
     background: ${palette('menuInactive')};
 
@@ -28,7 +28,7 @@ const Button = styled(_Button)`
       background: ${palette('menuHover')};
     }
 
-    ${props =>
+    ${(props) =>
       props.active &&
       css`
         color: white;

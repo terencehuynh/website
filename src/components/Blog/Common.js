@@ -14,10 +14,10 @@ export const getHeadingLevel = ({ headingLevel }) => {
 
 export const getMobileHeadingLevel = ({ headingLevel }) => {
   if (headingLevel === HeadingLevel.MEDIUM) return '1.3125rem'
-  return '2rem'
+  return '1.75rem'
 }
 
-export const generateWritingItems = ({ headingAs, headingLevel }) => edge => {
+export const generateWritingItems = ({ headingAs, headingLevel }) => (edge) => {
   const {
     node: {
       id,
@@ -40,7 +40,7 @@ export const generateBlogItems = ({
   headingAs,
   headingLevel,
   showPostLink,
-}) => edge => {
+}) => (edge) => {
   const {
     node: {
       id,

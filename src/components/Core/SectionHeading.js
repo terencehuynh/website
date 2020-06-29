@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { Heading as _Heading, styled, space, theme, palette } from 'fannypack'
 
 const Heading = styled(_Heading)`
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 700;
   margin: 0 0 ${space(4, 'major')}rem;
-  color: ${palette('primary')};
+  color: ${palette('primaryDark')};
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
@@ -20,8 +20,8 @@ const Heading = styled(_Heading)`
     left: 0;
     right: 0;
     width: 100%;
-    height: 3px;
-    background-color: #004fc9;
+    height: 2px;
+    background-color: ${palette('primaryDark')};
   }
 
   span {

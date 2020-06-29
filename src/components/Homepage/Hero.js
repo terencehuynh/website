@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Container, styled, space } from 'fannypack'
+import { Flex, Container, styled, space, palette } from 'fannypack'
 import { Link } from 'gatsby'
 import { theme } from 'styled-tools'
 
@@ -8,7 +8,7 @@ const BgWrap = styled(Flex)`
   justify-content: center;
   width: 100vw;
   padding: ${space(12, 'major')}rem ${space(2, 'major')}rem;
-  background-color: #004fc9;
+  background-color: ${palette('heroBg')};
   position: relative;
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
@@ -22,7 +22,7 @@ const HeroLine = styled.span`
   font-size: 2.5rem;
   line-height: 1.25;
   letter-spacing: -1px;
-  color: #97a8e4;
+  color: ${palette('heroText')};
   display: block;
   text-align: left;
 
@@ -56,7 +56,7 @@ const HeroContainer = styled(Container)`
 
     &:hover {
       background: white;
-      color: #004fc9;
+      color: ${palette('heroBg')};
     }
 
     @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {

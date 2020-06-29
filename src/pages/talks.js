@@ -36,7 +36,9 @@ const TalksPage = () => (
   <Layout pageTitle="Talks">
     <PageHeader heading="Talks" />
     <PageBlock>
-      <Grid>{data.map(renderTalks)}</Grid>
+      <Grid columns={3} desktopColumns={2}>
+        {data.map(renderTalks)}
+      </Grid>
     </PageBlock>
   </Layout>
 )

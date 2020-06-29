@@ -8,7 +8,7 @@ const Nav = styled(Navigation)`
   display: flex;
   justify-content: right;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     margin-top: ${space(2, 'major')}rem;
     margin-left: -${space(2, 'major')}rem;
     margin-bottom: -${space(2, 'major')}rem;
@@ -28,7 +28,7 @@ const NavList = styled(List)`
     margin-bottom: unset;
   }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border-top: 1px solid ${palette('primaryDark')};
@@ -37,6 +37,10 @@ const NavList = styled(List)`
     li {
       border-left: 1px solid ${palette('primaryDark')};
       border-bottom: 1px solid ${palette('primaryDark')};
+    }
+
+    li:last-child:nth-last-child(odd) {
+      grid-column: auto / span 2;
     }
   }
 `
@@ -71,7 +75,7 @@ const NavLink = styled(Link)`
     }
   }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     padding: ${space(2, 'major')}rem;
     margin-left: 0;
     font-size: 0.875rem;

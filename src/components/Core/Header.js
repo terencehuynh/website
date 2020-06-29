@@ -24,7 +24,7 @@ const Container = styled(_Container)`
   flex-direction: row;
   align-items: center;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     flex-direction: column;
     align-items: flex-start;
   }

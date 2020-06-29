@@ -9,12 +9,12 @@ body > div {
 
 a.line-button {
   text-decoration: none;
-  color: #004fc9;
+  color: #1f6bc1;
   transition: all 0.08s ease-in-out;
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 4px;
-  border: 1px solid #004fc9;
+  border: 1px solid #1f6bc1;
   padding: 5px 7px;
   display: inline-flex;
   align-items: center;
@@ -27,7 +27,7 @@ a.line-button svg {
 }
 
 a.line-button:hover {
-  background-color: #004fc9;
+  background-color: #1f6bc1;
   color: white;
 }
 
@@ -41,6 +41,6 @@ a.line-button__invert {
 }
 
 a.line-button__invert:hover {
-  color: #004fc9;
+  color: #1f6bc1;
   background-color: white;
 }
