@@ -1,6 +1,6 @@
 ---
 title: Why you should get involved in your local tech community
-date: 2018-12-04
+date: 2020-07-01
 showCoffee: true
 ---
 
