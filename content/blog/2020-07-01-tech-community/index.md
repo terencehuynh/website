@@ -1,5 +1,7 @@
 ---
 title: Why you should get involved in your local tech community
+summary: Melbourne’s tech community is only big because there are many people (including I) who are willing to put in the effort. So, here’s why you should contribute back and get involved in your local tech community.
+featured: hero-image.jpg
 date: 2020-07-01
 showCoffee: true
 ---

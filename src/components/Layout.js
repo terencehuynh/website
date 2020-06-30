@@ -16,6 +16,8 @@ const Layout = (props) => (
         site {
           siteMetadata {
             title
+            description
+            author
           }
         }
       }

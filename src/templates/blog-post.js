@@ -18,7 +18,10 @@ const ArticleFooter = styled.footer`
 const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark
   return (
-    <Layout>
+    <Layout
+      pageTitle={post.frontmatter.title}
+      description={post.frontmatter.summary}
+    >
       <BlogHeader />
       <PageBlock as="article">
         <ArticleHeader>
@@ -40,6 +43,7 @@ BlogPostTemplate.propTypes = {
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         date: PropTypes.string,
+        summary: PropTypes.string,
         showCoffee: PropTypes.bool,
       }),
       html: PropTypes.any,
@@ -56,6 +60,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        summary
         showCoffee
         date(formatString: "MMMM Do, YYYY")
       }

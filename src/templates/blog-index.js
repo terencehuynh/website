@@ -15,7 +15,7 @@ const BlogPostTemplate = ({
 }) => {
   const sectionTitle = humanPageNumber === 1 ? 'Latest Posts' : 'Previous Posts'
   return (
-    <Layout>
+    <Layout pageTitle="Blog" description="terence huynh dot com slash blog">
       <BlogHeader />
       <PageBlock>
         <Columns>
@@ -23,7 +23,10 @@ const BlogPostTemplate = ({
             <BlogList title={sectionTitle} edges={posts.edges} />
           </Column>
           <Column spread={4} spreadOffset={1}>
-            <BlogCoffee invert={true} />
+            <BlogCoffee
+              invert={true}
+              text="Enjoy reading my blog? Consider leaving a tip..."
+            />
           </Column>
         </Columns>
       </PageBlock>

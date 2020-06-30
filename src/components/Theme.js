@@ -8,6 +8,7 @@ import {
   faHeart,
   faVideo,
   faAngleRight,
+  faMugHot,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -54,6 +55,7 @@ const theme = {
           faHeart,
           faVideo,
           faAngleRight,
+          faMugHot,
         ],
         prefix: 'solid-',
         type: 'font-awesome',

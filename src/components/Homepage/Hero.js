@@ -52,7 +52,6 @@ const HeroContainer = styled(Container)`
     color: white;
     font-weight: 700;
     border-bottom: 0px solid white;
-    transition: border-width 0.08s linear;
 
     &:hover {
       border-bottom: 1px solid white;
