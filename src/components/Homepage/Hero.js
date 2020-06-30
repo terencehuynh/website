@@ -48,15 +48,14 @@ const HeroLine = styled.span`
 const HeroContainer = styled(Container)`
   a {
     text-decoration: none;
-    padding: 2px 6px;
+    padding: 2px;
     color: white;
-    border-bottom: 1px solid white;
     font-weight: 700;
-    transition: background-color 0.08s ease-in-out, color 0.08s ease-in-out;
+    border-bottom: 0px solid white;
+    transition: border-width 0.08s linear;
 
     &:hover {
-      background: white;
-      color: ${palette('heroBg')};
+      border-bottom: 1px solid white;
     }
 
     @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
