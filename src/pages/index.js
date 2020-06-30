@@ -15,7 +15,7 @@ const IndexPage = ({ data: { writings, blogs } }) => (
     <PageBlock>
       <Columns>
         <Column spread={7}>
-          <BlogList title="Blog Posts" edges={blogs.edges} />
+          <BlogList title="Latest Blog Posts" edges={blogs.edges} />
         </Column>
         <Column spread={4} spreadOffset={1}>
           <WritingList
@@ -74,6 +74,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM Do, YYYY")
             title
+            summary
           }
         }
       }

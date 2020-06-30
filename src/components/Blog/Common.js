@@ -46,7 +46,7 @@ export const generateBlogItems = ({
       id,
       excerpt,
       fields: { slug },
-      frontmatter: { title, date },
+      frontmatter: { title, summary, date },
     },
   } = edge
   return (
@@ -56,7 +56,7 @@ export const generateBlogItems = ({
       headingAs={headingAs}
       headingLevel={headingLevel}
       link={slug}
-      html={excerpt}
+      html={summary || excerpt}
       metadata={`${date}`}
       showPostLink={showPostLink}
     />

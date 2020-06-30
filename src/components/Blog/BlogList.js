@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { generateBlogItems, HeadingLevel } from '../Blog/Common'
 import SectionHeading from '../Core/SectionHeading'
 
-const WritingList = ({ title, titleAs, edges }) => {
+const BlogList = ({ title, titleAs, edges }) => {
   return (
     <>
       {title && <SectionHeading text={title} as={titleAs} />}
@@ -18,15 +18,15 @@ const WritingList = ({ title, titleAs, edges }) => {
   )
 }
 
-WritingList.propTypes = {
+BlogList.propTypes = {
   title: PropTypes.string,
   titleAs: PropTypes.string,
   edges: PropTypes.array,
   showLinkButton: PropTypes.bool,
 }
 
-WritingList.defaultProps = {
+BlogList.defaultProps = {
   showLinkButton: false,
 }
 
-export default WritingList
+export default BlogList
