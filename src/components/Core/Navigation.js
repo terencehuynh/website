@@ -4,16 +4,19 @@ import { Link } from 'gatsby'
 import MenuButton from './MenuButton'
 
 const Nav = styled(Navigation)`
-  margin-top: 12px;
+  flex: 1;
+  display: flex;
+  justify-content: right;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     margin-top: ${space(2, 'major')}rem;
     margin-left: -${space(2, 'major')}rem;
     margin-bottom: -${space(2, 'major')}rem;
     margin-right: -${space(2, 'major')}rem;
     background: ${palette('menu')};
     padding: ${space(2, 'major')}rem;
-    display: ${props => (props.active ? 'block' : 'none')};
+    display: ${(props) => (props.active ? 'block' : 'none')};
+    width: 100vw;
   }
 `
 
@@ -25,7 +28,7 @@ const NavList = styled(List)`
     margin-bottom: unset;
   }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border-top: 1px solid ${palette('primaryDark')};
@@ -35,18 +38,22 @@ const NavList = styled(List)`
       border-left: 1px solid ${palette('primaryDark')};
       border-bottom: 1px solid ${palette('primaryDark')};
     }
+
+    li:last-child:nth-last-child(odd) {
+      grid-column: auto / span 2;
+    }
   }
 `
 
 const NavLink = styled(Link)`
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   letter-spacing: 1px;
   font-weight: 400;
   text-transform: uppercase;
   text-decoration: none;
   display: block;
   color: ${palette('primaryLight')};
-  margin-right: ${space(4, 'major')}rem;
+  margin-left: ${space(3, 'major')}rem;
 
   &:hover {
     color: white;
@@ -68,9 +75,10 @@ const NavLink = styled(Link)`
     }
   }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
     padding: ${space(2, 'major')}rem;
-    margin-right: 0;
+    margin-left: 0;
+    font-size: 0.875rem;
     text-align: center;
 
     &.current {
@@ -85,7 +93,7 @@ const NavItems = [
   { title: 'About', to: '/about/' },
   { title: 'Talks', to: '/talks/' },
   { title: 'Writing', to: '/writing/' },
-  // { title: 'Blog', to: '/blog/' },
+  { title: 'Blog', to: '/blog/', partiallyActive: true },
   { title: 'Contact', to: '/contact/' },
 ]
 
@@ -98,7 +106,7 @@ class MainNavigation extends React.Component {
   }
 
   onClick = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return { active: !prevState.active }
     })
   }
@@ -110,10 +118,14 @@ class MainNavigation extends React.Component {
         <MenuButton onClick={this.onClick} active={active} />
         <Nav as="nav" a11yTitle="Main Navigation" active={active}>
           <NavList>
-            {NavItems.map(item => {
+            {NavItems.map((item) => {
               return (
                 <NavList.Item key={item.title}>
-                  <NavLink to={item.to} activeClassName="current">
+                  <NavLink
+                    to={item.to}
+                    partiallyActive={item.partiallyActive}
+                    activeClassName="current"
+                  >
                     {item.title}
                   </NavLink>
                 </NavList.Item>

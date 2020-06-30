@@ -8,6 +8,7 @@ import {
   faHeart,
   faVideo,
   faAngleRight,
+  faMugHot,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faTwitter,
@@ -25,13 +26,20 @@ import {
 
 const theme = {
   palette: {
-    primary: '#004fc9',
-    primaryDark: '#002294',
-    primaryLight: '#97a8e4',
-    menu: '#00196d',
-    menuInactive: '#001d80',
-    menuHover: '#0b43ff',
-    menuText: '#0b43ff',
+    primary: '#1F6BC1',
+    primaryDark: '#19579F',
+    primaryLight: '#D7E1EA',
+    primaryHover: '#0B2747',
+    primaryBorder: '#CBDEF6',
+    menu: '#113A6A',
+    menuInactive: '#164E8D',
+    menuHover: '#113A6A',
+    menuText: '#96BDED',
+    miniHeader: '#EEF4FC',
+    miniHeaderLink: '#5F81AB',
+    miniHeaderHover: '#184077',
+    heroBg: '#0B2747',
+    heroText: '#85B3EA',
   },
   Container: {
     tabletMargin: '0 20px',
@@ -47,6 +55,7 @@ const theme = {
           faHeart,
           faVideo,
           faAngleRight,
+          faMugHot,
         ],
         prefix: 'solid-',
         type: 'font-awesome',

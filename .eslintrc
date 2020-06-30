@@ -4,5 +4,9 @@
     "react/no-unescaped-entities": 0,
     "react/prop-types": 1
   },
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "extends": ["eslint:recommended", "plugin:react/recommended"]
 }

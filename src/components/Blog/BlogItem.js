@@ -1,13 +1,8 @@
 import React from 'react'
-import {
-  Heading as _Heading,
-  Icon,
-  styled,
-  space,
-  palette,
-  theme,
-} from 'fannypack'
+import { Heading as _Heading, styled, space, palette, theme } from 'fannypack'
 import { HeadingLevel, getHeadingLevel, getMobileHeadingLevel } from './Common'
+import Link from '../Link'
+import LinkButton from '../LinkButton'
 import { SerifFonts } from '../../constants'
 
 const Block = styled.article`
@@ -27,23 +22,21 @@ const Block = styled.article`
 `
 
 const Content = styled.div`
-  margin: ${space(2, 'major')}rem 0 0;
+  margin: ${space(3, 'major')}rem 0;
+  line-height: 2;
+  font-size: 1rem;
+  font-family: ${SerifFonts};
 
-  p {
-    margin: 0 0 ${space(2, 'major')}rem;
-    line-height: 2;
-    font-family: ${SerifFonts};
-  }
-
-  p:last-child {
-    margin-bottom: 0;
+  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
+    font-size: 0.875rem;
+    line-height: 1.75rem;
   }
 `
 
 const Heading = styled(_Heading)`
-  font-size: ${props => getHeadingLevel(props)};
-  margin: 0 0 ${space(2, 'major')}rem;
-  line-height: 1.25;
+  font-size: ${(props) => getHeadingLevel(props)}rem;
+  margin: 0 0 ${space(1, 'major')}rem;
+  line-height: ${(props) => getHeadingLevel(props) + 0.5}rem;
   font-family: ${SerifFonts};
   font-weight: 900;
   letter-spacing: -1px;
@@ -55,7 +48,7 @@ const Heading = styled(_Heading)`
   }
 
   a:hover {
-    color: #223241;
+    color: ${palette('primaryHover')};
   }
 
   a:focus {
@@ -65,44 +58,21 @@ const Heading = styled(_Heading)`
   }
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: ${props => getMobileHeadingLevel(props)};
+    font-size: ${(props) => getMobileHeadingLevel(props)}rem;
+    line-height: ${(props) => getMobileHeadingLevel(props) + 0.5}rem;
   }
 `
 
 const Metadata = styled.p`
   margin: 0;
   color: #778fa8;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  text-transform: uppercase;
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.875rem;
-  }
-`
-
-const Link = styled.a`
-  text-decoration: none;
-  color: #004fc9;
-  transition: all 0.08s ease-in-out;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 4px;
-  border: 1px solid #004fc9;
-  padding: 5px 7px;
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.875rem;
-
-  svg {
-    margin-left: 4px;
-    transition: all 0.08s ease-in-out;
-  }
-
-  &:hover {
-    background-color: #004fc9;
-    color: white;
-
-    svg {
-      margin-left: 10px;
-    }
+    font-size: 0.75rem;
+    line-height: 0.875rem;
   }
 `
 
@@ -118,7 +88,7 @@ const BlogItem = ({
   return (
     <Block>
       <Heading as={headingAs} headingLevel={headingLevel}>
-        <a href={link}>{title}</a>
+        <Link to={link} text={title} />
       </Heading>
       <Metadata>{metadata}</Metadata>
       {html && (
@@ -129,10 +99,7 @@ const BlogItem = ({
       )}
       {showPostLink && html && (
         <p>
-          <Link href={link}>
-            Continue Reading
-            <Icon icon="solid-angle-right" />
-          </Link>
+          <LinkButton to={link} text="Continue Reading" />
         </p>
       )}
     </Block>

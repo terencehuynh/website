@@ -8,16 +8,16 @@ export const HeadingLevel = {
 }
 
 export const getHeadingLevel = ({ headingLevel }) => {
-  if (headingLevel === HeadingLevel.MEDIUM) return '1.5rem'
-  return '2rem'
+  if (headingLevel === HeadingLevel.MEDIUM) return 1.5
+  return 2
 }
 
 export const getMobileHeadingLevel = ({ headingLevel }) => {
-  if (headingLevel === HeadingLevel.MEDIUM) return '1.3125rem'
-  return '2rem'
+  if (headingLevel === HeadingLevel.MEDIUM) return 1.3125
+  return 1.75
 }
 
-export const generateItems = ({ headingAs, headingLevel }) => edge => {
+export const generateWritingItems = ({ headingAs, headingLevel }) => (edge) => {
   const {
     node: {
       id,
@@ -32,6 +32,33 @@ export const generateItems = ({ headingAs, headingLevel }) => edge => {
       headingLevel={headingLevel}
       link={link}
       metadata={`${date} · ${source}`}
+    />
+  )
+}
+
+export const generateBlogItems = ({
+  headingAs,
+  headingLevel,
+  showPostLink,
+}) => (edge) => {
+  const {
+    node: {
+      id,
+      excerpt,
+      fields: { slug },
+      frontmatter: { title, summary, date },
+    },
+  } = edge
+  return (
+    <BlogItem
+      key={id}
+      title={title}
+      headingAs={headingAs}
+      headingLevel={headingLevel}
+      link={slug}
+      html={summary || excerpt}
+      metadata={`${date}`}
+      showPostLink={showPostLink}
     />
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -9,18 +9,20 @@ import Footer from './Core/Footer'
 
 import { generateMeta, generateLink } from '../utils/helmet'
 
-const Layout = props => (
+const Layout = (props) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
             title
+            description
+            author
           }
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const {
         site: {
           siteMetadata: {
@@ -36,7 +38,6 @@ const Layout = props => (
         description,
         lang,
         showHeader,
-        links,
         ...meta
       } = props
       const metaDescription = description || siteDescription
@@ -47,7 +48,7 @@ const Layout = props => (
             htmlAttributes={{ lang }}
             title={title}
             meta={generateMeta({ metaDescription, title, author, ...meta })}
-            link={generateLink(links)}
+            link={generateLink()}
           />
           <Theme>
             {showHeader && <Header />}
