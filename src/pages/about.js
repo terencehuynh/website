@@ -36,10 +36,9 @@ const IndexPage = () => (
           </Highlight>
           <Text>
             I am currently a Software Engineer at{' '}
-            <a href="https://localz.com">Localz</a>, a startup that is
-            developing last-mile solutions for retail, logistics and utility
-            businesses based in Melbourne, Australia. I currently work across
-            our backend, front-end and mobile applications (React Native).
+            <a href="https://atlassian.com">Atlassian</a>, the company that
+            makes tools like Jira, Trello and Confluence that are used by
+            thousands of teams worldwide.
           </Text>
           <Text>
             I am also the Executive Editor of{' '}
