@@ -40,12 +40,13 @@ const ArticleContent = styled.section`
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   h2 {
     font-size: 2rem;
     line-height: 2.25rem;
+    margin-top: ${space(8, 'major')}rem;
 
     @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
       font-size: 1.5rem;

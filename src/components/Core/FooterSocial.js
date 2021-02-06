@@ -32,7 +32,7 @@ const Link = styled(_Link)`
 const ListItem = ({ name, icon, link, ...opt }) => (
   <List.Item>
     <Link href={link} {...opt}>
-      <Icon icon={icon} a11yTitle={name} />
+      <Icon icon={icon} a11yLabel={name} />
     </Link>
   </List.Item>
 )

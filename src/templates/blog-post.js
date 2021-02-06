@@ -23,14 +23,14 @@ const BlogPostTemplate = ({ data }) => {
       description={post.frontmatter.summary}
     >
       <BlogHeader />
-      <PageBlock as="article">
+      <PageBlock as="article" xl>
         <ArticleHeader>
           <h1>{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </ArticleHeader>
         <ArticleContent dangerouslySetInnerHTML={{ __html: post.html }} />
         <ArticleFooter>
-          {post.frontmatter.showCoffee && <BlogCoffee />}
+          {post.frontmatter.showCoffee && <BlogCoffee invert />}
         </ArticleFooter>
       </PageBlock>
     </Layout>
@@ -62,7 +62,7 @@ export const pageQuery = graphql`
         title
         summary
         showCoffee
-        date(formatString: "MMMM Do, YYYY")
+        date(formatString: "MMMM D, YYYY")
       }
     }
   }

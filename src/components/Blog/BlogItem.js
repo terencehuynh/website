@@ -34,7 +34,7 @@ const Content = styled.div`
 
 const Heading = styled(_Heading)`
   font-size: ${(props) => getHeadingLevel(props)}rem;
-  margin: 0 0 ${space(1, 'major')}rem;
+  margin: 0 0 ${space(2, 'major')}rem;
   line-height: ${(props) => getHeadingLevel(props) + 0.5}rem;
   font-family: var(--serif-font);
   font-weight: 900;
@@ -64,8 +64,9 @@ const Heading = styled(_Heading)`
 
 const Metadata = styled.p`
   margin: 0;
-  color: #778fa8;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
   line-height: 1rem;
   text-transform: uppercase;
 

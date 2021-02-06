@@ -53,7 +53,7 @@ export const pageQuery = graphql`
           frontmatter {
             link
             source
-            date(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM D, YYYY")
             title
           }
         }
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
           }
           excerpt(format: PLAIN, pruneLength: 200, truncate: false)
           frontmatter {
-            date(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM D, YYYY")
             title
             summary
           }

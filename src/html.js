@@ -20,6 +20,7 @@ const GatsbyHtml = (props) => {
             -moz-osx-font-smoothing: auto;
             font-display: swap;
             --serif-font: 'Georgia', sans-serif;
+            --secondary-color: #5d7187;
           }
 
           body > div {
