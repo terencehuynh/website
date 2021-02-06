@@ -1,5 +1,4 @@
 import { styled, space, theme } from 'fannypack'
-import { SerifFonts } from '../../constants'
 
 const ArticleHeader = styled.header`
   max-width: 680px;
@@ -13,7 +12,7 @@ const ArticleHeader = styled.header`
 
   h1 {
     margin: 0 0 ${space(1, 'major')}rem;
-    font-family: ${SerifFonts};
+    font-family: var(--serif-font);
     font-size: 2.75rem;
     font-weight: 700;
     letter-spacing: -1px;

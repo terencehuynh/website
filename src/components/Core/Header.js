@@ -9,7 +9,6 @@ import {
 import { Link } from 'gatsby'
 
 import Navigation from './Navigation'
-import { SerifFonts } from '../../constants'
 
 const Wrapper = styled.div`
   display: flex;
@@ -35,7 +34,7 @@ const Container = styled(_Container)`
     line-height: 2rem;
     font-weight: 900;
     letter-spacing: -1px;
-    font-family: ${SerifFonts};
+    font-family: var(--serif-font);
 
     a {
       color: white;

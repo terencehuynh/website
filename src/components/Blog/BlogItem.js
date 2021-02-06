@@ -3,7 +3,6 @@ import { Heading as _Heading, styled, space, palette, theme } from 'fannypack'
 import { HeadingLevel, getHeadingLevel, getMobileHeadingLevel } from './Common'
 import Link from '../Link'
 import LinkButton from '../LinkButton'
-import { SerifFonts } from '../../constants'
 
 const Block = styled.article`
   border-bottom: 1px solid #d0d0d0;
@@ -25,7 +24,7 @@ const Content = styled.div`
   margin: ${space(3, 'major')}rem 0;
   line-height: 2;
   font-size: 1rem;
-  font-family: ${SerifFonts};
+  font-family: var(--serif-font);
 
   @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
     font-size: 0.875rem;
@@ -37,7 +36,7 @@ const Heading = styled(_Heading)`
   font-size: ${(props) => getHeadingLevel(props)}rem;
   margin: 0 0 ${space(1, 'major')}rem;
   line-height: ${(props) => getHeadingLevel(props) + 0.5}rem;
-  font-family: ${SerifFonts};
+  font-family: var(--serif-font);
   font-weight: 900;
   letter-spacing: -1px;
 

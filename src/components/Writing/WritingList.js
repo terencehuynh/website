@@ -11,7 +11,7 @@ const WritingList = ({ title, titleAs, edges, showLinkButton }) => {
       {edges.map(
         generateWritingItems({
           headingLevel: HeadingLevel.MEDIUM,
-          headingAs: 'h4',
+          headingAs: 'h3',
         })
       )}
       {showLinkButton && <LinkButton text="More Writings" to="/writing/" />}

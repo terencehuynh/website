@@ -1,5 +1,4 @@
 import { Heading, Paragraph, styled, theme, palette, space } from 'fannypack'
-import { SerifFonts } from '../../constants'
 
 export const SubHeading = styled(Heading)`
   font-weight: 300;
@@ -30,7 +29,7 @@ export const Highlight = styled(Paragraph)`
 export const Text = styled(Paragraph)`
   line-height: 2;
   font-size: 1.125rem;
-  font-family: ${SerifFonts};
+  font-family: var(--serif-font);
   font-weight: 300;
 
   em {

@@ -1,5 +1,4 @@
 import { styled, theme, palette, space } from 'fannypack'
-import { SerifFonts } from '../../constants'
 
 const ArticleContent = styled.section`
   p,
@@ -28,7 +27,7 @@ const ArticleContent = styled.section`
   p {
     line-height: 2rem;
     font-size: 1rem;
-    font-family: ${SerifFonts};
+    font-family: var(--serif-font);
 
     @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
       font-size: 0.875rem;

@@ -9,12 +9,9 @@ import {
   theme,
 } from 'fannypack'
 
-import { SerifFonts } from '../../constants'
-
 export const Card = styled(_Card.Card)`
   display: flex;
   flex-direction: column;
-  border-radius: 0;
 
   a[type='button'] {
     margin-bottom: 4px;
@@ -43,6 +40,7 @@ export const ImageBox = styled.div`
   margin: -24px -24px 20px;
   border-radius: 4px 4px 0 0;
   width: auto;
+  overflow: hidden;
 `
 
 export const ImageCredit = styled(Paragraph)`
@@ -54,14 +52,10 @@ export const ImageCredit = styled(Paragraph)`
 
 export const Description = styled(Paragraph)`
   line-height: 2;
-  font-size: 1rem;
-  font-family: ${SerifFonts};
+  font-size: 0.875rem;
+  font-family: var(--serif-font);
   font-weight: 300;
   flex: 1;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.875rem;
-  }
 `
 
 export const Metadata = styled(Paragraph)`

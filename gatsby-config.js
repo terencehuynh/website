@@ -15,6 +15,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: [
+            'Merriweather:ital,wght@0,300;0,700;0,900;1,300&display=swap',
+          ],
+        },
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
