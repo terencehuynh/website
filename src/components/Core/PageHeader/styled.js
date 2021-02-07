@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import {
   Container,
   Navigation as _Navigation,
@@ -9,9 +7,8 @@ import {
   palette,
   space,
 } from 'fannypack'
-import { Link } from 'gatsby'
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   padding-top: ${({ mini }) => (mini ? space('major-2') : space('major-4'))}rem;
   padding-bottom: ${({ mini }) => (mini ? space('major-2') : 0)}rem;
   padding-left: ${space('major-2')}rem;
@@ -21,7 +18,7 @@ const Wrapper = styled.div`
   border-bottom-color: ${palette('primaryBorder')};
 `
 
-const Heading = styled(_Heading)`
+export const Heading = styled(_Heading)`
   line-height: 1;
   color: ${palette('primaryDark')};
   font-weight: ${(props) => (props.mini ? 600 : 900)};
@@ -30,12 +27,12 @@ const Heading = styled(_Heading)`
   font-size: ${(props) => (props.mini ? 1.5 : 3)}rem;
 `
 
-const Navigation = styled(_Navigation)`
+export const Navigation = styled(_Navigation)`
   align-items: center;
   margin-top: ${space(1, 'major')}rem;
 `
 
-const List = styled(_List)`
+export const List = styled(_List)`
   margin-bottom: 0px;
   align-content: center;
 
@@ -60,43 +57,3 @@ const List = styled(_List)`
     }
   }
 `
-
-const Header = ({ heading, background, as, mini, nav }) => (
-  <Wrapper mini={mini} background={background}>
-    <Container breakpoint="desktop">
-      <Heading mini={mini} as={as}>
-        {heading}
-      </Heading>
-      {nav && (
-        <Navigation as="nav" a11yTitle={`${heading} Navigation`}>
-          <List>
-            {nav.map((item) => {
-              return (
-                <List.Item key={item.label}>
-                  <Link to={item.to}>{item.label}</Link>
-                </List.Item>
-              )
-            })}
-          </List>
-        </Navigation>
-      )}
-    </Container>
-  </Wrapper>
-)
-
-Header.propTypes = {
-  heading: PropTypes.string.isRequired,
-  background: PropTypes.string,
-  as: PropTypes.string,
-  mini: PropTypes.bool,
-  nav: PropTypes.arrayOf(
-    PropTypes.shape({ to: PropTypes.string, label: PropTypes.string })
-  ),
-}
-
-Header.defaultProps = {
-  mini: false,
-  as: 'h2',
-}
-
-export default Header

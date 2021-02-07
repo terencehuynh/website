@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from 'fannypack'
+import { Box } from 'bumbag'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'

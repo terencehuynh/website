@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Heading as _Heading, Icon, styled, space } from 'fannypack'
+import { Flex, Heading as _Heading, Icon, styled, space } from 'bumbag'
 import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'

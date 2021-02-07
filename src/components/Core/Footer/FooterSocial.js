@@ -1,38 +1,13 @@
 import React from 'react'
-import {
-  Navigation,
-  List as _List,
-  Link as _Link,
-  Icon,
-  styled,
-} from 'fannypack'
+import { Navigation, Icon, VisuallyHidden } from 'bumbag'
 
-const List = styled(_List)`
-  margin-bottom: 24px;
-
-  li {
-    display: inline-block;
-    margin-right: 8px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-`
-
-const Link = styled(_Link)`
-  font-size: 1.5rem;
-  color: #6d6d6d;
-
-  &:hover {
-    color: #004fc9;
-  }
-`
+import { List, Link } from './styled'
 
 const ListItem = ({ name, icon, link, ...opt }) => (
   <List.Item>
     <Link href={link} {...opt}>
       <Icon icon={icon} a11yLabel={name} />
+      <VisuallyHidden>{name}</VisuallyHidden>
     </Link>
   </List.Item>
 )

@@ -1,69 +1,7 @@
 import React from 'react'
-import { Flex, Container, styled, space, palette } from 'fannypack'
+import { Flex } from 'bumbag'
 import { Link } from 'gatsby'
-import { theme } from 'styled-tools'
-
-const BgWrap = styled(Flex)`
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  padding: ${space(12, 'major')}rem ${space(2, 'major')}rem;
-  background-color: ${palette('heroBg')};
-  position: relative;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    padding: ${space(6, 'major')}rem ${space(2, 'major')}rem;
-  }
-`
-
-const HeroLine = styled.span`
-  margin: 0;
-  font-weight: 300;
-  font-size: 2.5rem;
-  line-height: 1.25;
-  letter-spacing: -1px;
-  color: ${palette('heroText')};
-  display: block;
-  text-align: left;
-
-  &:not(:last-child) {
-    margin: 0 0 12px 0;
-  }
-
-  strong {
-    color: white;
-    font-weight: 700;
-  }
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    font-size: 2rem;
-    letter-spacing: 0px;
-  }
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 1.5rem;
-  }
-`
-
-const HeroContainer = styled(Container)`
-  a {
-    text-decoration: none;
-    padding: 2px;
-    color: white;
-    font-weight: 700;
-    border-bottom: 0px solid white;
-
-    &:hover {
-      border-bottom: 1px solid white;
-    }
-
-    @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-      padding: 0 4px;
-      display: inline-block;
-      clear: both;
-    }
-  }
-`
+import { BgWrap, HeroLine, HeroContainer } from './styled'
 
 const Hero = () => (
   <BgWrap>

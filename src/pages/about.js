@@ -1,5 +1,5 @@
 import React from 'react'
-import { Columns, Column, styled, theme } from 'fannypack'
+import { Columns, Column, styled, theme } from 'bumbag'
 import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
@@ -8,17 +8,7 @@ import { SubHeading, Highlight, Text } from '../components/Core'
 import PageBlock from '../components/Core/PageBlock'
 import Card from '../components/Card'
 import Grid from '../components/Grid'
-
-const Avatar = styled.div`
-  border-radius: 50%;
-  overflow: hidden;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-  }
-`
+import Avatar from '../components/Avatar'
 
 const IndexPage = () => (
   <Layout pageTitle="About Me">

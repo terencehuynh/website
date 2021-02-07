@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Columns, Column } from 'fannypack'
+import { Columns, Column } from 'bumbag'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'

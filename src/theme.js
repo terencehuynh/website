@@ -1,5 +1,3 @@
-import React from 'react'
-import { ThemeProvider } from 'fannypack'
 import {
   faLaptopCode,
   faPencilAlt,
@@ -24,7 +22,7 @@ import {
   faSpeakerDeck,
 } from '@fortawesome/free-brands-svg-icons'
 
-const theme = {
+export const theme = {
   palette: {
     primary: '#1F6BC1',
     primaryDark: '#19579F',
@@ -80,9 +78,3 @@ const theme = {
     ],
   },
 }
-
-const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
-)
-
-export default Theme

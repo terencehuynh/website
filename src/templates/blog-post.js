@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { styled } from 'fannypack'
+import { styled } from 'bumbag'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'

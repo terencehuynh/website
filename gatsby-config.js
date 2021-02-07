@@ -7,13 +7,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        displayName: false,
-        fileName: false,
-      },
-    },
+    'gatsby-plugin-bumbag',
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {

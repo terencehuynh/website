@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Columns, Column } from 'fannypack'
+import { Columns, Column } from 'bumbag'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'

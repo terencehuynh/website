@@ -6,8 +6,7 @@ import {
   Paragraph,
   styled,
   space,
-  theme,
-} from 'fannypack'
+} from 'bumbag'
 
 export const Card = styled(_Card.Card)`
   display: flex;
@@ -24,10 +23,6 @@ export const Title = styled(Heading)`
   line-height: 1.15;
   font-weight: 600;
   margin: 0 0 ${space(2, 'major')}rem;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 1.3125rem;
-  }
 `
 
 export const Button = ({ href, text, ...props }) => (
@@ -64,8 +59,4 @@ export const Metadata = styled(Paragraph)`
   font-weight: 400;
   letter-spacing; -1px;
   margin: -8px 0 24px;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.875rem;
-  }
 `

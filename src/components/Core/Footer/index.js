@@ -10,34 +10,7 @@ import {
 } from 'fannypack'
 
 import FooterSocial from './FooterSocial'
-
-const FooterParagraph = styled(Paragraph)`
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #6d6d6d;
-
-  a {
-    color: #6d6d6d;
-    font-weight: 700;
-  }
-
-  a:hover {
-    color: #004fc9;
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 2px;
-  }
-`
-
-const FooterSection = styled.footer`
-  background: #f2f2f2;
-  padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    text-align: center;
-  }
-`
+import { FooterSection, FooterParagraph } from './styled'
 
 const Footer = () => (
   <FooterSection>

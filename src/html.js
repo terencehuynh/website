@@ -1,6 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+const rootCss = `
+  body {
+    background: #f2f2f2;
+    -moz-osx-font-smoothing: auto;
+    font-display: swap;
+    --serif-font: 'Georgia', sans-serif;
+    --secondary-color: #5d7187;
+  }
+
+  body > div {
+    background: white;
+  }
+
+  .wf-active body {
+    --serif-font: 'Merriweather', 'Georgia', sans-serif;
+  }
+`
+
 const GatsbyHtml = (props) => {
   return (
     <html {...props.htmlAttributes}>
@@ -11,28 +29,7 @@ const GatsbyHtml = (props) => {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <style
-          type="text/css"
-          dangerouslySetInnerHTML={{
-            __html: `
-          body {
-            background: #f2f2f2;
-            -moz-osx-font-smoothing: auto;
-            font-display: swap;
-            --serif-font: 'Georgia', sans-serif;
-            --secondary-color: #5d7187;
-          }
-
-          body > div {
-            background: white;
-          }
-
-          .wf-active body {
-            --serif-font: 'Merriweather', 'Georgia', sans-serif;
-          }
-        `,
-          }}
-        />
+        <style type="text/css" dangerouslySetInnerHTML={{ __html: rootCss }} />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

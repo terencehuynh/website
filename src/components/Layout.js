@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Theme from './Theme'
 import Header from './Core/Header'
 import Footer from './Core/Footer'
 
@@ -49,11 +48,9 @@ const Layout = (props) => (
             title={title}
             meta={generateMeta({ metaDescription, title, author, ...meta })}
           />
-          <Theme>
-            {showHeader && <Header />}
-            {children}
-            <Footer />
-          </Theme>
+          {showHeader && <Header />}
+          {children}
+          <Footer />
         </>
       )
     }}
