@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   List as _List,
   Link as _Link,

@@ -38,7 +38,7 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "lint": "./node_modules/.bin/eslint ./",
+    "lint": "./node_modules/.bin/eslint ./src",
     "fix": "npm run lint -- --fix",
     "format": "prettier --write \"src/**/*.js\""
   },

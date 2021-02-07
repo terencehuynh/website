@@ -1,5 +1,5 @@
 import React from 'react'
-import { Columns, Column, styled, theme } from 'bumbag'
+import { Columns, Column } from 'bumbag'
 import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'

@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  Container,
-  Icon,
-  Paragraph,
-  Link,
-  styled,
-  space,
-  theme,
-} from 'fannypack'
+import { Container, Icon, Link } from 'fannypack'
 
 import FooterSocial from './FooterSocial'
 import { FooterSection, FooterParagraph } from './styled'

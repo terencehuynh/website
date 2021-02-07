@@ -1,4 +1,3 @@
-import React from 'react'
 import { Container, styled, space, palette, breakpoint, css } from 'bumbag'
 
 export const BgWrap = styled.div`

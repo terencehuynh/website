@@ -1,5 +1,4 @@
 import {
-  Container,
   Navigation as _Navigation,
   List as _List,
   Heading as _Heading,

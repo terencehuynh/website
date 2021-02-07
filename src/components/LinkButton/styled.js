@@ -1,4 +1,4 @@
-import { styled, palette, css } from 'bumbag'
+import { styled, css } from 'bumbag'
 
 export const generateStyledLink = (component) => styled(component)`
   text-decoration: none;

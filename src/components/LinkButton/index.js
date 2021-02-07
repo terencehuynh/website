@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link as GatsbyLink } from 'gatsby'
-import { Icon } from 'bumbag'
+import { Icon, palette } from 'bumbag'
 import { generateStyledLink } from './styled'
 
 const LinkButton = ({ text, to, activeClassName, invert, ...other }) => {

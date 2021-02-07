@@ -1,5 +1,4 @@
 import React from 'react'
-import { Flex } from 'bumbag'
 import { Link } from 'gatsby'
 import { BgWrap, HeroLine, HeroContainer } from './styled'
 
