@@ -5,7 +5,7 @@ import {
   styled,
   palette,
   space,
-} from 'fannypack'
+} from 'bumbag'
 
 export const Wrapper = styled.div`
   padding-top: ${({ mini }) => (mini ? space('major-2') : space('major-4'))}rem;

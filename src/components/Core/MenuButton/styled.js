@@ -5,7 +5,7 @@ import {
   palette,
   css,
   breakpoint,
-} from 'fannypack'
+} from 'bumbag'
 
 export const Button = styled(_Button)`
   color: ${palette('menuText')};

@@ -5,7 +5,7 @@ import {
   breakpoint,
   css,
   space,
-} from 'fannypack'
+} from 'bumbag'
 
 export const Wrapper = styled.div`
   display: flex;

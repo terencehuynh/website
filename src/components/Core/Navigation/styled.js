@@ -6,7 +6,7 @@ import {
   space,
   css,
   breakpoint,
-} from 'fannypack'
+} from 'bumbag'
 import { Link } from 'gatsby'
 
 export const Nav = styled(Navigation)`

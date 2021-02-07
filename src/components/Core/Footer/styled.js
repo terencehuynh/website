@@ -6,7 +6,7 @@ import {
   space,
   breakpoint,
   css,
-} from 'fannypack'
+} from 'bumbag'
 
 export const List = styled(_List)`
   margin-bottom: 24px;
