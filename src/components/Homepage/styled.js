@@ -1,18 +1,17 @@
-import { Container, styled, space, palette, breakpoint, css } from 'bumbag'
+import { Container, Flex, styled, palette, breakpoint, css } from 'bumbag'
 
-export const BgWrap = styled.div`
-  display: flex;
+export const BgWrap = styled(Flex)`
   align-items: center;
   justify-content: center;
   width: 100vw;
   background-color: ${palette('heroBg')};
   position: relative;
-  padding: ${space(6, 'major')}rem ${space(2, 'major')}rem;
+  padding: 3rem 1rem;
 
   ${breakpoint(
     'min-tablet',
     css`
-      padding: ${space(12, 'major')}rem ${space(2, 'major')}rem;
+      padding: 6rem 1rem;
     `
   )}
 `
@@ -22,7 +21,6 @@ export const HeroLine = styled.span`
   font-weight: 300;
   line-height: 1.25;
   font-size: 1.5rem;
-  letter-spacing: -1px;
   color: ${palette('heroText')};
   display: block;
   text-align: left;
@@ -48,6 +46,8 @@ export const HeroLine = styled.span`
     'min-desktop',
     css`
       font-size: 2.5rem;
+      line-height: 1.25;
+      letter-spacing: -1px;
     `
   )}
 `
@@ -59,7 +59,7 @@ export const HeroContainer = styled(Container)`
     font-weight: 700;
     border-bottom: 0px solid white;
     padding: 0 4px;
-    display: inline-block;
+    display: block;
     clear: both;
 
     &:hover {
@@ -70,7 +70,7 @@ export const HeroContainer = styled(Container)`
       'min-tablet',
       css`
         padding: 2px;
-        display: block;
+        display: inline;
         clear: none;
       `
     )}

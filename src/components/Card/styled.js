@@ -8,7 +8,7 @@ import {
   space,
 } from 'bumbag'
 
-export const Card = styled(_Card.Card)`
+export const Card = styled(_Card.Content)`
   display: flex;
   flex-direction: column;
 

@@ -1,6 +1,5 @@
-import React from 'react'
-import { Nav, NavList, NavLink } from './styled'
-import MenuButton from '../MenuButton'
+import React, { useState } from 'react'
+import { Nav, NavList, NavLink, Button, Icon } from './styled'
 
 const NavItems = [
   { title: 'About', to: '/about/' },
@@ -10,45 +9,37 @@ const NavItems = [
   { title: 'Contact', to: '/contact/' },
 ]
 
-class MainNavigation extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      active: false,
-    }
+const MainNavigation = () => {
+  const [active, setActive] = useState(false)
+
+  const onClick = () => {
+    setActive((prevState) => !prevState.active)
   }
 
-  onClick = () => {
-    this.setState((prevState) => {
-      return { active: !prevState.active }
-    })
-  }
-
-  render() {
-    const { active } = this.state
-    return (
-      <>
-        <MenuButton onClick={this.onClick} active={active} />
-        <Nav as="nav" a11yTitle="Main Navigation" active={active}>
-          <NavList>
-            {NavItems.map((item) => {
-              return (
-                <NavList.Item key={item.title}>
-                  <NavLink
-                    to={item.to}
-                    partiallyActive={item.partiallyActive}
-                    activeClassName="current"
-                  >
-                    {item.title}
-                  </NavLink>
-                </NavList.Item>
-              )
-            })}
-          </NavList>
-        </Nav>
-      </>
-    )
-  }
+  return (
+    <React.Fragment>
+      <Button use="a" variant="link" onClick={onClick} active={active}>
+        <Icon icon="solid-bars" />
+      </Button>
+      <Nav as="nav" a11yTitle="Main Navigation" active={active}>
+        <NavList>
+          {NavItems.map((item) => {
+            return (
+              <NavList.Item key={item.title}>
+                <NavLink
+                  to={item.to}
+                  partiallyActive={item.partiallyActive}
+                  activeClassName="current"
+                >
+                  {item.title}
+                </NavLink>
+              </NavList.Item>
+            )
+          })}
+        </NavList>
+      </Nav>
+    </React.Fragment>
+  )
 }
 
 export default MainNavigation

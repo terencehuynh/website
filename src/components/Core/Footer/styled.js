@@ -6,20 +6,28 @@ import {
   space,
   breakpoint,
   css,
+  applyTheme,
 } from 'bumbag'
 
-export const List = styled(_List)`
-  margin-bottom: 24px;
+export const List = applyTheme(_List, {
+  styles: {
+    base: {
+      marginBottom: '24px',
+    },
+  },
+  Item: {
+    styles: {
+      base: css`
+        display: inline-block;
+        margin-right: 8px;
 
-  li {
-    display: inline-block;
-    margin-right: 8px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-`
+        &:last-child {
+          margin-right: 0;
+        }
+      `,
+    },
+  },
+})
 
 export const Link = styled(_Link)`
   font-size: 1.5rem;
