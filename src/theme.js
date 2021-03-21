@@ -26,20 +26,15 @@ export const theme = {
   palette: {
     primary: '#1F6BC1',
     primaryDark: '#19579F',
-    primaryLight: '#D7E1EA',
     primaryHover: '#0B2747',
     primaryBorder: '#CBDEF6',
-    menu: '#113A6A',
-    menuInactive: '#164E8D',
-    menuHover: '#113A6A',
-    menuText: '#96BDED',
     miniHeader: '#EEF4FC',
     miniHeaderLink: '#5F81AB',
     miniHeaderHover: '#184077',
     heroBg: '#0B2747',
     heroText: '#85B3EA',
     text: '#435a6f',
-    textLight: '#778fa8',
+    textLight: '#5F7995',
   },
   Icon: {
     iconSets: [

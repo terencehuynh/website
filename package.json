@@ -5,9 +5,9 @@
   "version": "1.2.0",
   "author": "Terence Huynh <me@terencehuynh.com>",
   "dependencies": {
+    "@fontsource/merriweather": "^4.2.2",
     "@fortawesome/free-brands-svg-icons": "5.15.2",
     "@fortawesome/free-solid-svg-icons": "5.15.2",
-    "babel-plugin-styled-components": "1.12.0",
     "bumbag": "1.11.3",
     "gatsby": "3.1.1",
     "gatsby-awesome-pagination": "0.3.6",
@@ -17,7 +17,6 @@
     "gatsby-plugin-image": "^1.1.1",
     "gatsby-plugin-react-helmet": "4.1.0",
     "gatsby-plugin-sharp": "^3.1.1",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-custom-blocks": "3.1.0",
     "gatsby-remark-images": "4.1.0",
     "gatsby-remark-unwrap-images": "1.0.2",
