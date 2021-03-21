@@ -1,7 +1,4 @@
 module.exports = {
-  flags: {
-    DEV_SSR: true,
-  },
   siteMetadata: {
     title: `Terence Huynh`,
     description: `Software Engineer and Tech Blogger from Melbourne, Australia`,
@@ -42,8 +39,9 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
-    'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

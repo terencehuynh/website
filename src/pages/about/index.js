@@ -1,9 +1,10 @@
 import React from 'react'
 import { Columns, Column } from 'bumbag'
 import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
+
 import { SubHeading } from './styled'
 import Layout from '../../components/Layout'
-import Image from '../../components/Image'
 import PageBlock from '../../components/Core/PageBlock'
 import { Highlight, Text } from '../../components/Core/Text'
 import Card from '../../components/Card'
@@ -16,7 +17,11 @@ const IndexPage = () => (
       <Columns minBreakpoint="tablet">
         <Column spread={4} spreadTablet={12}>
           <Avatar>
-            <Image filename="avatar.png" alt="Terence Huynh" />
+            <StaticImage
+              src="assets/avatar.png"
+              alt="Terence Huynh"
+              style={{ display: 'block' }}
+            />
           </Avatar>
         </Column>
         <Column spread={7} spreadTablet={12} spreadOffset={1}>
@@ -52,7 +57,7 @@ const IndexPage = () => (
       <Grid>
         <Card.Card>
           <Card.ImageBox>
-            <Image filename="unihack.png" alt="UNIHACK" />
+            <StaticImage src="assets/unihack.png" alt="UNIHACK" />
           </Card.ImageBox>
           <Card.Title as="h5">UNIHACK Melbourne</Card.Title>
           <Card.Description>
@@ -68,7 +73,7 @@ const IndexPage = () => (
         </Card.Card>
         <Card.Card>
           <Card.ImageBox>
-            <Image filename="juniordev.png" alt="JuniorDev Melbourne" />
+            <StaticImage src="assets/juniordev.png" alt="JuniorDev Melbourne" />
           </Card.ImageBox>
           <Card.Title as="h5">JuniorDev Melbourne</Card.Title>
           <Card.Description>

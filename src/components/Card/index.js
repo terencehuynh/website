@@ -13,7 +13,6 @@ import { MediaListing } from './MediaListing'
 
 export default {
   Card,
-  ContentContainer,
   Title,
   Description,
   ImageBox,
