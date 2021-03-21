@@ -1,17 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import loadable from '@loadable/component'
+const LazyFontFaceObserver = loadable.lib(() => import('fontfaceobserver'))
 
 const rootCss = `
   body {
     background: #f2f2f2;
     -moz-osx-font-smoothing: auto;
     font-display: swap;
-    --serif-font: 'Merriweather', 'Georgia', sans-serif;
+    --serif-font: 'Georgia', sans-serif;
     --secondary-color: #5d7187;
   }
 
   body > div {
     background: white;
+  }
+
+  html.fonts-loaded body {
+    --serif-font: 'Merriweather', 'Georgia', sans-serif;
   }
 `
 
@@ -30,6 +36,16 @@ const GatsbyHtml = (props) => {
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
+        <LazyFontFaceObserver>
+          {({ default: FontFaceObserver }) => {
+            console.log('loading...')
+            const font = new FontFaceObserver('Merriweather')
+            font.load().then(() => {
+              console.log('loaded')
+              document.documentElement.className += ' fonts-loaded'
+            })
+          }}
+        </LazyFontFaceObserver>
         <div
           key={`body`}
           id="___gatsby"
