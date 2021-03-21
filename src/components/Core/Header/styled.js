@@ -1,11 +1,6 @@
-import {
-  Container as _Container,
-  styled,
-  palette,
-  breakpoint,
-  css,
-  space,
-} from 'bumbag'
+import { Container as _Container } from 'bumbag/Container'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space, palette } from 'bumbag/utils/theme'
 
 export const Wrapper = styled.div`
   display: flex;

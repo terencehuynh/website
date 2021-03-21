@@ -1,12 +1,7 @@
 import React from 'react'
-import {
-  Card as _Card,
-  Button as _Button,
-  Heading,
-  Paragraph,
-  styled,
-  space,
-} from 'bumbag'
+import { Button as _Button } from 'bumbag/Button'
+import { styled } from 'bumbag/styled'
+import { space } from 'bumbag/utils/theme'
 
 export const Card = styled.div`
   display: flex;

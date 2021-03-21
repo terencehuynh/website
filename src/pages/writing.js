@@ -1,11 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Columns, Column } from 'bumbag'
-
+import { Columns } from 'bumbag/Columns/Columns'
+import { Column } from 'bumbag/Columns/Column'
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
 import PageHeader from '../components/Core/PageHeader'
-import SectionHeading from '../components/Core/SectionHeading'
 import WritingList from '../components/Writing/WritingList'
 import BlogCoffee from '../components/Blog/BlogCoffee'
 

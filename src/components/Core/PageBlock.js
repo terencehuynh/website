@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Container, styled, space } from 'bumbag'
+import { Container } from 'bumbag/Container'
+import { styled } from 'bumbag/styled'
+import { space } from 'bumbag/utils/theme'
 
 const getVerticalPadding = (props) => {
   if (props.xl) return space(6, 'major')

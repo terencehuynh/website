@@ -1,17 +1,12 @@
-import {
-  List,
-  Icon as _Icon,
-  Button as _Button,
-  styled,
-  palette,
-  space,
-  css,
-  breakpoint,
-  applyTheme,
-} from 'bumbag'
+import { List } from 'bumbag/List'
+import { Icon as _Icon } from 'bumbag/Icon'
+import { styled, css } from 'bumbag/styled'
+import { applyTheme } from 'bumbag/utils/applyTheme'
+import { breakpoint, space } from 'bumbag/utils/theme'
+
 import { Link } from 'gatsby'
 
-const NavActiveStyle = ({ active, ...props }) =>
+const NavActiveStyle = ({ active }) =>
   active &&
   css`
     display: block;
@@ -119,7 +114,7 @@ export const NavLink = styled(Link)`
   )}
 `
 
-const ButtonActiveStyle = ({ active, ...props }) =>
+const ButtonActiveStyle = ({ active }) =>
   active &&
   css`
     color: white;

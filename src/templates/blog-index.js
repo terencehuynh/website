@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Columns, Column } from 'bumbag'
-
+import { Columns } from 'bumbag/Columns/Columns'
+import { Column } from 'bumbag/Columns/Column'
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
 import BlogHeader from '../components/Blog/BlogHeader'

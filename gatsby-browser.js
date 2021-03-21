@@ -1,5 +1,5 @@
 import React from 'react'
-import { Provider as BumbagProvider } from 'bumbag'
+import { Provider as BumbagProvider } from 'bumbag/Provider'
 import { theme } from './src/theme'
 import '@fontsource/merriweather/latin-300.css'
 import '@fontsource/merriweather/latin-300-italic.css'

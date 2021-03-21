@@ -1,5 +1,5 @@
-import { styled, css, breakpoint } from 'bumbag'
-import { StaticImage } from 'gatsby-plugin-image'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint } from 'bumbag/utils/theme'
 
 const Avatar = styled.div`
   border-radius: 50%;

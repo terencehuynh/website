@@ -1,5 +1,8 @@
 import React from 'react'
-import { Heading as _Heading, Icon, styled, space, palette } from 'bumbag'
+import { Heading as _Heading } from 'bumbag/Heading'
+import { Icon } from 'bumbag/Icon'
+import { styled } from 'bumbag/styled'
+import { space, palette } from 'bumbag/utils/theme'
 import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'

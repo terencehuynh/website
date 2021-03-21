@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Container } from 'bumbag'
+import { Container } from 'bumbag/Container'
 import { Link } from 'gatsby'
 import { Wrapper, Heading, Navigation, List } from './styled'
 

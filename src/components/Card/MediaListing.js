@@ -1,5 +1,5 @@
 import React from 'react'
-import { Set } from 'bumbag'
+import { Set } from 'bumbag/Set'
 import { Button } from './styled'
 
 export const MediaListing = ({ media }) => {

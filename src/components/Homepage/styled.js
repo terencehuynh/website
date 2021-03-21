@@ -1,4 +1,7 @@
-import { Container, Flex, styled, palette, breakpoint, css } from 'bumbag'
+import { Container } from 'bumbag/Container'
+import { Flex } from 'bumbag/Flex'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, palette } from 'bumbag/utils/theme'
 
 export const BgWrap = styled(Flex)`
   align-items: center;

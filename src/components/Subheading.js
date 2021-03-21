@@ -1,4 +1,5 @@
-import { styled, breakpoint, css, space } from 'bumbag'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space } from 'bumbag/utils/theme'
 
 export const SubHeading = styled.h3`
   font-weight: 300;

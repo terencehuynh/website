@@ -1,12 +1,9 @@
-import {
-  List as _List,
-  Link as _Link,
-  Icon as _Icon,
-  styled,
-  applyTheme,
-  breakpoint,
-  css,
-} from 'bumbag'
+import { List as _List } from 'bumbag/List'
+import { Link as _Link } from 'bumbag/Link'
+import { Icon as _Icon } from 'bumbag/Icon'
+import { styled, css } from 'bumbag/styled'
+import { applyTheme } from 'bumbag/utils/applyTheme'
+import { breakpoint } from 'bumbag/utils/theme'
 
 export const List = applyTheme(_List, {
   styles: {

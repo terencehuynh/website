@@ -1,5 +1,7 @@
 import React from 'react'
-import { Box, styled, space, palette, breakpoint, css } from 'bumbag'
+import { Box } from 'bumbag/Box'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space, palette } from 'bumbag/utils/theme'
 import { HeadingLevel } from './Common'
 import Link from '../Link'
 import LinkButton from '../LinkButton'

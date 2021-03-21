@@ -1,4 +1,5 @@
-import { styled, breakpoint, palette, space, css } from 'bumbag'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space, palette } from 'bumbag/utils/theme'
 
 const ArticleContent = styled.section`
   p,

@@ -1,6 +1,7 @@
 import React from 'react'
-import { Navigation, Icon, VisuallyHidden } from 'bumbag'
-
+import { Navigation } from 'bumbag/Navigation'
+import { Icon } from 'bumbag/Icon'
+import { VisuallyHidden } from 'bumbag/VisuallyHidden'
 import { List, Link } from './styled'
 
 const ListItem = ({ name, icon, link, ...opt }) => (

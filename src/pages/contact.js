@@ -1,6 +1,7 @@
 import React from 'react'
-import { Columns, Column, Link } from 'bumbag'
-
+import { Link } from 'bumbag/Link'
+import { Columns } from 'bumbag/Columns/Columns'
+import { Column } from 'bumbag/Columns/Column'
 import Layout from '../components/Layout'
 import { Highlight, Text } from '../components/Core/Text'
 import PageBlock from '../components/Core/PageBlock'

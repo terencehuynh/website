@@ -1,12 +1,5 @@
-import {
-  Heading as _Heading,
-  styled,
-  space,
-  css,
-  breakpoint,
-  palette,
-  applyTheme,
-} from 'bumbag'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, palette } from 'bumbag/utils/theme'
 
 export const Heading = styled.div`
   font-size: 0.875rem;

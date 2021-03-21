@@ -1,13 +1,9 @@
-import {
-  Paragraph,
-  List as _List,
-  Link as _Link,
-  styled,
-  space,
-  breakpoint,
-  css,
-  applyTheme,
-} from 'bumbag'
+import { Paragraph } from 'bumbag/Paragraph'
+import { List as _List } from 'bumbag/List'
+import { Link as _Link } from 'bumbag/Link'
+import { styled, css } from 'bumbag/styled'
+import { applyTheme } from 'bumbag/utils/applyTheme'
+import { space } from 'bumbag/utils/theme'
 
 export const List = applyTheme(_List, {
   styles: {

@@ -1,6 +1,6 @@
 import React from 'react'
 import PageHeader from '../Core/PageHeader'
-import { palette } from 'bumbag'
+import { palette } from 'bumbag/utils/theme'
 
 const BlogHeader = () => {
   return (

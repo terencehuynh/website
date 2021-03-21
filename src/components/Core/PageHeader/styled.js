@@ -1,13 +1,7 @@
-import {
-  Navigation as _Navigation,
-  List as _List,
-  Heading as _Heading,
-  styled,
-  palette,
-  space,
-  applyTheme,
-  css,
-} from 'bumbag'
+import { List as _List } from 'bumbag/List'
+import { styled, css } from 'bumbag/styled'
+import { applyTheme } from 'bumbag/utils/applyTheme'
+import { space, palette } from 'bumbag/utils/theme'
 
 export const Wrapper = styled.div`
   padding-top: ${({ mini }) => (mini ? 1 : 3)}rem;

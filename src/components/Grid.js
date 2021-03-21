@@ -1,4 +1,5 @@
-import { space, styled, breakpoint, css } from 'bumbag'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space } from 'bumbag/utils/theme'
 
 const Grid = styled.div`
   display: grid;

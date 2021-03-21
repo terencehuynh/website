@@ -1,4 +1,5 @@
-import { styled, space, breakpoint, css } from 'bumbag'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space } from 'bumbag/utils/theme'
 
 const ArticleHeader = styled.header`
   max-width: 680px;

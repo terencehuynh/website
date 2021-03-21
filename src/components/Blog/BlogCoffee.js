@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Icon, styled, space, palette, css } from 'bumbag'
+import { Icon } from 'bumbag/Icon'
+import { styled, css } from 'bumbag/styled'
+import { space, palette } from 'bumbag/utils/theme'
 
 import LinkButton from '../LinkButton'
 

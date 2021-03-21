@@ -1,5 +1,6 @@
 import React from 'react'
-import { Columns, Column } from 'bumbag'
+import { Columns } from 'bumbag/Columns/Columns'
+import { Column } from 'bumbag/Columns/Column'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 

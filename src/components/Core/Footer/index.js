@@ -1,6 +1,7 @@
 import React from 'react'
-import { Container, Icon, Link } from 'bumbag'
-
+import { Container } from 'bumbag/Container'
+import { Icon } from 'bumbag/Icon'
+import { Link } from 'bumbag/Link'
 import FooterSocial from './FooterSocial'
 import { FooterSection, FooterParagraph } from './styled'
 

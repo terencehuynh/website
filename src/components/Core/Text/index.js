@@ -1,4 +1,5 @@
-import { styled, breakpoint, css, palette, space } from 'bumbag'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space, palette } from 'bumbag/utils/theme'
 
 export const Text = styled.p`
   line-height: 2;

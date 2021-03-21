@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation } from 'bumbag'
+import { Navigation } from 'bumbag/Navigation'
 import { List, Link, Icon } from './styled'
 
 const ListItem = ({ name, icon, link, ...opt }) => (
