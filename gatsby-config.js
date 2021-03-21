@@ -7,13 +7,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        displayName: false,
-        fileName: false,
-      },
-    },
+    'gatsby-plugin-bumbag',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -35,8 +29,9 @@ module.exports = {
         path: `${__dirname}/content/assets`,
       },
     },
-    'gatsby-transformer-sharp',
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {

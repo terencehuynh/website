@@ -3,11 +3,10 @@ import { Helmet } from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Theme from './Theme'
 import Header from './Core/Header'
 import Footer from './Core/Footer'
 
-import { generateMeta, generateLink } from '../utils/helmet'
+import { generateMeta } from '../utils/helmet'
 
 const Layout = (props) => (
   <StaticQuery
@@ -38,6 +37,7 @@ const Layout = (props) => (
         description,
         lang,
         showHeader,
+        palette,
         ...meta
       } = props
       const metaDescription = description || siteDescription
@@ -48,13 +48,10 @@ const Layout = (props) => (
             htmlAttributes={{ lang }}
             title={title}
             meta={generateMeta({ metaDescription, title, author, ...meta })}
-            link={generateLink()}
           />
-          <Theme>
-            {showHeader && <Header />}
-            {children}
-            <Footer />
-          </Theme>
+          {showHeader && <Header palette={palette} />}
+          {children}
+          <Footer />
         </>
       )
     }}
@@ -69,6 +66,7 @@ Layout.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   pageTitle: PropTypes.string,
   showHeader: PropTypes.bool,
+  palette: PropTypes.string,
 }
 
 Layout.defaultProps = {

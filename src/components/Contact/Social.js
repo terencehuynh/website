@@ -1,38 +1,6 @@
 import React from 'react'
-import {
-  Navigation,
-  List as _List,
-  Link as _Link,
-  Icon as _Icon,
-  styled,
-} from 'fannypack'
-import { theme } from 'styled-tools'
-
-import { SerifFonts } from '../../constants'
-
-const List = styled(_List)`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`
-
-const Link = styled(_Link)`
-  line-height: 2;
-  font-size: 1.125rem;
-  font-family: ${SerifFonts};
-  font-weight: 300;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    font-size: 0.875rem;
-  }
-`
-
-const Icon = styled(_Icon)`
-  margin-right: 8px;
-`
+import { Navigation } from 'bumbag/Navigation'
+import { List, Link, Icon } from './styled'
 
 const ListItem = ({ name, icon, link, ...opt }) => (
   <List.Item>

@@ -1,13 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Columns, Column } from 'fannypack'
-
+import { Columns } from 'bumbag/Columns/Columns'
+import { Column } from 'bumbag/Columns/Column'
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
 import PageHeader from '../components/Core/PageHeader'
-import SectionHeading from '../components/Core/SectionHeading'
-import WritingWhere from '../components/Writing/Featured'
 import WritingList from '../components/Writing/WritingList'
+import BlogCoffee from '../components/Blog/BlogCoffee'
 
 const WritingPage = ({
   data: {
@@ -19,12 +18,11 @@ const WritingPage = ({
       <PageHeader heading="Writing" />
       <PageBlock>
         <Columns>
-          <Column spread={4}>
-            <SectionHeading text="Where I Write" as="h3" />
-            <WritingWhere />
-          </Column>
-          <Column spread={7} spreadOffset={1}>
+          <Column spread={7}>
             <WritingList title="Portfolio" titleAs="h3" edges={edges} />
+          </Column>
+          <Column spread={4} spreadOffset={1}>
+            <BlogCoffee text="Love what I write? Consider giving a tip..." />
           </Column>
         </Columns>
       </PageBlock>
@@ -44,7 +42,7 @@ export const pageQuery = graphql`
           frontmatter {
             link
             source
-            date(formatString: "DD MMMM YYYY")
+            date(formatString: "MMMM D, YYYY")
             title
           }
         }

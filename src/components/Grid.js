@@ -1,23 +1,34 @@
-import { Grid as _Grid, space, styled, theme } from 'fannypack'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space } from 'bumbag/utils/theme'
 
-const Grid = styled(_Grid)`
-  grid-template-columns: repeat(${(props) => props.columns || 2}, 1fr);
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: ${space(3, 'major')}rem;
 
-  @media (max-width: ${theme('fannypack.layout.desktopBreakpoint')}px) {
-    grid-template-columns: repeat(${(props) => props.desktopColumns || 2}, 1fr);
-  }
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    grid-template-columns: repeat(
-      ${(props) => props.desktopColumns || props.tabletColumns || 2},
-      1fr
-    );
-  }
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  ${({ desktopColumns, tabletColumns, columns, ...props }) => css`
+    ${breakpoint(
+      'min-tablet',
+      css`
+        grid-template-columns: repeat(
+          ${desktopColumns || tabletColumns || 2},
+          1fr
+        );
+      `
+    )(props)}
+    ${breakpoint(
+      'min-desktop',
+      css`
+        grid-template-columns: repeat(${desktopColumns || 2}, 1fr);
+      `
+    )(props)}
+    ${breakpoint(
+      'min-widescreen',
+      css`
+        grid-template-columns: repeat(${columns || 2}, 1fr);
+      `
+    )(props)}
+  `}
 `
 
 export default Grid

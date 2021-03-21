@@ -1,45 +1,21 @@
 import React from 'react'
-import {
-  Navigation,
-  List as _List,
-  Link as _Link,
-  Icon,
-  styled,
-} from 'fannypack'
-
-const List = styled(_List)`
-  margin-bottom: 24px;
-
-  li {
-    display: inline-block;
-    margin-right: 8px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-`
-
-const Link = styled(_Link)`
-  font-size: 1.5rem;
-  color: #6d6d6d;
-
-  &:hover {
-    color: #004fc9;
-  }
-`
+import { Navigation } from 'bumbag/Navigation'
+import { Icon } from 'bumbag/Icon'
+import { VisuallyHidden } from 'bumbag/VisuallyHidden'
+import { List, Link } from './styled'
 
 const ListItem = ({ name, icon, link, ...opt }) => (
   <List.Item>
     <Link href={link} {...opt}>
-      <Icon icon={icon} a11yTitle={name} />
+      <Icon icon={icon} a11yLabel={name} />
+      <VisuallyHidden>{name}</VisuallyHidden>
     </Link>
   </List.Item>
 )
 
 const FooterSocial = () => (
   <Navigation as="nav" a11yTitle="Footer Links">
-    <List>
+    <List orientation="horizontal">
       <ListItem
         name="Twitter"
         icon="brand-twitter"

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Columns, Column } from 'fannypack'
+import { Columns } from 'bumbag/Columns/Columns'
+import { Column } from 'bumbag/Columns/Column'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
 import HomepageHero from '../components/Homepage/Hero'
@@ -53,7 +53,7 @@ export const pageQuery = graphql`
           frontmatter {
             link
             source
-            date(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM D, YYYY")
             title
           }
         }
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
           }
           excerpt(format: PLAIN, pruneLength: 200, truncate: false)
           frontmatter {
-            date(formatString: "MMMM Do, YYYY")
+            date(formatString: "MMMM D, YYYY")
             title
             summary
           }

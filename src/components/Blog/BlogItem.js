@@ -1,43 +1,50 @@
 import React from 'react'
-import { Heading as _Heading, styled, space, palette, theme } from 'fannypack'
-import { HeadingLevel, getHeadingLevel, getMobileHeadingLevel } from './Common'
+import { Box } from 'bumbag/Box'
+import { styled, css } from 'bumbag/styled'
+import { breakpoint, space, palette } from 'bumbag/utils/theme'
+import { HeadingLevel } from './Common'
 import Link from '../Link'
 import LinkButton from '../LinkButton'
-import { SerifFonts } from '../../constants'
 
 const Block = styled.article`
-  border-bottom: 1px solid #d0d0d0;
-  margin-bottom: ${space(5, 'major')}rem;
-  padding-bottom: ${space(5, 'major')}rem;
+  border-bottom: 1px solid ${palette('white800')};
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 
   &:last-of-type {
     border-bottom: none;
     margin-bottom: 0;
   }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    margin-bottom: ${space(3, 'major')}rem;
-    padding-bottom: ${space(3, 'major')}rem;
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      margin-bottom: ${space(5, 'major')}rem;
+      padding-bottom: ${space(5, 'major')}rem;
+    `
+  )}
 `
 
 const Content = styled.div`
+  font-family: var(--serif-font);
   margin: ${space(3, 'major')}rem 0;
-  line-height: 2;
-  font-size: 1rem;
-  font-family: ${SerifFonts};
+  fill: ${palette('text')};
+  font-size: 0.875rem;
+  line-height: 1.75rem;
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.875rem;
-    line-height: 1.75rem;
-  }
+  ${breakpoint(
+    'min-tablet',
+    css`
+      line-height: 2;
+      font-size: 1rem;
+      font-weight: 300;
+    `
+  )}
 `
 
-const Heading = styled(_Heading)`
-  font-size: ${(props) => getHeadingLevel(props)}rem;
+const Heading = styled(Box)`
+  font-family: var(--serif-font);
   margin: 0 0 ${space(1, 'major')}rem;
-  line-height: ${(props) => getHeadingLevel(props) + 0.5}rem;
-  font-family: ${SerifFonts};
   font-weight: 900;
   letter-spacing: -1px;
 
@@ -57,23 +64,38 @@ const Heading = styled(_Heading)`
     outline-offset: 0;
   }
 
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: ${(props) => getMobileHeadingLevel(props)}rem;
-    line-height: ${(props) => getMobileHeadingLevel(props) + 0.5}rem;
-  }
+  ${(props) =>
+    props.headingLevel === HeadingLevel.LARGE
+      ? css`
+          font-size: 1.75rem;
+          line-height: 2.25rem;
+          ${breakpoint(
+            'min-tablet',
+            css`
+              font-size: 2rem;
+              line-height: 2.5rem;
+            `
+          )(props)}
+        `
+      : css`
+          font-size: 1.3125rem;
+          line-height: 1.8125rem;
+          ${breakpoint(
+            'min-tablet',
+            css`
+              font-size: 1.5rem;
+              line-height: 2rem;
+            `
+          )(props)}
+        `}
 `
 
 const Metadata = styled.p`
   margin: 0;
-  color: #778fa8;
   font-size: 0.875rem;
   line-height: 1rem;
   text-transform: uppercase;
-
-  @media (max-width: ${theme('fannypack.layout.mobileBreakpoint')}px) {
-    font-size: 0.75rem;
-    line-height: 0.875rem;
-  }
+  color: ${palette('textLight')};
 `
 
 const BlogItem = ({
@@ -85,11 +107,12 @@ const BlogItem = ({
   headingAs = 'h3',
   showPostLink = true,
 }) => {
+  const BlogHeading = Heading.withComponent(headingAs)
   return (
     <Block>
-      <Heading as={headingAs} headingLevel={headingLevel}>
+      <BlogHeading headingLevel={headingLevel}>
         <Link to={link} text={title} />
-      </Heading>
+      </BlogHeading>
       <Metadata>{metadata}</Metadata>
       {html && (
         <Content

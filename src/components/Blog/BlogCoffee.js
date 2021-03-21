@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Icon, styled, space, palette, css } from 'fannypack'
+import { Icon } from 'bumbag/Icon'
+import { styled, css } from 'bumbag/styled'
+import { space, palette } from 'bumbag/utils/theme'
 
 import LinkButton from '../LinkButton'
 
@@ -27,18 +29,18 @@ const ArticleCoffee = styled.section`
     margin-left: 4px;
   }
 
-  ${(props) =>
-    props.invert &&
+  ${({ invert, ...props }) =>
+    !!invert &&
     css`
       background: white;
-      border: 1px solid ${palette('white900')};
+      border: 1px solid ${palette('white900')(props)};
 
       h6 {
-        color: ${palette('text')};
+        color: ${palette('text')(props)};
       }
 
       > span svg {
-        color: ${palette('primary')};
+        color: ${palette('primary')(props)};
       }
     `}
 `
@@ -55,7 +57,7 @@ const BlogCoffee = ({ text, invert }) => {
         text="Buy me a coffee"
         to="https://www.buymeacoffee.com/terencehuynh"
         invert={!invert}
-        color={palette(invert ? 'primary' : 'heroBg')}
+        palette={invert ? 'primary' : 'heroBg'}
       />
     </ArticleCoffee>
   )

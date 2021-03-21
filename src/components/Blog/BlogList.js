@@ -10,7 +10,7 @@ const BlogList = ({ title, titleAs, edges }) => {
       {edges.map(
         generateBlogItems({
           headingLevel: HeadingLevel.LARGE,
-          headingAs: 'h4',
+          headingAs: 'h3',
           showPostLink: true,
         })
       )}

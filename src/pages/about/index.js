@@ -1,24 +1,16 @@
 import React from 'react'
-import { Columns, Column, styled, theme } from 'fannypack'
+import { Columns } from 'bumbag/Columns/Columns'
+import { Column } from 'bumbag/Columns/Column'
 import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
-import Layout from '../components/Layout'
-import Image from '../components/Image'
-import { SubHeading, Highlight, Text } from '../components/Core'
-import PageBlock from '../components/Core/PageBlock'
-import Card from '../components/Card'
-import Grid from '../components/Grid'
-
-const Avatar = styled.div`
-  border-radius: 50%;
-  overflow: hidden;
-
-  @media (max-width: ${theme('fannypack.layout.tabletBreakpoint')}px) {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-  }
-`
+import { SubHeading } from '../../components/Subheading'
+import Layout from '../../components/Layout'
+import PageBlock from '../../components/Core/PageBlock'
+import { Highlight, Text } from '../../components/Core/Text'
+import Card from '../../components/Card'
+import Grid from '../../components/Grid'
+import Avatar from '../../components/Avatar'
 
 const IndexPage = () => (
   <Layout pageTitle="About Me">
@@ -26,7 +18,11 @@ const IndexPage = () => (
       <Columns minBreakpoint="tablet">
         <Column spread={4} spreadTablet={12}>
           <Avatar>
-            <Image filename="avatar.png" alt="Terence Huynh" />
+            <StaticImage
+              src="assets/avatar.png"
+              alt="Terence Huynh"
+              style={{ display: 'block' }}
+            />
           </Avatar>
         </Column>
         <Column spread={7} spreadTablet={12} spreadOffset={1}>
@@ -62,7 +58,7 @@ const IndexPage = () => (
       <Grid>
         <Card.Card>
           <Card.ImageBox>
-            <Image filename="unihack.png" alt="UNIHACK" />
+            <StaticImage src="assets/unihack.png" alt="UNIHACK" />
           </Card.ImageBox>
           <Card.Title as="h5">UNIHACK Melbourne</Card.Title>
           <Card.Description>
@@ -70,11 +66,7 @@ const IndexPage = () => (
             hackathon. With 200 students competing in Melbourne every year, we
             are also one of the largest hackathons in Australia.
           </Card.Description>
-          <Card.Button
-            as="a"
-            href="https://unihack.net/"
-            text="Visit the site"
-          />
+          <Card.Button href="https://unihack.net/" text="Visit the site" />
           <Card.Button
             href="https://twitter.com/unihackmelb"
             text="Follow @unihackmelb"
@@ -82,7 +74,7 @@ const IndexPage = () => (
         </Card.Card>
         <Card.Card>
           <Card.ImageBox>
-            <Image filename="juniordev.png" alt="JuniorDev Melbourne" />
+            <StaticImage src="assets/juniordev.png" alt="JuniorDev Melbourne" />
           </Card.ImageBox>
           <Card.Title as="h5">JuniorDev Melbourne</Card.Title>
           <Card.Description>
@@ -95,7 +87,6 @@ const IndexPage = () => (
             text="Join the Meetup Group"
           />
           <Card.Button
-            as="a"
             href="https://twitter.com/juniordevio"
             text="Follow @juniordevio"
           />
