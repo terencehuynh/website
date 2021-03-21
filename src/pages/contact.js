@@ -2,7 +2,7 @@ import React from 'react'
 import { Columns, Column, Link } from 'bumbag'
 
 import Layout from '../components/Layout'
-import { Highlight, Text } from '../components/Core'
+import { Highlight, Text } from '../components/Core/Text'
 import PageBlock from '../components/Core/PageBlock'
 import SectionHeading from '../components/Core/SectionHeading'
 import ContactSocial from '../components/Contact/Social'

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box } from 'bumbag'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
@@ -19,14 +18,12 @@ const renderTalks = (event, index) => {
           <Card.ImageCredit>Image Credit: {event.imageCredit}</Card.ImageCredit>
         )}
       </Card.ImageBox>
-      <Box flex="1">
-        <Card.Title as="h5"> {event.title}</Card.Title>
-        <Card.Metadata>
-          {event.date}
-          {event.conference ? ` · ${event.conference}` : ''}
-        </Card.Metadata>
-        <Card.Description>{event.description}</Card.Description>
-      </Box>
+      <Card.Title as="h5"> {event.title}</Card.Title>
+      <Card.Metadata>
+        {event.date}
+        {event.conference ? ` · ${event.conference}` : ''}
+      </Card.Metadata>
+      <Card.Description>{event.description}</Card.Description>
       <Card.MediaListing media={event.media} />
     </Card.Card>
   )

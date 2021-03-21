@@ -33,14 +33,16 @@ const ArticleContent = styled.section`
   p {
     font-size: 0.875rem;
     line-height: 1.75rem;
-
     font-family: var(--serif-font);
+    margin: 0 auto 1rem;
 
     ${breakpoint(
       'min-tablet',
       css`
+        font-weight: 300;
         line-height: 2rem;
         font-size: 1rem;
+        margin: 0 auto 1.5rem;
       `
     )}
   }
@@ -50,7 +52,8 @@ const ArticleContent = styled.section`
   h4,
   h5,
   h6 {
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -1px;
   }
 
   h2 {

@@ -5,18 +5,20 @@ import {
   styled,
   palette,
   space,
+  applyTheme,
+  css,
 } from 'bumbag'
 
 export const Wrapper = styled.div`
-  padding-top: ${({ mini }) => (mini ? 2 : 3)}rem;
-  padding-bottom: ${({ mini }) => (mini ? 2 : 3)}rem;
+  padding-top: ${({ mini }) => (mini ? 1 : 3)}rem;
+  padding-bottom: ${({ mini }) => (mini ? 1 : 3)}rem;
   padding-left: ${space('major-2')}rem;
   padding-right: ${space('major-2')}rem;
   background: ${(props) => props.background || 'transparent'};
   border-bottom: 1px solid ${palette('primaryBorder')};
 `
 
-export const Heading = styled(_Heading)`
+export const Heading = styled.h2`
   line-height: 1;
   color: ${palette('primaryDark')};
   font-weight: ${(props) => (props.mini ? 600 : 900)};
@@ -25,33 +27,27 @@ export const Heading = styled(_Heading)`
   font-size: ${(props) => (props.mini ? 1.5 : 3)}rem;
 `
 
-export const Navigation = styled(_Navigation)`
+export const Navigation = styled.nav`
   align-items: center;
   margin-top: ${space(1, 'major')}rem;
 `
 
-export const List = styled(_List)`
-  margin-bottom: 0px;
-  align-content: center;
+export const List = applyTheme(_List, {
+  styles: {
+    base: (props) => css`
+      margin-bottom: 0px;
+      align-content: center;
 
-  li {
-    display: inline-block;
-    margin-bottom: 0;
-    margin-right: ${space(2, 'major')}rem;
+      && a {
+        text-decoration: none;
+        color: ${palette('miniHeaderLink')(props)};
+        font-size: 0.875rem;
 
-    &:last-child {
-      margin-right: 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: ${palette('miniHeaderLink')};
-      font-size: 0.875rem;
-
-      &:hover {
-        color: ${palette('miniHeaderHover')};
-        text-decoration: underline;
+        &:hover {
+          color: ${palette('miniHeaderHover')(props)};
+          text-decoration: underline;
+        }
       }
-    }
-  }
-`
+    `,
+  },
+})

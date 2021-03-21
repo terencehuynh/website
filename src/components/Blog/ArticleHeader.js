@@ -34,6 +34,8 @@ const ArticleHeader = styled.header`
       h1 {
         font-size: 2.75rem;
         line-height: 3.25rem;
+        font-weight: 900;
+        letter-spacing: -2px;
       }
 
       p {

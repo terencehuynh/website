@@ -57,11 +57,4 @@ export const FooterSection = styled.footer`
   background: #f2f2f2;
   padding: ${space(4, 'major')}rem ${space(2, 'major')}rem;
   text-align: center;
-
-  ${breakpoint(
-    'min-tablet',
-    css`
-      text-align: left;
-    `
-  )}
 `

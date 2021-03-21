@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
-import { Text } from '../components/Core'
+import Text from '../components/Core/Text'
 
 const Container = styled.div`
   max-width: 480px;

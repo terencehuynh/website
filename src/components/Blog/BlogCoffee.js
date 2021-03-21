@@ -27,18 +27,18 @@ const ArticleCoffee = styled.section`
     margin-left: 4px;
   }
 
-  ${(props) =>
-    props.invert &&
+  ${({ invert, ...props }) =>
+    !!invert &&
     css`
       background: white;
-      border: 1px solid ${palette('white900')};
+      border: 1px solid ${palette('white900')(props)};
 
       h6 {
-        color: ${palette('text')};
+        color: ${palette('text')(props)};
       }
 
       > span svg {
-        color: ${palette('primary')};
+        color: ${palette('primary')(props)};
       }
     `}
 `

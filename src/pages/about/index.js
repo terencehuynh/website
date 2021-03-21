@@ -1,14 +1,14 @@
 import React from 'react'
 import { Columns, Column } from 'bumbag'
 import { Link } from 'gatsby'
-
-import Layout from '../components/Layout'
-import Image from '../components/Image'
-import { SubHeading, Highlight, Text } from '../components/Core'
-import PageBlock from '../components/Core/PageBlock'
-import Card from '../components/Card'
-import Grid from '../components/Grid'
-import Avatar from '../components/Avatar'
+import { SubHeading } from './styled'
+import Layout from '../../components/Layout'
+import Image from '../../components/Image'
+import PageBlock from '../../components/Core/PageBlock'
+import { Highlight, Text } from '../../components/Core/Text'
+import Card from '../../components/Card'
+import Grid from '../../components/Grid'
+import Avatar from '../../components/Avatar'
 
 const IndexPage = () => (
   <Layout pageTitle="About Me">
@@ -60,11 +60,7 @@ const IndexPage = () => (
             hackathon. With 200 students competing in Melbourne every year, we
             are also one of the largest hackathons in Australia.
           </Card.Description>
-          <Card.Button
-            as="a"
-            href="https://unihack.net/"
-            text="Visit the site"
-          />
+          <Card.Button href="https://unihack.net/" text="Visit the site" />
           <Card.Button
             href="https://twitter.com/unihackmelb"
             text="Follow @unihackmelb"
@@ -85,7 +81,6 @@ const IndexPage = () => (
             text="Join the Meetup Group"
           />
           <Card.Button
-            as="a"
             href="https://twitter.com/juniordevio"
             text="Follow @juniordevio"
           />

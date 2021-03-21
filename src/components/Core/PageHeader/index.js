@@ -11,8 +11,8 @@ const Header = ({ heading, background, as, mini, nav }) => (
         {heading}
       </Heading>
       {nav && (
-        <Navigation as="nav" a11yTitle={`${heading} Navigation`}>
-          <List>
+        <Navigation a11yTitle={`${heading} Navigation`}>
+          <List orientation="horizontal">
             {nav.map((item) => {
               return (
                 <List.Item key={item.label}>

@@ -11,7 +11,7 @@ import {
 export const Heading = styled.div`
   font-size: 0.875rem;
   font-weight: 700;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
   color: ${palette('primaryDark')};
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -36,4 +36,11 @@ export const Heading = styled.div`
     position: relative;
     z-index: 2;
   }
+
+  ${breakpoint(
+    'min-desktop',
+    css`
+      margin: 0 0 1.5rem;
+    `
+  )}
 `

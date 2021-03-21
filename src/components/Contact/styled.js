@@ -3,21 +3,26 @@ import {
   Link as _Link,
   Icon as _Icon,
   styled,
+  applyTheme,
   breakpoint,
   css,
 } from 'bumbag'
 
-export const List = styled(_List)`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  ${breakpoint(
-    'min-tablet',
-    css`
+export const List = applyTheme(_List, {
+  styles: {
+    base: css`
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
-    `
-  )}
-`
+
+      ${breakpoint(
+        'min-tablet',
+        css`
+          grid-template-columns: repeat(2, 1fr);
+        `
+      )}
+    `,
+  },
+})
 
 export const Link = styled(_Link)`
   line-height: 2;
@@ -26,7 +31,7 @@ export const Link = styled(_Link)`
   font-weight: 300;
 
   ${breakpoint(
-    'min-desktop',
+    'min-tablet',
     css`
       font-size: 1.125rem;
     `
