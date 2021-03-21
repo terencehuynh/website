@@ -21,7 +21,7 @@ export const Nav = styled.nav`
   margin-top: 1rem;
   margin-left: -1rem;
   margin-bottom: -1rem;
-  background: ${palette('menu')};
+  background: rgba(0, 0, 0, 0.6);
   padding: 2rem;
   width: 100vw;
   display: none;
@@ -56,12 +56,12 @@ export const NavList = applyTheme(List, {
         css`
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          border-top: 1px solid ${palette('primaryDark')(props)};
-          border-right: 1px solid ${palette('primaryDark')(props)};
+          border-top: 1px solid rgba(255, 255, 255, 0.4);
+          border-right: 1px solid rgba(255, 255, 255, 0.4);
 
           & li {
-            border-left: 1px solid ${palette('primaryDark')(props)};
-            border-bottom: 1px solid ${palette('primaryDark')(props)};
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             &:last-child:nth-last-child(odd) {
               grid-column: auto / span 2;
             }
@@ -79,7 +79,7 @@ export const NavLink = styled(Link)`
   text-transform: uppercase;
   text-decoration: none;
   display: block;
-  color: ${palette('primaryLight')};
+  color: white;
   margin-left: ${space(3, 'major')}rem;
 
   &:hover {
@@ -123,12 +123,12 @@ const ButtonActiveStyle = ({ active, ...props }) =>
   active &&
   css`
     color: white;
-    background: ${palette('menu')(props)};
+    background: rgba(0, 0, 0, 0.6);
   `
 
 export const Button = styled.a`
-  color: ${palette('menuText')};
-  background: ${palette('menuInactive')};
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
   right: 0;
   top: 0;
@@ -140,7 +140,7 @@ export const Button = styled.a`
 
   &:hover {
     color: white;
-    background: ${palette('menuHover')};
+    background: rgba(0, 0, 0, 0.6);
   }
 
   ${breakpoint(

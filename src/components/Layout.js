@@ -37,6 +37,7 @@ const Layout = (props) => (
         description,
         lang,
         showHeader,
+        palette,
         ...meta
       } = props
       const metaDescription = description || siteDescription
@@ -48,7 +49,7 @@ const Layout = (props) => (
             title={title}
             meta={generateMeta({ metaDescription, title, author, ...meta })}
           />
-          {showHeader && <Header />}
+          {showHeader && <Header palette={palette} />}
           {children}
           <Footer />
         </>
@@ -65,6 +66,7 @@ Layout.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   pageTitle: PropTypes.string,
   showHeader: PropTypes.bool,
+  palette: PropTypes.string,
 }
 
 Layout.defaultProps = {

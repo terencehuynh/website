@@ -1,22 +1,23 @@
 import React from 'react'
-import { Heading as _Heading, Icon, styled, space } from 'bumbag'
+import { Heading as _Heading, Icon, styled, space, palette } from 'bumbag'
 import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
 import PageBlock from '../components/Core/PageBlock'
-import Text from '../components/Core/Text'
+import { Text } from '../components/Core/Text'
 
 const Container = styled.div`
   max-width: 480px;
+  flex: 1;
 
   a {
     text-decoration: none;
-    color: #d11c16;
+    color: ${palette('danger')};
     transition: all 0.08s ease-in-out;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 4px;
-    border: 1px solid #d11c16;
+    border: 1px solid ${palette('danger')};
     padding: 5px 7px;
     display: inline-flex;
     align-items: center;
@@ -28,7 +29,7 @@ const Container = styled.div`
     }
 
     &:hover {
-      background-color: #d11c16;
+      background-color: ${palette('danger')};
       color: white;
 
       svg {
@@ -39,14 +40,14 @@ const Container = styled.div`
 `
 
 const Heading = styled(_Heading)`
-  color: #d11c16;
+  color: ${palette('danger')};
   margin: 0 0 ${space(4, 'major')}rem;
   font-size: 3rem;
   line-height: 1;
 `
 
 const NotFoundPage = () => (
-  <Layout pageTitle="404 Not Found">
+  <Layout pageTitle="404 Not Found" palette="danger">
     <PageBlock>
       <Container>
         <Heading as="h1">Page Not Found</Heading>

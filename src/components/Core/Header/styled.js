@@ -10,7 +10,7 @@ import {
 export const Wrapper = styled.div`
   display: flex;
   padding: ${space(2, 'major')}rem ${space(2, 'major')}rem;
-  background: ${palette('primaryDark')};
+  background: ${(props) => palette(props.palette || 'primaryDark')};
   min-height: 64px;
 `
 
