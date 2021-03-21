@@ -3,7 +3,7 @@ import { Columns, Column } from 'bumbag'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 
-import { SubHeading } from './styled'
+import { SubHeading } from '../../components/SubHeading'
 import Layout from '../../components/Layout'
 import PageBlock from '../../components/Core/PageBlock'
 import { Highlight, Text } from '../../components/Core/Text'
