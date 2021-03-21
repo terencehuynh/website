@@ -5,12 +5,13 @@ import {
   css,
   breakpoint,
   palette,
+  applyTheme,
 } from 'bumbag'
 
-export const Heading = styled(_Heading)`
+export const Heading = styled.div`
   font-size: 0.875rem;
   font-weight: 700;
-  margin: 0 0 ${space(3, 'major')}rem;
+  margin: 0 0 2rem;
   color: ${palette('primaryDark')};
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -35,11 +36,4 @@ export const Heading = styled(_Heading)`
     position: relative;
     z-index: 2;
   }
-
-  ${breakpoint(
-    'min-tablet',
-    css`
-      margin: 0 0 ${space(4, 'major')}rem;
-    `
-  )}
 `

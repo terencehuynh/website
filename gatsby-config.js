@@ -1,4 +1,7 @@
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `Terence Huynh`,
     description: `Software Engineer and Tech Blogger from Melbourne, Australia`,

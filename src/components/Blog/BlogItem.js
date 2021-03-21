@@ -1,20 +1,13 @@
 import React from 'react'
-import {
-  Heading as _Heading,
-  styled,
-  space,
-  palette,
-  breakpoint,
-  css,
-} from 'bumbag'
-import { HeadingLevel, getHeadingLevel, getMobileHeadingLevel } from './Common'
+import { Box, styled, space, palette, breakpoint, css } from 'bumbag'
+import { HeadingLevel } from './Common'
 import Link from '../Link'
 import LinkButton from '../LinkButton'
 
 const Block = styled.article`
-  border-bottom: 1px solid #d0d0d0;
-  margin-bottom: ${space(3, 'major')}rem;
-  padding-bottom: ${space(3, 'major')}rem;
+  border-bottom: 1px solid ${palette('white800')};
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 
   &:last-of-type {
     border-bottom: none;
@@ -31,8 +24,9 @@ const Block = styled.article`
 `
 
 const Content = styled.div`
-  margin: ${space(3, 'major')}rem 0;
   font-family: var(--serif-font);
+  margin: ${space(3, 'major')}rem 0;
+  fill: ${palette('text')};
   font-size: 0.875rem;
   line-height: 1.75rem;
 
@@ -41,17 +35,14 @@ const Content = styled.div`
     css`
       line-height: 2;
       font-size: 1rem;
+      font-weight: 300;
     `
   )}
 `
 
-const Heading = styled(_Heading)`
-  font-size: ${(props) => getMobileHeadingLevel(props)}rem;
-  line-height: ${(props) => getMobileHeadingLevel(props) + 0.5}rem;
-
-  margin: 0 0 ${space(2, 'major')}rem;
-  line-height: ${(props) => getHeadingLevel(props) + 0.5}rem;
+const Heading = styled(Box)`
   font-family: var(--serif-font);
+  margin: 0 0 ${space(1, 'major')}rem;
   font-weight: 900;
   letter-spacing: -1px;
 
@@ -71,22 +62,38 @@ const Heading = styled(_Heading)`
     outline-offset: 0;
   }
 
-  ${breakpoint(
-    'min-tablet',
-    css`
-      font-size: ${(props) => getHeadingLevel(props)}rem;
-      line-height: ${(props) => getHeadingLevel(props) + 0.5}rem;
-    `
-  )}
+  ${(props) =>
+    props.headingLevel === HeadingLevel.LARGE
+      ? css`
+          font-size: 1.75rem;
+          line-height: 2.25rem;
+          ${breakpoint(
+            'min-tablet',
+            css`
+              font-size: 2rem;
+              line-height: 2.5rem;
+            `
+          )(props)}
+        `
+      : css`
+          font-size: 1.3125rem;
+          line-height: 1.8125rem;
+          ${breakpoint(
+            'min-tablet',
+            css`
+              font-size: 1.5rem;
+              line-height: 2rem;
+            `
+          )(props)}
+        `}
 `
 
 const Metadata = styled.p`
   margin: 0;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  letter-spacing: 1px;
+  font-size: 0.875rem;
   line-height: 1rem;
   text-transform: uppercase;
+  color: ${palette('textLight')};
 `
 
 const BlogItem = ({
@@ -98,11 +105,12 @@ const BlogItem = ({
   headingAs = 'h3',
   showPostLink = true,
 }) => {
+  const BlogHeading = Heading.withComponent(headingAs)
   return (
     <Block>
-      <Heading as={headingAs} headingLevel={headingLevel}>
+      <BlogHeading headingLevel={headingLevel}>
         <Link to={link} text={title} />
-      </Heading>
+      </BlogHeading>
       <Metadata>{metadata}</Metadata>
       {html && (
         <Content

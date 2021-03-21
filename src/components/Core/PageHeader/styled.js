@@ -8,13 +8,12 @@ import {
 } from 'bumbag'
 
 export const Wrapper = styled.div`
-  padding-top: ${({ mini }) => (mini ? space('major-2') : space('major-4'))}rem;
-  padding-bottom: ${({ mini }) => (mini ? space('major-2') : 0)}rem;
+  padding-top: ${({ mini }) => (mini ? 2 : 3)}rem;
+  padding-bottom: ${({ mini }) => (mini ? 2 : 3)}rem;
   padding-left: ${space('major-2')}rem;
   padding-right: ${space('major-2')}rem;
   background: ${(props) => props.background || 'transparent'};
-  border-bottom: ${({ mini }) => (mini ? '1px solid' : 'none')};
-  border-bottom-color: ${palette('primaryBorder')};
+  border-bottom: 1px solid ${palette('primaryBorder')};
 `
 
 export const Heading = styled(_Heading)`

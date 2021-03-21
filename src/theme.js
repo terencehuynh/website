@@ -38,9 +38,8 @@ export const theme = {
     miniHeaderHover: '#184077',
     heroBg: '#0B2747',
     heroText: '#85B3EA',
-  },
-  Container: {
-    tabletMargin: '0 20px',
+    text: '#435a6f',
+    textLight: '#778fa8',
   },
   Icon: {
     iconSets: [

@@ -55,7 +55,7 @@ const BlogCoffee = ({ text, invert }) => {
         text="Buy me a coffee"
         to="https://www.buymeacoffee.com/terencehuynh"
         invert={!invert}
-        color={palette(invert ? 'primary' : 'heroBg')}
+        palette={invert ? 'primary' : 'heroBg'}
       />
     </ArticleCoffee>
   )

@@ -1,13 +1,13 @@
-import { styled, css } from 'bumbag'
+import { styled, css, palette } from 'bumbag'
 
 export const generateStyledLink = (component) => styled(component)`
   text-decoration: none;
-  color: ${(props) => props.color};
+  color: ${(props) => palette(props.palette)};
   transition: all 0.08s ease-in-out;
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 4px;
-  border: 1px solid ${(props) => props.color};
+  border: 1px solid ${(props) => palette(props.palette)};
   padding: 5px 7px;
   display: inline-flex;
   align-items: center;
@@ -19,7 +19,7 @@ export const generateStyledLink = (component) => styled(component)`
   }
 
   &:hover {
-    background-color: ${(props) => props.color};
+    background-color: ${(props) => palette(props.palette)};
     color: white;
 
     svg {
@@ -34,7 +34,7 @@ export const generateStyledLink = (component) => styled(component)`
       border-color: white;
 
       &:hover {
-        color: ${(props) => props.color};
+        color: ${palette(props.palette)(props)};
         background-color: white;
       }
     `}

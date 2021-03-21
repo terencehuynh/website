@@ -13,7 +13,7 @@ const MainNavigation = () => {
   const [active, setActive] = useState(false)
 
   const onClick = () => {
-    setActive((prevState) => !prevState.active)
+    setActive(!active)
   }
 
   return (

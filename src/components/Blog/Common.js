@@ -8,16 +8,6 @@ export const HeadingLevel = {
   SMALL: 'SMALL',
 }
 
-export const getHeadingLevel = ({ headingLevel }) => {
-  if (headingLevel === HeadingLevel.MEDIUM) return 1.5
-  return 2
-}
-
-export const getMobileHeadingLevel = ({ headingLevel }) => {
-  if (headingLevel === HeadingLevel.MEDIUM) return 1.3125
-  return 1.75
-}
-
 export const generateWritingItems = ({ headingAs, headingLevel }) => (edge) => {
   const {
     node: {

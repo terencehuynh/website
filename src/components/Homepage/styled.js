@@ -59,7 +59,6 @@ export const HeroContainer = styled(Container)`
     font-weight: 700;
     border-bottom: 0px solid white;
     padding: 0 4px;
-    display: block;
     clear: both;
 
     &:hover {

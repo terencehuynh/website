@@ -14,7 +14,7 @@ const ListItem = ({ name, icon, link, ...opt }) => (
 
 const FooterSocial = () => (
   <Navigation as="nav" a11yTitle="Footer Links">
-    <List>
+    <List orientation="horizontal">
       <ListItem
         name="Twitter"
         icon="brand-twitter"

@@ -28,14 +28,14 @@ LinkButton.propTypes = {
   text: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   activeClassName: PropTypes.string,
-  color: PropTypes.string,
+  palette: PropTypes.string,
   invert: PropTypes.bool,
 }
 
 LinkButton.defaultProps = {
   activeClassName: 'active',
   invert: false,
-  color: palette('primary'),
+  palette: 'primary',
 }
 
 export default LinkButton
