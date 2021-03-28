@@ -27,7 +27,7 @@ export const Nav = styled.nav`
     css`
       flex: 1;
       display: flex;
-      justify-content: right;
+      justify-content: flex-end;
       margin: 0;
       padding: 0;
       width: auto;

@@ -14,14 +14,14 @@ const ArticleCoffee = styled.section`
   padding: ${space(4, 'major')}rem;
   text-align: center;
 
-  h6 {
+  p {
+    margin: 0;
+  }
+
+  p.title {
     margin: ${space(2, 'major')}rem 0;
     font-size: 1.125rem;
     color: white;
-  }
-
-  p {
-    margin: 0;
   }
 
   > span svg {
@@ -35,7 +35,7 @@ const ArticleCoffee = styled.section`
       background: white;
       border: 1px solid ${palette('white900')(props)};
 
-      h6 {
+      p.title {
         color: ${palette('text')(props)};
       }
 
@@ -52,7 +52,7 @@ const BlogCoffee = ({ text, invert }) => {
         <Icon icon="solid-mug-hot" />
         <Icon icon="solid-heart" />
       </span>
-      <h6>{text}</h6>
+      <p className="title">{text}</p>
       <LinkButton
         text="Buy me a coffee"
         to="https://www.buymeacoffee.com/terencehuynh"

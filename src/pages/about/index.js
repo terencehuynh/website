@@ -60,7 +60,7 @@ const IndexPage = () => (
           <Card.ImageBox>
             <StaticImage src="assets/unihack.png" alt="UNIHACK" />
           </Card.ImageBox>
-          <Card.Title as="h5">UNIHACK Melbourne</Card.Title>
+          <Card.Title as="h4">UNIHACK Melbourne</Card.Title>
           <Card.Description>
             I am the founder of UNIHACK, Australia's premier university student
             hackathon. With 200 students competing in Melbourne every year, we
@@ -76,7 +76,7 @@ const IndexPage = () => (
           <Card.ImageBox>
             <StaticImage src="assets/juniordev.png" alt="JuniorDev Melbourne" />
           </Card.ImageBox>
-          <Card.Title as="h5">JuniorDev Melbourne</Card.Title>
+          <Card.Title as="h4">JuniorDev Melbourne</Card.Title>
           <Card.Description>
             I am one of the organisers of this meetup group that helps new and
             upcoming developers and other members in the IT scene in Melbourne
