@@ -31,7 +31,7 @@ const BlogPostTemplate = ({ data }) => {
         </ArticleHeader>
         <ArticleContent dangerouslySetInnerHTML={{ __html: post.html }} />
         <ArticleFooter>
-          {post.frontmatter.showCoffee && <BlogCoffee invert={true} />}
+          {post.frontmatter.showCoffee && <BlogCoffee />}
         </ArticleFooter>
       </PageBlock>
     </Layout>

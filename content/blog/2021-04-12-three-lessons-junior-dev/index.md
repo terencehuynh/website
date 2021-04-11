@@ -65,7 +65,7 @@ Of course, I am not expecting it to be an overnight success. It takes years to b
 
 In 2019, as a New Years' resolution, I said that I would do more public speaking opportunities. And before a pesky pandemic put a halt to my plans, I was pretty happy with what I managed to achieve - starting small, local, and with what you know.
 
-As such, I did several talks about React Native at several conferences and meetups - including DDD Brisbane and /dev/world in Melbourne. I also managed to convince a conference in Tokyo - DevRelCon Tokyo - to let me speak about hackathons. Other opportunities also included hosting a panel at DDD Melbourne, and being an MC at YOW! Melbourne (for two sessions) and a hackathon.
+As such, I did [several talks](https://terencehuynh.com/talks) about React Native at several conferences and meetups - including DDD Brisbane and /dev/world in Melbourne. I also managed to convince a conference in Tokyo - DevRelCon Tokyo - to let me speak about hackathons. Other opportunities also included hosting a panel at DDD Melbourne, and being an MC at YOW! Melbourne (for two sessions) and a hackathon.
 
 I haven't fully dived back into public speaking at conferences this year since I reorientated my priorities slightly. However, that doesn't mean I've fully dropped it as a goal. I am still doing little bits here and there. For example, I recently did a lightning talk within my team at Atlassian.
 
