@@ -59,4 +59,4 @@ I should stress that starting a hackathon isn’t the only way of “paying it f
 _This blog post was previously published on Localz Engineering on December 4, 2018._
 
 [[credits]]
-| Top Image: Melbourne Startup Photo Library (City Of Melbourne & That Startup Show)</p>
+| Top Image: Melbourne Startup Photo Library (City Of Melbourne & That Startup Show)

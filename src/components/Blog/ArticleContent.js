@@ -111,10 +111,6 @@ const ArticleContent = styled.section`
       color: ${palette('text100')};
       font-family: inherit;
     }
-
-    p:last-child {
-      margin: 0;
-    }
   }
 `
 
