@@ -8,6 +8,9 @@ showCoffee: true
 
 ![](hero-image.jpg)
 
+[[credits]]
+| Top Image: [Corinne Kutz/Unsplash](https://unsplash.com/photos/tMI2_-r5Nfo)
+
 On occasion, as part of my role as one of the organisers for JuniorDev Melbourne, I have been asked to provide some advice to up-and-coming developers on how to navigate their junior developer journey.
 
 Since I'm approaching five years of being paid full-time to write code for a living, I thought this would be the perfect opportunity to write about what I've learnt during my formidable years as a junior developer at two companies (more on that later).
@@ -102,5 +105,8 @@ I was lucky that I found a company that not only took a risk on me but also allo
 
 Now, admittedly, I only got the job because I also knew some super talented developers at said startup. But without their references, I wouldn't have joined and had the best three years working there.
 
-[[credits]]
-| Top Image: [Corinne Kutz/Unsplash](https://unsplash.com/photos/tMI2_-r5Nfo)
+---
+
+As I said at the beginning, everyone's junior developer journey will be different - and each one will encounter different challenges as part of that journey.
+
+If this blog post did help, feel free to let me know by sending a message [on Twitter](https://twitter.com/terencehuynh). And if it didn't but still need some advice, my direct messages are always open. Alternatively, you can reach out on the [Junior Developers Slack community](http://juniordevcommunity.herokuapp.com/) where other junior (and not so junior) developers can help.
