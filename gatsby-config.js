@@ -95,8 +95,20 @@ module.exports = {
                 }
               }
             `,
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_element: [{ 'content:encoded': edge.node.html }],
+                })
+              })
+            },
             output: '/blog/feed.xml',
             title: "Terence Huynh's Blog",
+            match: '^/blog/',
           },
         ],
       },

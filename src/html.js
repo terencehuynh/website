@@ -6,12 +6,16 @@ const rootCss = `
     background: #f2f2f2;
     -moz-osx-font-smoothing: auto;
     font-display: swap;
-    --serif-font: 'Merriweather', 'Georgia', sans-serif;
+    --serif-font: 'Georgia', sans-serif;
     --secondary-color: #5d7187;
   }
 
   body > div {
     background: white;
+  }
+
+  html.fonts-loaded body {
+    --serif-font: 'Merriweather', 'Georgia', sans-serif;
   }
 `
 
