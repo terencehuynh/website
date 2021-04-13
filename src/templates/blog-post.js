@@ -20,8 +20,10 @@ const BlogPostTemplate = ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout
+      isBlogPost={true}
       pageTitle={post.frontmatter.title}
       description={post.frontmatter.summary}
+      ogImageUrl={post.frontmatter.featured.publicURL}
     >
       <BlogHeader />
       <PageBlock as="article" xl>
@@ -64,6 +66,10 @@ export const pageQuery = graphql`
         summary
         showCoffee
         date(formatString: "MMMM D, YYYY")
+        featured {
+          id
+          publicURL
+        }
       }
     }
   }

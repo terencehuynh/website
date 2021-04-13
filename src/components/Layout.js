@@ -17,6 +17,7 @@ const Layout = (props) => (
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -28,6 +29,7 @@ const Layout = (props) => (
             title: siteTitle,
             description: siteDescription,
             author,
+            siteUrl,
           },
         },
       } = data
@@ -38,6 +40,7 @@ const Layout = (props) => (
         lang,
         showHeader,
         palette,
+        isBlogPost = false,
         ...meta
       } = props
       const metaDescription = description || siteDescription
@@ -47,7 +50,14 @@ const Layout = (props) => (
           <Helmet
             htmlAttributes={{ lang }}
             title={title}
-            meta={generateMeta({ metaDescription, title, author, ...meta })}
+            meta={generateMeta({
+              siteUrl,
+              metaDescription,
+              title,
+              author,
+              isBlogPost,
+              ...meta,
+            })}
           />
           {showHeader && <Header palette={palette} />}
           {children}

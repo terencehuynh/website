@@ -1,3 +1,56 @@
+const feedQuery = `
+  {
+    allMarkdownRemark(
+      filter: { fields: { format: { eq: "post" } } }
+      sort: { order: DESC, fields: [frontmatter___date] },
+    ) {
+      edges {
+        node {
+          html
+          fields { slug }
+          frontmatter {
+            title
+            date
+            summary
+          }
+        }
+      }
+    }
+  }
+`
+
+const serializeFeedItems = (isSummary = false) => ({
+  query: {
+    site: {
+      siteMetadata: { siteUrl },
+    },
+    allMarkdownRemark,
+  },
+}) => {
+  return allMarkdownRemark.edges.map(({ node }) => {
+    const {
+      html,
+      frontmatter: { title, date, summary: description },
+      fields: { slug },
+    } = node
+    const postUrl = siteUrl + slug
+    return {
+      title,
+      date,
+      description,
+      url: postUrl,
+      guid: postUrl,
+      custom_elements: [
+        {
+          'content:encoded': isSummary
+            ? `<p>${description}</p><p><a href="${postUrl}">Read More</a></p>`
+            : html,
+        },
+      ],
+    }
+  })
+}
+
 module.exports = {
   siteMetadata: {
     title: `Terence Huynh`,
@@ -75,39 +128,17 @@ module.exports = {
        `,
         feeds: [
           {
-            query: `
-              {
-                allMarkdownRemark(
-                  filter: { fields: { format: { eq: "post" } } }
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map((edge) => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_element: [{ 'content:encoded': edge.node.html }],
-                })
-              })
-            },
+            query: feedQuery,
+            serialize: serializeFeedItems(true),
             output: '/blog/feed.xml',
             title: "Terence Huynh's Blog",
+            match: '^/blog/',
+          },
+          {
+            query: feedQuery,
+            serialize: serializeFeedItems(false),
+            output: '/blog/feed-full.xml',
+            title: "Terence Huynh's Blog - Full Article",
             match: '^/blog/',
           },
         ],
