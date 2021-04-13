@@ -1,9 +1,12 @@
 export const generateMeta = ({
+  siteUrl,
   metaDescription,
   title,
   author,
+  ogImageUrl,
   keywords = [],
   meta = [],
+  isBlogPost,
 }) => {
   return [
     {
@@ -24,7 +27,7 @@ export const generateMeta = ({
     },
     {
       name: `twitter:card`,
-      content: `summary`,
+      content: isBlogPost ? 'summary_large_card' : 'summary',
     },
     {
       name: `twitter:creator`,
@@ -39,6 +42,18 @@ export const generateMeta = ({
       content: metaDescription,
     },
   ]
+    .concat(
+      isBlogPost
+        ? [
+            {
+              property: 'twitter:site',
+              content: author,
+            },
+            { property: 'twitter:image', content: siteUrl + ogImageUrl },
+            { property: 'og:image', content: siteUrl + ogImageUrl },
+          ]
+        : []
+    )
     .concat(
       keywords.length > 0
         ? {
