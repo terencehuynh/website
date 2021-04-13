@@ -29,6 +29,7 @@ const Layout = (props) => (
             title: siteTitle,
             description: siteDescription,
             author,
+            siteUrl,
           },
         },
       } = data
