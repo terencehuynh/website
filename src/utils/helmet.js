@@ -27,7 +27,7 @@ export const generateMeta = ({
     },
     {
       name: `twitter:card`,
-      content: isBlogPost ? 'summary_large_card' : 'summary',
+      content: isBlogPost ? 'summary_large_image' : 'summary',
     },
     {
       name: `twitter:creator`,
