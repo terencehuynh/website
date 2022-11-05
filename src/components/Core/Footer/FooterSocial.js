@@ -22,6 +22,12 @@ const FooterSocial = () => (
         href="https://twitter.com/terencehuynh/"
       />
       <ListItem
+        name="Mastodon"
+        icon="brand-mastodon"
+        href="https://melb.social/@terence"
+        rel="me" 
+      />
+      <ListItem
         name="Instagram"
         icon="brand-instagram"
         href="https://www.instagram.com/terencehuynh/"
